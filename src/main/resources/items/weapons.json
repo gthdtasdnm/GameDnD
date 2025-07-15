@@ -1,0 +1,16 @@
+[
+  {
+    "id": "rusty_iron_sword",
+    "name": "Rostiges Eisenschwert",
+    "description": "Ein altes Schwert was verrostet ist.",
+    "attack": 5,
+    "price": 10
+  },
+  {
+    "id": "iron_sword",
+    "name": "Eisenschwert",
+    "description": "Ein solides Schwert aus Eisen. Zuverlässig und scharf.",
+    "attack": 15,
+    "price": 50
+  }
+]
