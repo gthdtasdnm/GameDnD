@@ -1,0 +1,83 @@
+[
+  {
+    "id": "iron_helmet",
+    "name": "Eisenhelm",
+    "description": "Ein schwerer Helm aus robustem Eisen.",
+    "defense": 4,
+    "price": 50,
+    "slot": "HEAD"
+  },
+  {
+    "id": "iron_chestplate",
+    "name": "Eisenbrustplatte",
+    "description": "Schützt den Oberkörper mit dicker Eisenschicht.",
+    "defense": 10,
+    "price": 150,
+    "slot": "CHEST"
+  },
+  {
+    "id": "iron_leggings",
+    "name": "Eisenhose",
+    "description": "Schwere Beinpanzerung aus Eisen.",
+    "defense": 7,
+    "price": 100,
+    "slot": "LEGS"
+  },
+  {
+    "id": "iron_boots",
+    "name": "Eisenstiefel",
+    "description": "Stabile Stiefel, ideal für Schlachten.",
+    "defense": 5,
+    "price": 60,
+    "slot": "FEET"
+  },
+  {
+    "id": "iron_gauntlets",
+    "name": "Eisenarmschienen",
+    "description": "Schützen die Unterarme vor Hieben.",
+    "defense": 3,
+    "price": 40,
+    "slot": "ARMS"
+  },
+
+  {
+    "id": "leather_helmet",
+    "name": "Lederkappe",
+    "description": "Ein leichter Helm aus gehärtetem Leder.",
+    "defense": 2,
+    "price": 20,
+    "slot": "HEAD"
+  },
+  {
+    "id": "leather_chestplate",
+    "name": "Lederweste",
+    "description": "Bietet etwas Schutz und viel Bewegungsfreiheit.",
+    "defense": 5,
+    "price": 60,
+    "slot": "CHEST"
+  },
+  {
+    "id": "leather_leggings",
+    "name": "Lederhose",
+    "description": "Flexible Hose aus stabilem Leder.",
+    "defense": 3,
+    "price": 45,
+    "slot": "LEGS"
+  },
+  {
+    "id": "leather_boots",
+    "name": "Lederstiefel",
+    "description": "Leichte Stiefel für schnelle Bewegungen.",
+    "defense": 2,
+    "price": 30,
+    "slot": "FEET"
+  },
+  {
+    "id": "leather_gauntlets",
+    "name": "Lederarmschienen",
+    "description": "Schlicht, aber schützt die Handgelenke.",
+    "defense": 1,
+    "price": 25,
+    "slot": "ARMS"
+  }
+]

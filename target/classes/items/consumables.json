@@ -1,0 +1,18 @@
+[
+  {
+    "id": "heal_small",
+    "name": "Kleiner Heiltrank",
+    "description": "Stellt eine kleine Menge Gesundheit wieder her.",
+    "price": 15,
+    "effect": "HEAL",
+    "magnitude": 20
+  },
+  {
+    "id": "heal_middle",
+    "name": "Mittlerer Heiltrank",
+    "description": "Stellt eine mittlere Menge Gesundheit wieder her.",
+    "price": 30,
+    "effect": "HEAL",
+    "magnitude": 50
+  }
+]
