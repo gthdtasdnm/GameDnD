@@ -1,0 +1,52 @@
+[
+  {
+    "id": "npc_gomez",
+    "name": "Gomez",
+    "maxHp": 500,
+    "currentHp": 500,
+    "strength": 100,
+    "dexterity": 30,
+    "inventory": [],
+    "equipment": {}
+  },
+  {
+    "id": "npc_thorus",
+    "name": "Thorus",
+    "maxHp": 350,
+    "currentHp": 350,
+    "strength": 80,
+    "dexterity": 40,
+    "inventory": [],
+    "equipment": {}
+  },
+  {
+    "id": "npc_diego",
+    "name": "Diego",
+    "maxHp": 300,
+    "currentHp": 300,
+    "strength": 60,
+    "dexterity": 70,
+    "inventory": [],
+    "equipment": {}
+  },
+  {
+    "id": "npc_scorpio",
+    "name": "Scorpio",
+    "maxHp": 250,
+    "currentHp": 250,
+    "strength": 55,
+    "dexterity": 40,
+    "inventory": [],
+    "equipment": {}
+  },
+  {
+    "id": "npc_fisk",
+    "name": "Fisk",
+    "maxHp": 220,
+    "currentHp": 220,
+    "strength": 30,
+    "dexterity": 30,
+    "inventory": [],
+    "equipment": {}
+  }
+]
