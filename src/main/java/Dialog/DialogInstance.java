@@ -20,7 +20,7 @@ public class DialogInstance {
     }
 
     public void run(){
-        if(condition.checkAll("test")){
+        if(condition.checkAll()){
             information.processAll();
         }
     }

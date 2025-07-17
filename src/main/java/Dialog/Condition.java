@@ -1,32 +1,46 @@
 package Dialog;
 
+import character.Character;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Condition<T> {
+public class Condition {
 
-    private final List<Predicate<T>> conditions = new ArrayList<>();
+    private final List<Predicate<Character>> conditions = new ArrayList<>();
+    private Character character; // abgespeicherter Kontext
 
-    public void addCondition(Predicate<T> condition) {
+    public Condition(Character character) {
+        this.character = character;
+    }
+
+    public Condition() {
+
+    }
+
+    public void addCondition(Predicate<Character> condition) {
         conditions.add(condition);
     }
 
-    public boolean checkAll(T object) {
-        for (Predicate<T> condition : conditions) {
-            if (!condition.test(object)) {
+    public boolean checkAll() {
+        if (character == null) return true;
+        for (Predicate<Character> condition : conditions) {
+            if (!condition.test(character)) {
                 return false;
             }
         }
         return true;
     }
 
-    public boolean checkAny(T object) {
-        for (Predicate<T> condition : conditions) {
-            if (condition.test(object)) {
-                return true;
-            }
-        }
-        return false;
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public boolean isEmpty() {
+        return conditions.isEmpty();
     }
 }
