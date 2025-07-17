@@ -44,6 +44,5 @@ public class CharacterTest {
         player.equip(ItemRepository.getArmor("iron_helmet"));
         System.out.println(player.getEquipment());
         System.out.println(player.getInventory());
-
     }
 }

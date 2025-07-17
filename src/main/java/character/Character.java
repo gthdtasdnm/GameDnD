@@ -9,18 +9,22 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Character {
-    //Unveränderbare Attribute
+    //unchangeable Attribute
     protected String name;
 
-    //Veränderbare Attribute
-    private Set<String> knownInfos = new HashSet<>();
+    //changeable Attribute
     private String guild;
     protected int maxHp;
     protected int currentHp;
     protected int strength;
     protected int dexterity;
+
+    //Items
     protected Inventory inventory;
     protected Equipment equipment;
+
+    //for dialog flags
+    private Set<String> knownInfos = new HashSet<>();
 
     public Character(String name, String guild, int maxHp, int currentHp,
                      int strength, int dexterity, Inventory inventory, Equipment equipment) {
