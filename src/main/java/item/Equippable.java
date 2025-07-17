@@ -1,5 +1,6 @@
 package item;
 
+import character.PlayerCharacter;
 import models.EquipmentSlot;
 
 public interface Equippable {
@@ -12,4 +13,5 @@ public interface Equippable {
     int getAttack();
 
     String getName();
+
 }

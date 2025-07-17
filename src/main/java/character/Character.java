@@ -1,5 +1,6 @@
 package character;
 
+import item.Armor;
 import item.Item;
 import models.Equipment;
 import models.Inventory;
@@ -31,6 +32,15 @@ public abstract class Character {
         this.dexterity = dexterity;
         this.inventory = inventory != null ? inventory : new Inventory();
         this.equipment = equipment != null ? equipment : new Equipment();
+    }
+
+    public void equip(Armor armor){
+        if(inventory.hasItem(armor)){
+            equipment.equip(armor);
+            inventory.removeItem(armor);
+        }else{
+            System.out.println("item not in inventory");
+        }
     }
 
     public String getName() {return name;}

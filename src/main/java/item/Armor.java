@@ -1,5 +1,6 @@
 package item;
 
+import character.PlayerCharacter;
 import models.EquipmentSlot;
 
 public class Armor extends Item implements Equippable {
@@ -19,6 +20,9 @@ public class Armor extends Item implements Equippable {
 
     @Override
     public int getAttack() {return 0;}
+
+    @Override
+
 
     public EquipmentSlot getSlot() {return slot;}
 

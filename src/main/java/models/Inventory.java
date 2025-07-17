@@ -4,6 +4,7 @@ import item.Item;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Inventory {
     protected int gold;
@@ -37,6 +38,15 @@ public class Inventory {
     public void removeItem(Item item){
         inventory.remove(item.getId());
     }
+
+    @Override
+    public String toString() {
+        return inventory.values().stream()
+                        .map(Item::getName)
+                        .collect(Collectors.joining(", "));
+    }
+
+
 
 
 
