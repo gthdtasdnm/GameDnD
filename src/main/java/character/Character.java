@@ -21,10 +21,9 @@ public abstract class Character {
     protected Inventory inventory;
     protected Equipment equipment;
 
-    public Character(String name, Set<String> knownInfos, String guild, int maxHp, int currentHp,
+    public Character(String name, String guild, int maxHp, int currentHp,
                      int strength, int dexterity, Inventory inventory, Equipment equipment) {
         this.name = name;
-        this.knownInfos = knownInfos != null ? knownInfos : new HashSet<>();
         this.guild = guild;
         this.maxHp = maxHp;
         this.currentHp = currentHp;

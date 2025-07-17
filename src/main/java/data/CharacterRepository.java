@@ -15,7 +15,7 @@ public class CharacterRepository {
     // Charaktere laden und speichern
     public static void loadCharacters(List<NPC> npcs) {
         for (NPC npc : npcs) {
-            characterMap.put(npc.getId(), npc);
+            characterMap.put(npc.getName(), npc);
         }
     }
 

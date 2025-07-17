@@ -11,6 +11,5 @@ public class Main {
         System.out.println(ItemRepository.getArmor("iron_chestplate").getName());
         System.out.println(ItemRepository.getWeapon("rusty_iron_sword").getName());
         System.out.println(ItemRepository.getConsumable("heal_small").getName());
-
     }
 }

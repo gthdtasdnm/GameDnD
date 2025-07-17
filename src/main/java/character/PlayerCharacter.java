@@ -1,8 +1,11 @@
 package character;
 
+import models.Equipment;
+import models.Inventory;
 import models.Quest;
 
 import java.util.List;
+import java.util.Set;
 
 public class PlayerCharacter extends Character {
     private QuestLog questLog;
@@ -11,8 +14,9 @@ public class PlayerCharacter extends Character {
     protected int experience;
     protected int skillpoints;
 
-    public PlayerCharacter(String name, CharacterState state) {
-        super(name, state);
+    public PlayerCharacter(String name, String guild, int maxHp, int currentHp,
+                           int strength, int dexterity, Inventory inventory, Equipment equipment) {
+        super(name, guild, maxHp, currentHp, strength, dexterity, inventory, equipment);
         experience = 0;
         skillpoints = 0;
     }
