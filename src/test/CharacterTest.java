@@ -2,12 +2,8 @@ package test;
 
 import character.NPC;
 import character.PlayerCharacter;
-import data.ItemLoader;
 import data.ItemRepository;
-import item.Armor;
-import item.Item;
 import models.Equipment;
-import models.EquipmentSlot;
 import models.Inventory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,7 +30,6 @@ public class CharacterTest {
         System.out.println("===> Initialisiere Items");
         ItemRepository itemRepository = new ItemRepository();
         itemRepository.loadAllItems();
-        Armor armor = new Armor("chest_plate", "Brustpanzer","Brustpanzer der die Brust schützt", 50, 10, EquipmentSlot.CHEST);
 
 
         System.out.println(player.getName());
@@ -42,6 +37,7 @@ public class CharacterTest {
         player.addItem(ItemRepository.getArmor("iron_leggings"));
         player.addItem(ItemRepository.getArmor("iron_helmet"));
         player.equip(ItemRepository.getArmor("iron_helmet"));
+        player.equip(ItemRepository.getArmor("iron_leggings"));
         System.out.println(player.getEquipment());
         System.out.println(player.getInventory());
     }
