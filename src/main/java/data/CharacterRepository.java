@@ -13,8 +13,8 @@ public class CharacterRepository {
     private static final Map<String, Character> characterMap = new HashMap<>();
 
     // Charaktere laden und speichern
-    public static void loadCharacters(List<NPC> npcs) {
-        for (NPC npc : npcs) {
+    public static void loadCharacters() {
+        for (NPC npc : CharacterLoader.loadNPCs("characters/oldcamp_npcs.json")) {
             characterMap.put(npc.getName(), npc);
         }
     }

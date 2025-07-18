@@ -104,28 +104,28 @@ public class MapScreen extends Screen {
             map[playerY][playerX] = '@';
             renderMap();
 
-            checkForEvent();  // NEU
+            //checkForEvent();  // NEU
         }
     }
 
-    private void checkForEvent() {
-        // Beispiel: Wenn Spieler bei (10,5) steht → Kampf starten
-        if (playerX == 10 && playerY == 5) {
-            System.out.println("Kampf beginnt!");
-
-            // Fenster schließen
-            closeScreen();
-
-            // Zustand wechseln → z. B. auf FightState
-            GameContext.getInstance().setState(new FightState());
-        }
-
-        // Beispiel: Wenn bei (3,3) → Dialog
-        if (playerX == 3 && playerY == 3) {
-            closeScreen();
-            GameContext.getInstance().setState(new DialogState());
-        }
-    }
+//    private void checkForEvent() {
+//        // Beispiel: Wenn Spieler bei (10,5) steht → Kampf starten
+//        if (playerX == 10 && playerY == 5) {
+//            System.out.println("Kampf beginnt!");
+//
+//            // Fenster schließen
+//            closeScreen();
+//
+//            // Zustand wechseln → z. B. auf FightState
+//            GameContext.getInstance().setState(new FightState());
+//        }
+//
+//        // Beispiel: Wenn bei (3,3) → Dialog
+//        if (playerX == 3 && playerY == 3) {
+//            closeScreen();
+//            GameContext.getInstance().setState(new DialogState());
+//        }
+//    }
 
 
 

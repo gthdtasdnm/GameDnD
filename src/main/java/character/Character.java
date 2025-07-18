@@ -5,12 +5,15 @@ import item.Item;
 import models.Equipment;
 import models.Inventory;
 
+import java.awt.Dimension;
 import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Character {
     //unchangeable Attribute
     protected String name;
+    private int x;
+    private int y;
 
     //changeable Attribute
     private String guild;
@@ -103,6 +106,15 @@ public abstract class Character {
     public int getCurrentHp() {return currentHp;}
 
     public void AddToInventory(Item item){inventory.addItem(item);}
+
+    public int getX() { return x; }
+
+    public int getY() { return y; }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 
 }
 

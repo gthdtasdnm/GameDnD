@@ -1,13 +1,11 @@
 
 
-import state.ExploreState;
-import state.FightState;
-import state.GameContext;
+import state.GameManager;
 
 public class Main {
    public static void main(String[] args) {
-//        GameContext.getInstance().setState(new ExploreState());
-//        GameContext.getInstance().update();
+        GameManager game = new GameManager();
+        game.startGame();
     }
 }
 
