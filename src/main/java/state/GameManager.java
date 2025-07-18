@@ -22,7 +22,6 @@ public class GameManager {
         this.npcs = CharacterRepository.getAllNPCs();
         this.mapData = new MapData(20, 10, npcs, player);
         this.gameContext = GameContext.getInstance();
-        mapData.printMap();
     }
 
     public void startGame() {
