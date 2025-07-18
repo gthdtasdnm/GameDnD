@@ -11,8 +11,8 @@
       "inventory": {}
     },
     "equipment": {},
-    "x": 6,
-    "y": 10
+    "x": 1,
+    "y": 1
   },
   {
     "id": "npc_thorus",
@@ -26,8 +26,8 @@
       "inventory": {}
     },
     "equipment": {},
-    "x": 7,
-    "y": 10
+    "x": 2,
+    "y": 2
   },
   {
     "id": "npc_diego",
@@ -41,8 +41,8 @@
       "inventory": {}
     },
     "equipment": {},
-    "x": 8,
-    "y": 10
+    "x": 2,
+    "y": 4
   },
   {
     "id": "npc_scorpio",
@@ -56,8 +56,8 @@
       "inventory": {}
     },
     "equipment": {},
-    "x": 9,
-    "y": 10
+    "x": 4,
+    "y": 3
   },
   {
     "id": "npc_fisk",
@@ -71,7 +71,7 @@
       "inventory": {}
     },
     "equipment": {},
-    "x": 10,
-    "y": 10
+    "x": 4,
+    "y": 6
   }
 ]

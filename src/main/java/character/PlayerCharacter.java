@@ -19,6 +19,8 @@ public class PlayerCharacter extends Character {
         super(name, guild, maxHp, currentHp, strength, dexterity, inventory, equipment);
         experience = 0;
         skillpoints = 0;
+        x = 0;
+        y = 0;
     }
 
     public PlayerCharacter() {

@@ -1,5 +1,6 @@
 package UI;
 
+import map.MapData;
 import state.DialogState;
 import state.FightState;
 import state.GameContext;
@@ -16,6 +17,11 @@ public class MapScreen extends Screen {
     private char[][] map;
     private int playerX = 1;
     private int playerY = 1;
+    private final MapData mapData;
+
+    public MapScreen(MapData mapData) {
+        this.mapData = mapData;
+    }
 
     private JTextPane mapPane;
 
@@ -55,32 +61,36 @@ public class MapScreen extends Screen {
         frame.add(panel);
         frame.setVisible(true);
 
-        initMap();
         renderMap();
 
         // Tastensteuerung
         frame.addKeyListener(new ArrowKeyListener(this));
     }
 
-    private void initMap() {
-        map = new char[mapHeight][mapWidth];
-        for (int y = 0; y < mapHeight; y++) {
-            for (int x = 0; x < mapWidth; x++) {
-                map[y][x] = (x == 0 || x == mapWidth - 1 || y == 0 || y == mapHeight - 1) ? '#' : '.';
-            }
-        }
-        map[5][10] = 'S';
-        map[3][3] = 'D';
-        map[playerY][playerX] = '@';
-    }
+//    private void initMap() {
+//        map = new char[mapHeight][mapWidth];
+//        for (int y = 0; y < mapHeight; y++) {
+//            for (int x = 0; x < mapWidth; x++) {
+//                map[y][x] = (x == 0 || x == mapWidth - 1 || y == 0 || y == mapHeight - 1) ? '#' : '.';
+//            }
+//        }
+//        map[5][10] = 'S';
+//        map[3][3] = 'D';
+//        map[playerY][playerX] = '@';
+//    }
 
     private void renderMap() {
+        char[][] tiles = mapData.getTiles();
         StringBuilder builder = new StringBuilder();
-        for (char[] row : map) {
-            builder.append(row).append('\n');
+
+        for (char[] row : tiles) {
+            for (char c : row) {
+                builder.append(c).append(' ');
+            }
+            builder.append('\n');
         }
 
-        // Text mit zentrierter Ausrichtung einfügen
+        // Text zentrieren
         StyledDocument doc = mapPane.getStyledDocument();
         SimpleAttributeSet center = new SimpleAttributeSet();
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
@@ -93,6 +103,7 @@ public class MapScreen extends Screen {
             e.printStackTrace();
         }
     }
+
 
     public void movePlayer(int dx, int dy) {
         int newX = playerX + dx;

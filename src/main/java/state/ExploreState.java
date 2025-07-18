@@ -5,13 +5,22 @@ import character.PlayerCharacter;
 import map.MapData;
 
 public class ExploreState implements GameState {
-    MapScreen mapScreen = new MapScreen();
+    GameManager gameManager;
+    PlayerCharacter player;
+    MapData mapData;
+    MapScreen mapScreen;
 
-    public ExploreState(GameManager gameManager, PlayerCharacter player, MapData mapData) {}
+
+    public ExploreState(GameManager gameManager, PlayerCharacter player, MapData mapData) {
+        this.gameManager = gameManager;
+        this.player = player;
+        this.mapData = mapData;
+    }
 
     @Override
     public void enter() {
         System.out.println("Betrete Erkundungsmodus");
+        mapScreen = new MapScreen(mapData);
         mapScreen.createScreen();
     }
 

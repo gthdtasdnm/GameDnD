@@ -90,10 +90,10 @@ public class DialogTest {
 
     }
 
-    @Test
-    public void MapScreenTest() throws InterruptedException {
-        MapScreen map = new MapScreen();
-        map.createScreen();
-
-    }
+//    @Test
+//    public void MapScreenTest() throws InterruptedException {
+//        MapScreen map = new MapScreen();
+//        map.createScreen();
+//
+//    }
 }

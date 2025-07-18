@@ -12,8 +12,8 @@ import java.util.Set;
 public abstract class Character {
     //unchangeable Attribute
     protected String name;
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
 
     //changeable Attribute
     private String guild;

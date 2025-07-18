@@ -20,9 +20,9 @@ public class GameManager {
         this.player = new PlayerCharacter();
         CharacterRepository.loadCharacters();
         this.npcs = CharacterRepository.getAllNPCs();
-        this.mapData = new MapData(65, 15);
+        this.mapData = new MapData(20, 10, npcs, player);
         this.gameContext = GameContext.getInstance();
-        System.out.println(npcs);
+        mapData.printMap();
     }
 
     public void startGame() {

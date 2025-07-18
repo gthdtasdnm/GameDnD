@@ -6,8 +6,13 @@
     "currentHp": 500,
     "strength": 100,
     "dexterity": 30,
-    "inventory": [],
-    "equipment": {}
+    "inventory": {
+      "gold": 0,
+      "inventory": {}
+    },
+    "equipment": {},
+    "x": 1,
+    "y": 1
   },
   {
     "id": "npc_thorus",
@@ -16,8 +21,13 @@
     "currentHp": 350,
     "strength": 80,
     "dexterity": 40,
-    "inventory": [],
-    "equipment": {}
+    "inventory": {
+      "gold": 0,
+      "inventory": {}
+    },
+    "equipment": {},
+    "x": 2,
+    "y": 2
   },
   {
     "id": "npc_diego",
@@ -26,8 +36,13 @@
     "currentHp": 300,
     "strength": 60,
     "dexterity": 70,
-    "inventory": [],
-    "equipment": {}
+    "inventory": {
+      "gold": 0,
+      "inventory": {}
+    },
+    "equipment": {},
+    "x": 2,
+    "y": 4
   },
   {
     "id": "npc_scorpio",
@@ -36,8 +51,13 @@
     "currentHp": 250,
     "strength": 55,
     "dexterity": 40,
-    "inventory": [],
-    "equipment": {}
+    "inventory": {
+      "gold": 0,
+      "inventory": {}
+    },
+    "equipment": {},
+    "x": 4,
+    "y": 3
   },
   {
     "id": "npc_fisk",
@@ -46,7 +66,12 @@
     "currentHp": 220,
     "strength": 30,
     "dexterity": 30,
-    "inventory": [],
-    "equipment": {}
+    "inventory": {
+      "gold": 0,
+      "inventory": {}
+    },
+    "equipment": {},
+    "x": 4,
+    "y": 6
   }
 ]
