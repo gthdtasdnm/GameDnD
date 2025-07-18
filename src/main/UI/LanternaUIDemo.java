@@ -1,4 +1,4 @@
-package map;
+package main.UI;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -6,7 +6,6 @@ import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 
@@ -16,7 +15,7 @@ public class LanternaUIDemo {
     private static int playerX = 0;
     private static int playerY = 0;
 
-    public static void main(String[] args) throws IOException {
+    public void IO() throws IOException {
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory()
                 .setInitialTerminalSize(new TerminalSize(WIDTH, HEIGHT))
                 .setPreferTerminalEmulator(true)
