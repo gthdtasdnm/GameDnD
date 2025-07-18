@@ -38,6 +38,10 @@ public abstract class Character {
         this.equipment = equipment != null ? equipment : new Equipment();
     }
 
+    public Character() {
+
+    }
+
     public void equip(Armor armor){
         if(inventory.hasItem(armor)){
             equipment.equip(armor);

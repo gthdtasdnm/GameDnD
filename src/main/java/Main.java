@@ -1,15 +1,13 @@
-import data.ItemRepository;
-import item.Armor;
-import data.ItemLoader;
 
-import java.util.List;
+
+import state.ExploreState;
+import state.FightState;
+import state.GameContext;
 
 public class Main {
-    public static void main(String[] args) {
-        ItemRepository.loadAllItems();
-
-        System.out.println(ItemRepository.getArmor("iron_chestplate").getName());
-        System.out.println(ItemRepository.getWeapon("rusty_iron_sword").getName());
-        System.out.println(ItemRepository.getConsumable("heal_small").getName());
+   public static void main(String[] args) {
+//        GameContext.getInstance().setState(new ExploreState());
+//        GameContext.getInstance().update();
     }
 }
+

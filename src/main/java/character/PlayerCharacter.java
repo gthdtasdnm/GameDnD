@@ -21,6 +21,10 @@ public class PlayerCharacter extends Character {
         skillpoints = 0;
     }
 
+    public PlayerCharacter() {
+        super();
+    }
+
     public void addExperience(int amount){
         experience += amount;
         //TODO auf levelup überprüfen;

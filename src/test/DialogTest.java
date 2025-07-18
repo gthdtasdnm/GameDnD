@@ -4,6 +4,8 @@ import Dialog.Condition;
 import Dialog.DialogInstance;
 import Dialog.DialogLine;
 import Dialog.Information;
+import UI.DialogScreen;
+import UI.MapScreen;
 import character.PlayerCharacter;
 import data.ItemRepository;
 import models.Equipment;
@@ -72,6 +74,26 @@ public class DialogTest {
         DialogInstance Dialoginstance = new DialogInstance("Hello Stranger", 1, true, false, condition, information);
 
         Dialoginstance.run();
+    }
+
+    @Test
+    public void DialogScreenTest() throws InterruptedException {
+        DialogScreen screen = new DialogScreen();
+        screen.createScreen();
+        screen.addDialog("Diego: hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.");
+        screen.addDialog("Held: hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.");
+        screen.addDialog("Diego: hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.");
+        screen.addDialog("Held: hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.hallo was machst du hier? du solltest besser aufpassen wo du dich rumtreibts.");
+
+        screen.addOption("ich will kämpfen");
+        screen.addOption("zeig mir deine ware");
+
+    }
+
+    @Test
+    public void MapScreenTest() throws InterruptedException {
+        MapScreen map = new MapScreen();
+        map.createScreen();
 
     }
 }
