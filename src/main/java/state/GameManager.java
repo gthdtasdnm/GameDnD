@@ -47,5 +47,9 @@ public class GameManager {
         ExploreState explore = new ExploreState(this, player, mapData, controller);
         gameContext.setState(explore);
     }
+
+
+
+
 }
 

@@ -1,32 +1,19 @@
 package UI;
 
 import map.MapData;
-import state.DialogState;
-import state.FightState;
-import state.GameContext;
 import state.PlayerController;
 
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 public class MapScreen extends Screen {
-    private final int mapWidth = 65;
-    private final int mapHeight = 15;
-    private char[][] map;
-    private int playerX = 1;
-    private int playerY = 1;
     private final MapData mapData;
-    private PlayerController playerController;
-
-    public MapScreen(MapData mapData, PlayerController controller) {
-        this.mapData = mapData;
-        this.playerController = controller;
-    }
-
     private JTextPane mapPane;
+
+    public MapScreen(MapData mapData) {
+        this.mapData = mapData;
+    }
 
     @Override
     public void createScreen() {
@@ -65,20 +52,7 @@ public class MapScreen extends Screen {
         frame.setVisible(true);
 
         renderMap();
-
     }
-
-//    private void initMap() {
-//        map = new char[mapHeight][mapWidth];
-//        for (int y = 0; y < mapHeight; y++) {
-//            for (int x = 0; x < mapWidth; x++) {
-//                map[y][x] = (x == 0 || x == mapWidth - 1 || y == 0 || y == mapHeight - 1) ? '#' : '.';
-//            }
-//        }
-//        map[5][10] = 'S';
-//        map[3][3] = 'D';
-//        map[playerY][playerX] = '@';
-//    }
 
     public void renderMap() {
         char[][] tiles = mapData.getTiles();
@@ -102,21 +76,6 @@ public class MapScreen extends Screen {
             doc.insertString(0, builder.toString(), null);
         } catch (BadLocationException e) {
             e.printStackTrace();
-        }
-    }
-
-
-    public void movePlayer(int dx, int dy) {
-        int newX = playerX + dx;
-        int newY = playerY + dy;
-        if (map[newY][newX] != '#') {
-            map[playerY][playerX] = '.';
-            playerX = newX;
-            playerY = newY;
-            map[playerY][playerX] = '@';
-            renderMap();
-
-            //checkForEvent();  // NEU
         }
     }
 

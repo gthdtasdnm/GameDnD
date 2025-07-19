@@ -23,7 +23,7 @@ public class ExploreState implements GameState {
     @Override
     public void enter() {
         System.out.println("Betrete Erkundungsmodus");
-        mapScreen = new MapScreen(mapData, controller);
+        mapScreen = new MapScreen(mapData);
         mapScreen.createScreen();
         mapScreen.getFrame().addKeyListener(new ArrowKeyListener(controller, mapScreen));
     }
@@ -38,7 +38,6 @@ public class ExploreState implements GameState {
     public void exit() {
         System.out.println("Verlasse Erkundungsmodus");
         mapScreen.closeScreen();
-
     }
 }
 
