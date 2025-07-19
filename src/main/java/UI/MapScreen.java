@@ -4,6 +4,7 @@ import map.MapData;
 import state.DialogState;
 import state.FightState;
 import state.GameContext;
+import state.PlayerController;
 
 import javax.swing.*;
 import javax.swing.text.*;
@@ -18,9 +19,11 @@ public class MapScreen extends Screen {
     private int playerX = 1;
     private int playerY = 1;
     private final MapData mapData;
+    private PlayerController playerController;
 
-    public MapScreen(MapData mapData) {
+    public MapScreen(MapData mapData, PlayerController controller) {
         this.mapData = mapData;
+        this.playerController = controller;
     }
 
     private JTextPane mapPane;
@@ -63,8 +66,6 @@ public class MapScreen extends Screen {
 
         renderMap();
 
-        // Tastensteuerung
-        frame.addKeyListener(new ArrowKeyListener(this));
     }
 
 //    private void initMap() {
@@ -79,7 +80,7 @@ public class MapScreen extends Screen {
 //        map[playerY][playerX] = '@';
 //    }
 
-    private void renderMap() {
+    public void renderMap() {
         char[][] tiles = mapData.getTiles();
         StringBuilder builder = new StringBuilder();
 

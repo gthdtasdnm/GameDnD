@@ -1,5 +1,6 @@
 package state;
 
+import UI.ArrowKeyListener;
 import UI.MapScreen;
 import character.PlayerCharacter;
 import map.MapData;
@@ -9,19 +10,22 @@ public class ExploreState implements GameState {
     PlayerCharacter player;
     MapData mapData;
     MapScreen mapScreen;
+    PlayerController controller;
 
 
-    public ExploreState(GameManager gameManager, PlayerCharacter player, MapData mapData) {
+    public ExploreState(GameManager gameManager, PlayerCharacter player, MapData mapData, PlayerController controller) {
         this.gameManager = gameManager;
         this.player = player;
         this.mapData = mapData;
+        this.controller = controller;
     }
 
     @Override
     public void enter() {
         System.out.println("Betrete Erkundungsmodus");
-        mapScreen = new MapScreen(mapData);
+        mapScreen = new MapScreen(mapData, controller);
         mapScreen.createScreen();
+        mapScreen.getFrame().addKeyListener(new ArrowKeyListener(controller, mapScreen));
     }
 
     @Override

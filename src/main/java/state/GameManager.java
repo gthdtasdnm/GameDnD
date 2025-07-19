@@ -1,31 +1,35 @@
 package state;
 
 import Dialog.DialogInstance;
+import UI.ArrowKeyListener;
 import character.Enemy;
 import character.NPC;
 import character.PlayerCharacter;
 import data.CharacterRepository;
 import map.MapData;
+import models.Equipment;
+import models.Inventory;
 
 import java.util.List;
 
 public class GameManager {
     private GameContext gameContext; // State-Maschine
-    private PlayerCharacter player;
+    private PlayerCharacter player = new PlayerCharacter("Held", "oldcamp", 100, 100, 10, 10, new Inventory(), new Equipment());
     private List<NPC> npcs;
     private MapData mapData;
+    private PlayerController controller;
 
 
     public GameManager() {
-        this.player = new PlayerCharacter();
         CharacterRepository.loadCharacters();
         this.npcs = CharacterRepository.getAllNPCs();
-        this.mapData = new MapData(20, 10, npcs, player);
+        mapData = new MapData(20, 10, npcs, player);
+        controller = new PlayerController(player, mapData);
         this.gameContext = GameContext.getInstance();
     }
 
     public void startGame() {
-        ExploreState explore = new ExploreState(this, player, mapData);
+        ExploreState explore = new ExploreState(this, player, mapData, controller);
         gameContext.setState(explore);
     }
 
@@ -40,7 +44,7 @@ public class GameManager {
     }
 
     public void returnToExplore() {
-        ExploreState explore = new ExploreState(this, player, mapData);
+        ExploreState explore = new ExploreState(this, player, mapData, controller);
         gameContext.setState(explore);
     }
 }

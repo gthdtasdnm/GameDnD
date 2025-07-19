@@ -36,5 +36,10 @@ public class PlayerCharacter extends Character {
         skillpoints +=1;
     }
 
+    public void move(int dx, int dy){
+        x += dx;
+        y += dy;
+    }
+
     // TODO: Weitere Spielerfunktionen wie Level, Erfahrung, Skills etc.
 }

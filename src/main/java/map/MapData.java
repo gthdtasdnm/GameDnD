@@ -51,5 +51,25 @@ public class MapData {
             System.out.println();
         }
     }
+
+    public void updatePlayerPosition(PlayerCharacter player) {
+        // Karte vorher bereinigen (z. B. setze vorherige Position auf '.')
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                if (tiles[y][x] == '@') {
+                    tiles[y][x] = '.';
+                }
+            }
+        }
+
+        int x = player.getX();
+        int y = player.getY();
+        tiles[y][x] = '@';
+    }
+
+    public boolean isWalkable(int x, int y) {
+        return x >= 0 && x < width && y >= 0 && y < height && tiles[y][x] == '.';
+    }
+
 }
 
