@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"core"},{"l":"core.factory"},{"l":"data"},{"l":"domain.character"},{"l":"domain.dialog"},{"l":"domain.inventory"},{"l":"domain.item"},{"l":"domain.map"},{"l":"domain.quest"},{"l":"state"},{"l":"test"},{"l":"UI.GUI"},{"l":"UI.Input"}];updateSearchResults();

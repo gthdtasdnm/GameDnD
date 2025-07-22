@@ -1,0 +1,14 @@
+Unbenanntes Package
+core
+core.factory
+data
+domain.character
+domain.dialog
+domain.inventory
+domain.item
+domain.map
+domain.quest
+state
+test
+UI.GUI
+UI.Input
