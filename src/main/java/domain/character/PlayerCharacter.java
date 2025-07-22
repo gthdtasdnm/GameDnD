@@ -3,6 +3,21 @@ package domain.character;
 import domain.inventory.Equipment;
 import domain.inventory.Inventory;
 
+/**
+ * Die Klasse {@code PlayerCharacter} repräsentiert den spielbaren Hauptcharakter.
+ *
+ * <p>Sie erweitert {@link Character} um zusätzliche Spielfunktionen wie
+ * Erfahrung, Skillpunkte und ein persönliches {@code QuestLog}.</p>
+ *
+ * <p>Bewegung, Erfahrungssammlung und Spielfortschritt werden hier zentral verwaltet.</p>
+ *
+ * <p>Geplant ist die Erweiterung um Levelsystem, Skillverteilung und Questmechanik.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class PlayerCharacter extends Character {
     private QuestLog questLog;
 

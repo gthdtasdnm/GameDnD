@@ -1,3 +1,46 @@
+/**
+ * JSON-Struktur: Liste von konsumierbaren Gegenständen (Consumables)
+ *
+ * Diese Datei enthält eine Sammlung von Trank-Items, die vom Spieler konsumiert
+ * werden können. Jeder Eintrag entspricht einem {@link domain.item.Consumable}
+ * und wird beim Spielstart in das {@code ItemRepository} geladen.
+ *
+ * Struktur pro Eintrag:
+ * {
+ *   "id":          String – Eindeutige technische Kennung des Items (z. B. "heal_small")
+ *   "name":        String – Anzeigename des Items im Spiel (z. B. "Kleiner Heiltrank")
+ *   "description": String – Beschreibung für Tooltip oder Inventar
+ *   "price":       int – Preis in Gold
+ *   "effect":      String – Wirkung des Tranks (Enum-Wert aus {@link domain.inventory.PotionEffect})
+ *                           Zulässig: HEAL (weitere möglich)
+ *   "magnitude":   int – Stärke der Wirkung, z. B. wie viel HP geheilt werden
+ * }
+ *
+ * Beispiel:
+ * {
+ *   "id": "heal_small",
+ *   "name": "Kleiner Heiltrank",
+ *   "description": "Stellt eine kleine Menge Gesundheit wieder her.",
+ *   "price": 15,
+ *   "effect": "HEAL",
+ *   "magnitude": 20
+ * }
+ *
+ * Verwendung:
+ * - Eingelesen mit {@code ItemLoader.loadConsumableItems()}
+ * - In {@code ItemRepository} gespeichert
+ * - Vom Spieler nutzbar über {@code use(Character)}
+ *
+ * Hinweise:
+ * - Alle Felder sind erforderlich
+ * - {@code effect} muss mit einem gültigen {@link domain.inventory.PotionEffect} übereinstimmen
+ * - Weitere Effekte und Trankarten (z. B. MANA, BUFFS) können später ergänzt werden
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 [
   {
     "id": "heal_small",

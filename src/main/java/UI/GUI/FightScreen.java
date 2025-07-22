@@ -6,6 +6,28 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Dimension;
 
+/**
+ * Die Klasse {@code FightScreen} stellt das grafische Interface für Kampfsituationen im Spiel dar.
+ *
+ * <p>Sie erweitert {@link Screen} und zeigt Informationen über Spieler- und Gegnerstatus sowie
+ * interaktive Aktionsbuttons (z. B. Attack, Heal, Block, Dodge).</p>
+ *
+ * <p>Beim Aufruf von {@code createScreen()} wird ein statischer Bildschirm aufgebaut, bestehend aus:</p>
+ * <ul>
+ *   <li>Überschrift (Kampftitel)</li>
+ *   <li>Kurzbeschreibung des Gegners</li>
+ * <li>Lebensanzeige für Spieler und Gegner</li>
+ *   <li>Vier Buttons zur Auswahl von Kampfaktionen</li>
+ * </ul>
+ *
+ * <p>Die Buttons sind aktuell funktional über {@code System.out}-Ausgaben verbunden und
+ * sollen später mit echter Spiellogik verknüpft werden.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class FightScreen extends Screen {
 
     @Override

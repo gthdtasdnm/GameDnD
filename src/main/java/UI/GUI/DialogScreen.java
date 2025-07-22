@@ -15,6 +15,29 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Insets;
 
+/**
+ * Die Klasse {@code DialogScreen} stellt ein grafisches Interface zur Darstellung von Dialogen
+ * und auswählbaren Optionen im Spiel dar.
+ *
+ * <p>Sie erweitert {@link Screen} und nutzt Swing-Komponenten wie {@link JScrollPane},
+ * {@link JTextArea} und {@link JButton}, um dialogbasiertes Gameplay visuell umzusetzen.</p>
+ *
+ * <p>Funktionen im Überblick:</p>
+ * <ul>
+ *   <li>{@code createScreen()} – Initialisiert Fenster, Layout und Komponenten</li>
+ *   <li>{@code addDialog(String)} – Fügt dem Dialogbereich neue Textzeilen hinzu</li>
+ *   <li>{@code addOption(String)} – Fügt interaktive Antwortmöglichkeiten hinzu</li>
+ * </ul>
+ *
+ * <p>Das Layout ist zweigeteilt: Ein oberer Bereich für Dialogtext und ein unterer Bereich für Antwortoptionen.</p>
+ *
+ * <p>Wird vom {@code DialogState} aufgerufen, sobald ein Dialog beginnt.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class DialogScreen extends Screen{
 
     private JPanel dialogContainer;

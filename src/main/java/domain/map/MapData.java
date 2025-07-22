@@ -5,6 +5,27 @@ import domain.character.PlayerCharacter;
 
 import java.util.List;
 
+/**
+ * Die Klasse {@code MapData} repräsentiert die Spielfeldkarte als zweidimensionales Char-Array.
+ *
+ * <p>Sie verwaltet die Positionen des {@link domain.character.PlayerCharacter} und aller {@link domain.character.NPC}s
+ * und stellt Methoden zur Anzeige und Aktualisierung der Karte bereit.</p>
+ *
+ * <p>Symbole auf der Karte:</p>
+ * <ul>
+ *   <li>{@code '.'} = leeres Feld</li>
+ *   <li>{@code '@'} = Spieler</li>
+ *   <li>Großbuchstabe = erster Buchstabe eines NPC-Namens</li>
+ * </ul>
+ *
+ * <p>Die Methode {@code isWalkable()} prüft, ob eine Position innerhalb der Kartenbegrenzung liegt.
+ * {@code updatePlayerPosition()} aktualisiert die Karte nach einer Bewegung.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class MapData {
     private final int width;
     private final int height;

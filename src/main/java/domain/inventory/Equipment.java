@@ -6,6 +6,22 @@ import domain.item.Equippable;
 import java.util.EnumMap;
 import java.util.Map;
 
+/**
+ * Die Klasse {@code Equipment} verwaltet alle aktuell ausgerüsteten Items eines Charakters.
+ *
+ * <p>Items vom Typ {@link domain.item.Equippable} werden in einem {@link EquipmentSlot} platziert
+ * und können jederzeit ausgetauscht oder abgefragt werden.</p>
+ *
+ * <p>Die Klasse stellt außerdem Methoden zur Berechnung von Gesamtangriff und Gesamtverteidigung bereit,
+ * basierend auf allen aktuell ausgerüsteten Items.</p>
+ *
+ * <p>Typisch für Spieler- und NPC-Charaktere zur Darstellung und Berechnung ihrer Kampfstärke.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class Equipment {
 
     private final Map<EquipmentSlot, Equippable> slots = new EnumMap<>(EquipmentSlot.class);

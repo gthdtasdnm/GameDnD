@@ -5,6 +5,27 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+/**
+ * Die Klasse {@code StartScreen} stellt das grafische Hauptmenü des Spiels dar.
+ *
+ * <p>Sie erweitert {@link Screen} und zeigt beim Aufruf von {@code createScreen()}
+ * eine einfache Startoberfläche mit einem Titel und einem Button zum Spielstart.</p>
+ *
+ * <p>Bestandteile des Bildschirms:</p>
+ * <ul>
+ *   <li>Ein zentrierter Header mit der Beschriftung „Hauptmenü“</li>
+ *   <li>Ein Button mit der Aufschrift „Start new Game“</li>
+ * </ul>
+ *
+ * <p>Die Layout-Konfiguration erfolgt manuell über absolute Positionierung.</p>
+ *
+ * <p>Spätere Erweiterungen könnten Einstellungen, Ladefunktionen oder Credits ergänzen.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class StartScreen extends Screen{
     public void createScreen(){
         // Frame Einstellungen

@@ -2,6 +2,21 @@ package domain.item;
 
 import domain.inventory.EquipmentSlot;
 
+/**
+ * Die Klasse {@code Weapon} repräsentiert eine ausrüstbare Waffe im Spiel.
+ *
+ * <p>Sie erweitert {@link Item} und implementiert das {@link Equippable}-Interface,
+ * wodurch sie einem {@link domain.character.Character} im Slot {@link domain.inventory.EquipmentSlot#WEAPON} zugewiesen werden kann.</p>
+ *
+ * <p>Waffen besitzen einen Angriffs-Wert ({@code attack}), aber keinen Verteidigungswert.</p>
+ *
+ * <p>Typisch für Charaktere, die im Nah- oder Fernkampf Schaden verursachen sollen.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class Weapon extends Item implements Equippable {
     private final int attack;
 

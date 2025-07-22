@@ -1,5 +1,25 @@
 package domain.dialog;
 
+/**
+ * Die Klasse {@code DialogInstance} repräsentiert eine einzelne Dialogoption
+ * in einem Gespräch mit einem NPC.
+ *
+ * <p>Eine Dialoginstanz enthält:</p>
+ * <ul>
+ *   <li>einen Beschreibungstext für das Dialogmenü</li>
+ *   <li>eine Priorität zur Sortierung</li>
+ *   <li>Informationen über Wiederholbarkeit und Wichtigkeit</li>
+ *   <li>eine {@link Condition}, um anzuzeigen, ob die Option verfügbar ist</li>
+ *   <li>eine {@link Information}, die beim Auswählen ausgeführt wird</li>
+ * </ul>
+ *
+ * <p>Die Methode {@code run()} prüft alle Bedingungen und führt bei Erfolg die zugehörige Logik aus.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class DialogInstance {
     private String npc;
     private String description;         // Option text shown in dialog menu

@@ -6,6 +6,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Die Klasse {@code Inventory} verwaltet das Inventar eines Charakters.
+ *
+ * <p>Es enthält eine Sammlung von {@link domain.item.Item}-Objekten, die über ihre ID gespeichert sind,
+ * sowie einen Goldzähler für käufliche Transaktionen.</p>
+ *
+ * <p>Funktionen beinhalten das Hinzufügen, Entfernen und Überprüfen von Items sowie das Verwalten von Gold.</p>
+ *
+ * <p>Wird typischerweise von {@code PlayerCharacter} oder {@code NPC} verwendet,
+ * um Besitzstände im Spiel zu verwalten.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class Inventory {
     protected int gold;
     protected Map<String, Item> inventory;

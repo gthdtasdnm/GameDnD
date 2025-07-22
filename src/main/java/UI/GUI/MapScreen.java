@@ -6,6 +6,27 @@ import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
 
+/**
+ * Die Klasse {@code MapScreen} stellt das grafische Interface für die Kartenansicht
+ * während des Erkundungsmodus dar.
+ *
+ * <p>Sie erweitert {@link Screen} und zeigt die aktuelle Spielwelt in einem {@link JTextPane}
+ * auf Basis der {@link domain.map.MapData} als zweidimensionale Zeichenkarte.</p>
+ *
+ * <p>Funktionen:</p>
+ * <ul>
+ *   <li>{@code createScreen()} – Initialisiert das Fenster, Layout und Textfeld</li>
+ *   <li>{@code renderMap()} – Konvertiert das aktuelle Spielfeld in Text und zeigt es zentriert an</li>
+ * </ul>
+ *
+ * <p>Die Darstellung verwendet eine monospaced-Schriftart, um ein rasterbasiertes Layout zu gewährleisten.
+ * Spielerposition, NPCs und leere Felder werden anhand von Zeichen angezeigt.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class MapScreen extends Screen {
     private final MapData mapData;
     private JTextPane mapPane;

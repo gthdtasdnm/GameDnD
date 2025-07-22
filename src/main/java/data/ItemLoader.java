@@ -10,6 +10,27 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.List;
 
+/**
+ * Die {@code ItemLoader}-Klasse lädt Item-Daten (Rüstungen, Waffen, Verbrauchsgegenstände)
+ * aus JSON-Dateien mithilfe von {@code Gson}.
+ *
+ * <p>Sie verwendet eine generische Methode {@code loadItems}, um beliebige Itemtypen
+ * aus Ressourcendateien zu deserialisieren.</p>
+ *
+ * <p>Die spezialisierten Methoden {@code loadArmorItems}, {@code loadWeaponItems} und
+ * {@code loadConsumableItems} kapseln den Pfad und den Typ für die jeweiligen Item-Klassen.</p>
+ *
+ * <p>Beispielnutzung:</p>
+ * <pre>{@code
+ * List<Armor> armors = ItemLoader.loadArmorItems();
+ * List<Weapon> weapons = ItemLoader.loadWeaponItems();
+ * }</pre>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class ItemLoader {
 
     private static final Gson gson = new Gson();

@@ -1,5 +1,18 @@
 package domain.item;
 
+/**
+ * Die abstrakte Klasse {@code Item} stellt die gemeinsame Basis für alle Gegenstände im Spiel dar.
+ *
+ * <p>Jedes Item besitzt eine eindeutige ID, einen Namen, eine Beschreibung und einen Preis.
+ * Diese Informationen werden zur Darstellung, Verwaltung und für Transaktionen verwendet.</p>
+ *
+ * <p>Konkrete Subtypen sind z. B. {@link Armor}, {@link Weapon} oder {@link Consumable}.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public abstract class Item {
     protected final String id;
     protected final String name;

@@ -8,6 +8,27 @@ import domain.inventory.Inventory;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Die abstrakte Klasse {@code Character} bildet die gemeinsame Grundlage für alle Spielfiguren.
+ *
+ * <p>Sie enthält Attribute wie Name, Position, Lebenspunkte, Stärke, Geschicklichkeit sowie
+ * Inventar und Ausrüstung.</p>
+ *
+ * <p>Typische Aktionen sind:</p>
+ * <ul>
+ *   <li>Schaden nehmen oder heilen</li>
+ *   <li>Items aufnehmen, prüfen und ausrüsten</li>
+ *   <li>Position verändern (für Kartenbewegung)</li>
+ *   <li>Dialoginformationen merken (z. B. Flags für Gesprächsverlauf)</li>
+ * </ul>
+ *
+ * <p>Diese Klasse wird von konkreten Spielcharakteren wie {@code PlayerCharacter} und {@code NPC} erweitert.</p>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public abstract class Character {
     //unchangeable Attribute
     protected String name;

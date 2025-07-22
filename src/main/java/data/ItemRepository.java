@@ -7,6 +7,32 @@ import domain.item.Weapon;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Die {@code ItemRepository}-Klasse dient als zentraler Zwischenspeicher
+ * für alle im Spiel verfügbaren Items.
+ *
+ * <p>Sie verwaltet getrennte Maps für:</p>
+ * <ul>
+ *   <li>{@link domain.item.Armor} – Rüstungen</li>
+ *   <li>{@link domain.item.Weapon} – Waffen</li>
+ *   <li>{@link domain.item.Consumable} – Verbrauchsgegenstände</li>
+ * </ul>
+ *
+ * <p>Die Items werden zur Laufzeit über den {@link ItemLoader} aus JSON-Dateien geladen
+ * und mit ihrer eindeutigen ID gespeichert. Der Zugriff erfolgt lesend über die ID
+ * oder vollständig über die jeweilige Map.</p>
+ *
+ * <p>Beispiel:</p>
+ * <pre>{@code
+ * ItemRepository.loadAllItems();
+ * Weapon sword = ItemRepository.getWeapon("old_sword_01");
+ * }</pre>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 public class ItemRepository {
 
     private static final Map<String, Armor> armorMap = new HashMap<>();
