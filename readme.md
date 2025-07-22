@@ -62,12 +62,12 @@ Benutzerschnittstelle:
 
 ## 🧱 SOLID-Prinzipien im Projekt
 
-| Prinzip | Anwendung im Projekt |
-|--------|------------------------|
-| **S** – Single Responsibility Principle | Jede Klasse hat genau eine klar umrissene Aufgabe. |
-| **O** – Open/Closed Principle | Neue Zustände, Items usw. können durch Vererbung/Komposition hinzugefügt werden. |
-| **L** – Liskov Substitution Principle | Polymorphie wird korrekt angewendet – z. B. bei Zuständen und Items. |
-| **I** – Interface Segregation Principle | Interfaces werden zielgerichtet eingesetzt (z. B. für interaktive Objekte). |
+| Prinzip | Anwendung im Projekt                                                                                     |
+|--------|----------------------------------------------------------------------------------------------------------|
+| **S** – Single Responsibility Principle | Jede Klasse hat genau eine klar umrissene Aufgabe.                                                       |
+| **O** – Open/Closed Principle | Klassen sind offen für Erweiterungen, aber geschlossen für Veränderungen                                 |
+| **L** – Liskov Substitution Principle | Polymorphie wird korrekt angewendet – z. B. bei Zuständen und Items.                                     |
+| **I** – Interface Segregation Principle | Interfaces werden zielgerichtet eingesetzt (z. B. für interaktive Objekte).                              |
 | **D** – Dependency Inversion Principle | Höhere Module hängen nicht direkt von konkreten Implementierungen ab – z. B. via Factory oder Interface. |
 
 ---
