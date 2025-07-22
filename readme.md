@@ -1,75 +1,85 @@
-# Projekt: Textbasiertes RPG-Spiel in Java
+# Textbasiertes RPG in Java
 
-## 🧾 Projektbeschreibung
-
-Dieses Projekt ist ein **textbasiertes Rollenspiel (RPG)**, das vollständig in Java entwickelt wurde. Ziel ist es, ein spielbares, aber auch didaktisch wertvolles Spielsystem zu schaffen, das sowohl das Erkunden einer Welt als auch Interaktionen mit Charakteren und Kämpfe ermöglicht.
-
-Der Spielverlauf orientiert sich an klassischen Rollenspielen wie Gothic oder Dungeons & Dragons – jedoch in einer rein textbasierten und modularen Umgebung mit einer grafischen Oberfläche durch Java Swing. Der Spieler bewegt sich über eine ASCII-basierte Karte, trifft Charaktere, kämpft gegen Gegner und sammelt Items.
-
-Das Spiel wurde nach modernen Softwarearchitekturprinzipien konzipiert und implementiert – insbesondere den **SOLID-Prinzipien**, die Modularität, Testbarkeit und Erweiterbarkeit sicherstellen.
+Dieses Projekt ist ein **textbasiertes RPG-Spiel**, das vollständig in Java entwickelt wird. Es dient als Lernplattform für **sauberen Code**, die Anwendung von **Design Patterns** und die konsequente Umsetzung der **SOLID-Prinzipien**.
 
 ---
 
-## 🔧 Strukturüberblick
+## 🔍 Projektbeschreibung
 
-Das Projekt ist in mehrere logisch getrennte Pakete unterteilt:
+Das Spiel ist modular aufgebaut und verwendet bereits folgende **Design Patterns**:
 
-### 1. `domain.character`
+- **State Pattern** – zur Verwaltung der verschiedenen Spielzustände (Kampf, Dialog, Erkundung usw.).
+- **Factory Pattern** – zur dynamischen Erstellung von Objekten wie Charakteren oder Items.
 
-- **Character** *(abstrakt)*: Basisklasse mit grundlegenden Attributen
-- **PlayerCharacter**, **NPC**, **Enemy**: Konkrete Implementierungen
-- Enthält Werte wie HP, Stärke, Inventar etc.
-
-### 2. `domain.item`
-
-- **Item** *(abstrakt)*: Basis für alle Items
-- **Armor**: Rüstungen mit Slot-Zuweisung (HEAD, CHEST, ...)
-- **Usable** *(Interface)*: z. B. Heiltränke
-- **ItemFactory**: Erzeugt Items aus JSON-Daten
-
-### 3. `domain.inventory`
-
-- **Inventory**: Beinhaltet normale Items
-- **Equipment**: Beinhaltet Rüstungsgegenstände
-
-### 4. `domain.map`
-
-- **MapData**: 2D-Darstellung der Spielwelt mit Tiles
-
-### 5. `domain.quest`
-
-- **Quest**: Aufgaben mit Belohnungen, Beschreibung, Zielen
-
-### 6. `domain.dialog`
-
-- **DialogInstance**: Stellt einen einzelnen Dialog dar mit auswählbaren Optionen
-
-### 7. `core`
-
-- **GameManager**: Steuert den Spielablauf
-- **PlayerController**: Bewegt die Spielfigur auf der Karte
-
-### 8. `state` *(State Pattern)*
-
-- **GameState** *(Interface)*: Zustandsübergänge (`enter`, `update`, `exit`)
-- **ExploreState**: Spieler erkundet Karte
-- **FightState**: Kampfmodus
-- **DialogState**: Gespräch mit NPCs
-- **GameContext** *(Singleton)*: Verwalter des aktuellen Zustands
-
-### 9. `UI.GUI`
-
-- **Screen** *(abstrakt)*: Definiert Grundfunktionen aller Bildschirme
-- **StartScreen**, **MapScreen**, **DialogScreen**, **FightScreen**: Verschiedene UI-Zustände
-- **ModernScrollBarUI**: Custom Scrollbar
-
-### 10. `UI.Input`
-
-- **ArrowKeyListener**: Tastatureingabe zur Bewegung
+Ziel ist es, das Projekt als Beispiel für gutes objektorientiertes Design zu nutzen und sukzessive weitere Patterns einzubauen. Besonders im Fokus steht dabei der didaktische Wert: Das Projekt soll helfen, die **SOLID-Prinzipien** praktisch anzuwenden und zu verinnerlichen.
 
 ---
 
-## 📂 Diagramm- und Datenstruktur
+## 🔧 Projektstruktur
 
-Alle Projektbegleitmaterialien wie Klassendiagramme oder Architekturentwürfe sollten im Verzeichnis:
+Die Projektstruktur folgt einer klaren Trennung nach Verantwortlichkeiten:
+
+### 📁 core
+Zentrale Spiellogik und Kontrollstruktur:
+
+- `GameManager.java` – Koordiniert den Spielablauf.
+- `GameLoop.java` – Führt das Hauptspiel in Schleifen aus.
+- `PlayerController.java` – Verarbeitet Spieleraktionen.
+- `StateManager.java` – Verwalten und Umschalten zwischen Spielzuständen.
+- `InputHandler.java` – Verarbeitung der Benutzereingaben.
+- `factory/` – Enthält Factories zur Erzeugung von Spielfiguren und Objekten.
+
+### 📁 data
+Zuständig für das Laden und Verwalten persistenter Daten:
+
+- `CharacterLoader`, `ItemLoader` – Laden von JSON- oder anderen Datenquellen.
+- `CharacterRepository`, `ItemRepository` – Zugriff auf geladene Daten.
+
+### 📁 domain
+Enthält die Fachlogik des Spiels – die Spielwelt selbst:
+
+- `character/` – Spieler, NPCs, Gegner usw.
+- `dialog/` – Dialogsystem und Sprechakte.
+- `inventory/` – Inventarverwaltung.
+- `item/` – Waffen, Tränke, Gegenstände.
+- `map/` – Karten- und Positionsdaten.
+- `quest/` – Aufgaben, Ziele, Questlogik.
+
+### 📁 state
+Implementierung der verschiedenen Spielzustände mithilfe des State Patterns:
+
+- `ExploreState`, `FightState`, `DialogState` – spezialisierte Zustände.
+- `GameState` – Abstrakte Basisklasse für Zustände.
+- `GameContext` – Kontextklasse, die aktuellen Zustand hält.
+
+### 📁 UI
+Benutzerschnittstelle:
+
+- `Input/` – Eingabeverarbeitung.
+- `GUI/` – Ausgabekomponenten (z. B. Konsolendarstellung oder spätere GUI-Erweiterungen).
+
+---
+
+## 🧱 SOLID-Prinzipien im Projekt
+
+| Prinzip | Anwendung im Projekt |
+|--------|------------------------|
+| **S** – Single Responsibility Principle | Jede Klasse hat genau eine klar umrissene Aufgabe. |
+| **O** – Open/Closed Principle | Neue Zustände, Items usw. können durch Vererbung/Komposition hinzugefügt werden. |
+| **L** – Liskov Substitution Principle | Polymorphie wird korrekt angewendet – z. B. bei Zuständen und Items. |
+| **I** – Interface Segregation Principle | Interfaces werden zielgerichtet eingesetzt (z. B. für interaktive Objekte). |
+| **D** – Dependency Inversion Principle | Höhere Module hängen nicht direkt von konkreten Implementierungen ab – z. B. via Factory oder Interface. |
+
+---
+
+## 🚀 Zielsetzung
+
+Dieses Projekt verfolgt das Ziel, ein **robustes, erweiterbares und gut strukturiertes** Java-Spiel zu entwickeln. Es soll langfristig um folgende Elemente erweitert werden:
+
+- Grafische Benutzeroberfläche (z. B. Swing oder JavaFX)
+- KI-Gegner
+- Speichersystem
+- Online-Mehrspielermodus (experimentell)
+- Weitere Design Patterns wie Observer, Strategy, Command usw.
+
 
