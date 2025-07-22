@@ -1,15 +1,14 @@
 package test;
 
-import Dialog.Condition;
-import Dialog.DialogInstance;
-import Dialog.DialogLine;
-import Dialog.Information;
-import UI.DialogScreen;
-import UI.MapScreen;
-import character.PlayerCharacter;
+import domain.dialog.Condition;
+import domain.dialog.DialogInstance;
+import domain.dialog.DialogLine;
+import domain.dialog.Information;
+import UI.GUI.DialogScreen;
+import domain.character.PlayerCharacter;
 import data.ItemRepository;
-import models.Equipment;
-import models.Inventory;
+import domain.inventory.Equipment;
+import domain.inventory.Inventory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,7 +45,7 @@ public class DialogTest {
     public void DialogConditionTest(){
         System.out.println("");
         System.out.println("Test 2 #################################");
-        PlayerCharacter player = new PlayerCharacter("Held", "oldcamp", 100, 100, 10, 10, new Inventory(), new Equipment());
+        PlayerCharacter player = new PlayerCharacter("Held", "oldcamp", 100,  10, 10, new Inventory(), new Equipment());
 
         ItemRepository itemRepository = new ItemRepository();
         itemRepository.loadAllItems();

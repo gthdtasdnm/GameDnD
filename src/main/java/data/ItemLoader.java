@@ -1,6 +1,9 @@
 package data;
 
 import com.google.gson.Gson;
+import domain.item.Armor;
+import domain.item.Consumable;
+import domain.item.Weapon;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -29,18 +32,18 @@ public class ItemLoader {
     }
 
     // Spezialisierungen rufen nur noch die generische Methode auf
-    public static List<item.Armor> loadArmorItems() {
+    public static List<Armor> loadArmorItems() {
         System.out.println("Load Armor...");
-        return loadItems("items/armor.json", new com.google.gson.reflect.TypeToken<List<item.Armor>>() {}.getType());
+        return loadItems("items/armor.json", new com.google.gson.reflect.TypeToken<List<Armor>>() {}.getType());
     }
 
-    public static List<item.Weapon> loadWeaponItems() {
+    public static List<Weapon> loadWeaponItems() {
         System.out.println("Load Weapons...");
-        return loadItems("items/weapons.json", new com.google.gson.reflect.TypeToken<List<item.Weapon>>() {}.getType());
+        return loadItems("items/weapons.json", new com.google.gson.reflect.TypeToken<List<Weapon>>() {}.getType());
     }
 
-    public static List<item.Consumable> loadConsumableItems() {
+    public static List<Consumable> loadConsumableItems() {
         System.out.println("Load Consumables...");
-        return loadItems("items/consumables.json", new com.google.gson.reflect.TypeToken<List<item.Consumable>>() {}.getType());
+        return loadItems("items/consumables.json", new com.google.gson.reflect.TypeToken<List<Consumable>>() {}.getType());
     }
 }

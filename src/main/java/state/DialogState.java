@@ -1,7 +1,8 @@
 package state;
 
-import Dialog.DialogInstance;
-import UI.DialogScreen;
+import domain.dialog.DialogInstance;
+import UI.GUI.DialogScreen;
+import core.GameManager;
 
 public class DialogState implements GameState{
     DialogScreen dialogScreen = new DialogScreen();

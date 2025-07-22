@@ -1,14 +1,12 @@
 package test;
 
-import character.NPC;
-import character.PlayerCharacter;
+import domain.character.NPC;
+import domain.character.PlayerCharacter;
 import data.ItemRepository;
-import models.Equipment;
-import models.Inventory;
+import domain.inventory.Equipment;
+import domain.inventory.Inventory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Set;
 
 public class CharacterTest {
     private PlayerCharacter player;
@@ -24,8 +22,8 @@ public class CharacterTest {
         System.out.println("==> Test startet");
 
         System.out.println("==> Initialisiere Testcharaktere...");
-        player = new PlayerCharacter("Held", "oldcamp", 100, 100, 10, 10, new Inventory(), new Equipment());
-        npc = new NPC("Held", "oldcamp", 100, 100, 10, 10, new Inventory(), new Equipment());
+        player = new PlayerCharacter("Held", "oldcamp", 100, 10, 10, new Inventory(), new Equipment());
+        npc = new NPC("Held", "oldcamp", 100, 10, 10, new Inventory(), new Equipment());
 
         System.out.println("===> Initialisiere Items");
         ItemRepository itemRepository = new ItemRepository();

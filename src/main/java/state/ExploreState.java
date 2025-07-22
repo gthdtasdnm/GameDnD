@@ -1,9 +1,11 @@
 package state;
 
-import UI.ArrowKeyListener;
-import UI.MapScreen;
-import character.PlayerCharacter;
-import map.MapData;
+import UI.Input.ArrowKeyListener;
+import UI.GUI.MapScreen;
+import domain.character.PlayerCharacter;
+import core.GameManager;
+import core.PlayerController;
+import domain.map.MapData;
 
 public class ExploreState implements GameState {
     GameManager gameManager;

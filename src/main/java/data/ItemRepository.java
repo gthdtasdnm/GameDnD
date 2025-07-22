@@ -1,8 +1,8 @@
 package data;
 
-import item.Armor;
-import item.Consumable;
-import item.Weapon;
+import domain.item.Armor;
+import domain.item.Consumable;
+import domain.item.Weapon;
 
 import java.util.HashMap;
 import java.util.Map;

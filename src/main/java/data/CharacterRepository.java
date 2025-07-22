@@ -1,12 +1,38 @@
 package data;
 
-import character.Character;
-import character.NPC;
+import domain.character.Character;
+import domain.character.NPC;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * Die {@code CharacterRepository}-Klasse stellt ein zentrales Speicher- und Zugriffsmodul
+ * für alle geladenen {@link domain.character.Character}-Objekte dar.
+ *
+ * <p>Sie lädt NPCs aus einer JSON-Datei und speichert sie intern in einer Map,
+ * wodurch der Zugriff über Namen (IDs) möglich ist.</p>
+ *
+ * <p>Funktionen umfassen:</p>
+ * <ul>
+ *   <li>Laden von Charakteren aus Dateien</li>
+ *   <li>Zugriff auf einzelne oder alle Charaktere</li>
+ *   <li>Filterung nach {@link domain.character.NPC}</li>
+ *   <li>Zurücksetzen des Repositories</li>
+ * </ul>
+ *
+ * <p>Beispiel:</p>
+ * <pre>{@code
+ * CharacterRepository.loadCharacters();
+ * Character diego = CharacterRepository.getCharacter("Diego");
+ * }</pre>
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
 
 public class CharacterRepository {
 

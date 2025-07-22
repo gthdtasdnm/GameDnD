@@ -1,8 +1,9 @@
 package state;
 
-import UI.FightScreen;
-import character.Enemy;
-import character.PlayerCharacter;
+import UI.GUI.FightScreen;
+import domain.character.Enemy;
+import domain.character.PlayerCharacter;
+import core.GameManager;
 
 public class FightState implements GameState {
     FightScreen fightScreen = new FightScreen();
