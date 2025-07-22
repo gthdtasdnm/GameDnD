@@ -1,0 +1,53 @@
+@startuml
+class core.factory.NpcFactory {
++ Character create(String,String,int,int,int,Inventory,Equipment)
+}
+
+abstract class core.factory.CharacterFactory {
++ {abstract}Character create(String,String,int,int,int,Inventory,Equipment)
+}
+
+class core.GameLoop {
+}
+class core.factory.PlayerFactory {
++ Character create(String,String,int,int,int,Inventory,Equipment)
+}
+
+class core.PlayerController {
+- MapData mapData
+- PlayerCharacter player
++ <<Create>> PlayerController(PlayerCharacter,MapData)
++ void movePlayer(int,int)
+}
+
+
+class core.GameManager {
+- GameContext gameContext
+- PlayerCharacter player
+- List<NPC> npcs
+- MapData mapData
+- PlayerController controller
++ <<Create>> GameManager()
++ void startGame()
++ void enterFight(Enemy)
++ void enterDialog(DialogInstance)
++ void returnToExplore()
+}
+note left of core.GameManager::gameContext
+ State-Maschine
+end note
+
+
+class core.StateManager {
+}
+class core.InputHandler {
+}
+class core.factory.ItemFactory {
++ {static} Armor createArmor(String,String,String,int,int,EquipmentSlot)
+}
+
+
+
+core.factory.CharacterFactory <|-- core.factory.NpcFactory
+core.factory.CharacterFactory <|-- core.factory.PlayerFactory
+@enduml

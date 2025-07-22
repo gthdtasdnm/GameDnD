@@ -25,6 +25,22 @@ package core;
  */
 
 public class GameLoop {
-    //TODO
-    // Spielschleife – wird zukünftig durch State-Management erweitert
+    public void run(){
+        boolean running = false;
+        Object dt = null; //Zeit Delta
+        while(running){
+            //dt = tNOW - tLAST_UPDATE
+            //tLAST_UPDATE += dt
+            update(dt);
+            draw();
+        }
+    }
+
+    private void draw() {
+
+    }
+
+    private void update(Object dt) {
+
+    }
 }

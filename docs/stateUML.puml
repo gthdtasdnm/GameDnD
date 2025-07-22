@@ -1,0 +1,57 @@
+@startuml
+class state.FightState {
+~ FightScreen fightScreen
++ <<Create>> FightState(GameManager,PlayerCharacter,Enemy)
++ void enter()
++ void update()
++ void exit()
+}
+
+
+class state.DialogState {
+~ DialogScreen dialogScreen
++ <<Create>> DialogState(GameManager,DialogInstance)
++ void enter()
++ void update()
++ void exit()
+}
+
+
+class state.GameContext {
+- {static} GameContext instance
+- GameState currentState
++ <<Create>> GameContext()
++ {static} GameContext getInstance()
++ void setState(GameState)
++ void update()
+}
+
+
+interface state.GameState {
+~ void enter()
+~ void update()
+~ void exit()
+}
+
+class state.ExploreState {
+~ GameManager gameManager
+~ PlayerCharacter player
+~ MapData mapData
+~ MapScreen mapScreen
+~ PlayerController controller
++ <<Create>> ExploreState(GameManager,PlayerCharacter,MapData,PlayerController)
++ void enter()
++ void update()
++ void exit()
+}
+note left of state.ExploreState::gameManager
+TODO Eingabe und ausgabe auslagern in andere Klassen
+end note
+
+
+
+
+state.GameState <|.. state.FightState
+state.GameState <|.. state.DialogState
+state.GameState <|.. state.ExploreState
+@enduml

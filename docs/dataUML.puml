@@ -1,0 +1,67 @@
+@startuml
+class data.ItemLoader {
+- {static} Gson gson
++ {static} List<T> loadItems(String,Type)
++ {static} List<Armor> loadArmorItems()
++ {static} List<Weapon> loadWeaponItems()
++ {static} List<Consumable> loadConsumableItems()
+}
+
+note left of data.ItemLoader::loadItems(String,Type)
+ 💡 Generische Methode
+end note
+note right of data.ItemLoader::loadArmorItems()
+ Spezialisierungen rufen nur noch die generische Methode auf
+end note
+
+class data.CharacterLoader {
++ {static} List<NPC> loadNPCs(String)
+}
+
+class data.CharacterRepository {
+- {static} Map<String,Character> characterMap
++ {static} void loadCharacters()
++ {static} Character getCharacter(String)
++ {static} boolean hasCharacter(String)
++ {static} Collection<Character> getAllCharacters()
++ {static} List<NPC> getAllNPCs()
++ {static} void clear()
+}
+
+note left of data.CharacterRepository::loadCharacters()
+ Charaktere laden und speichern
+end note
+note right of data.CharacterRepository::getCharacter(String)
+ Zugriff auf einen Charakter per ID
+end note
+note left of data.CharacterRepository::hasCharacter(String)
+ Prüfen ob vorhanden
+end note
+note right of data.CharacterRepository::getAllCharacters()
+ Alle Charaktere abrufen
+end note
+note left of data.CharacterRepository::getAllNPCs()
+ (Optional) Nur NPCs abrufen
+end note
+note right of data.CharacterRepository::clear()
+ (Optional) Repository zurücksetzen (für Tests oder Neu-Laden)
+end note
+
+class data.ItemRepository {
+- {static} Map<String,Armor> armorMap
+- {static} Map<String,Weapon> weaponMap
+- {static} Map<String,Consumable> consumableMap
++ {static} void loadAllItems()
++ {static} Armor getArmor(String)
++ {static} boolean hasArmor(String)
++ {static} Map<String,Armor> getAllArmor()
++ {static} Weapon getWeapon(String)
++ {static} boolean hasWeapon(String)
++ {static} Map<String,Weapon> getAllWeapons()
++ {static} Consumable getConsumable(String)
++ {static} boolean hasConsumable(String)
++ {static} Map<String,Consumable> getAllConsumables()
+}
+
+
+@enduml

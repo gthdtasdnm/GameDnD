@@ -1,0 +1,345 @@
+@startuml
+class domain.item.Armor {
+- int defense
+- EquipmentSlot slot
++ <<Create>> Armor(String,String,String,int,int,EquipmentSlot)
++ void equip(Character)
++ int getDefense()
++ int getAttack()
++ EquipmentSlot getSlot()
+}
+
+
+enum domain.inventory.EquipmentSlot {
++  HEAD
++  CHEST
++  LEGS
++  FEET
++  ARMS
++  WEAPON
++  SHIELD
+}
+
+abstract class domain.character.Character {
+# String name
+# int x
+# int y
+- String guild
+# int maxHp
+# int currentHp
+# int strength
+# int dexterity
+# Inventory inventory
+# Equipment equipment
+- Set<String> knownInfos
++ <<Create>> Character(String,String,int,int,int,Inventory,Equipment)
++ <<Create>> Character()
++ void equip(Armor)
++ String getName()
++ boolean knows(String)
++ void learn(String)
++ void setGuild(String)
++ String getGuild()
++ void addItem(Item)
++ boolean hasItem(Item)
++ void takeDamage(int)
++ void heal(int)
++ int getMaxHp()
++ int getDexterity()
++ Inventory getInventory()
++ Equipment getEquipment()
++ int getCurrentHp()
++ void AddToInventory(Item)
++ int getX()
++ int getY()
++ String toString()
++ void setPosition(int,int)
+}
+note left of domain.character.Character::name
+unchangeable Attribute
+end note
+note right of domain.character.Character::guild
+changeable Attribute
+end note
+note left of domain.character.Character::inventory
+Items
+end note
+note right of domain.character.Character::knownInfos
+for dialog flags
+end note
+
+
+class domain.character.NPC {
++ <<Create>> NPC(String,String,int,int,int,Inventory,Equipment)
+}
+
+class domain.map.GameMap {
+- {static} int WIDTH
+- {static} int HEIGHT
+- {static} int playerX
+- {static} int playerY
++ {static} void main(String[])
+- {static} void move(int,int)
+- {static} void printMap()
+}
+
+
+class domain.dialog.DialogLine {
+- String id
+- String text
++ <<Create>> DialogLine(String,String)
++ String getId()
++ String getText()
++ void execute()
+}
+
+
+class domain.character.PlayerCharacter {
+- QuestLog questLog
+# int experience
+# int skillpoints
++ <<Create>> PlayerCharacter(String,String,int,int,int,Inventory,Equipment)
++ void addExperience(int)
++ void addSkillpoint()
++ void move(int,int)
+}
+note left of domain.character.PlayerCharacter::experience
+Attribute
+end note
+
+
+class domain.item.Weapon {
+- int attack
++ <<Create>> Weapon(String,String,String,int,int)
++ void equip(Character)
++ EquipmentSlot getSlot()
++ int getDefense()
++ int getAttack()
+}
+
+
+interface domain.dialog.InfoElement {
+~ void execute()
+}
+
+class domain.character.QuestLog {
+- Map<String,Quest> activeQuests
++ void addQuest(Quest)
++ void removeQuest(String)
++ Quest getQuest(String)
++ Collection<Quest> getAllQuests()
++ boolean hasQuest(String)
+}
+
+note left of domain.character.QuestLog::addQuest(Quest)
+ Quest hinzufügen
+end note
+note right of domain.character.QuestLog::removeQuest(String)
+ Quest entfernen
+end note
+note left of domain.character.QuestLog::getQuest(String)
+ Eine bestimmte Quest holen
+end note
+note right of domain.character.QuestLog::getAllQuests()
+ Alle aktiven Quests
+end note
+note left of domain.character.QuestLog::hasQuest(String)
+ Prüfen, ob eine bestimmte Quest aktiv ist
+end note
+
+interface domain.item.Usable {
+~ void use(Character)
+}
+
+class domain.dialog.DialogInstance {
+- String npc
+- String description
+- int priority
+- boolean isPermanent
+- boolean isImportant
+- Condition condition
+- Information information
++ <<Create>> DialogInstance(String,int,boolean,boolean,Condition,Information)
++ void run()
+}
+note left of domain.dialog.DialogInstance::description
+ Option text shown in dialog menu
+end note
+note right of domain.dialog.DialogInstance::priority
+ Priority in the dialog select menu
+end note
+note left of domain.dialog.DialogInstance::isPermanent
+ If yes the dialog option is repeatable
+end note
+note right of domain.dialog.DialogInstance::isImportant
+ If yes NPC will stop you and talk to you
+end note
+note left of domain.dialog.DialogInstance::condition
+ Conditions to show dialog as an option
+end note
+note right of domain.dialog.DialogInstance::information
+ Script function to be called when this information got selected in the dialogue menu. hat dialog lines
+end note
+
+
+class domain.dialog.Information {
+- Queue<InfoElement> elements
++ void add(InfoElement)
++ void processAll()
++ boolean isEmpty()
+}
+
+
+class domain.inventory.Equipment {
+- Map<EquipmentSlot,Equippable> slots
++ void equip(Equippable)
++ void unequip(EquipmentSlot)
++ Equippable getItem(EquipmentSlot)
++ Map<EquipmentSlot,Equippable> getAllEquippedItems()
++ int getTotalDefense()
++ int getTotalAttack()
++ String toString()
+}
+
+note left of domain.inventory.Equipment::equip(Equippable)
+ Item ausrüsten
+end note
+note right of domain.inventory.Equipment::unequip(EquipmentSlot)
+ Item aus einem Slot entfernen
+end note
+note left of domain.inventory.Equipment::getItem(EquipmentSlot)
+ Ausgerüstetes Item für einen Slot abfragen
+end note
+note right of domain.inventory.Equipment::getAllEquippedItems()
+ Alle Slots + Items zurückgeben
+end note
+note left of domain.inventory.Equipment::getTotalDefense()
+ Gesamte Verteidigung berechnen (z. B. für Kampfsystem)
+end note
+note right of domain.inventory.Equipment::getTotalAttack()
+ Gesamten Angriff berechnen
+end note
+note left of domain.inventory.Equipment::toString()
+ Optional: Alle ausgerüsteten Items ausgeben
+end note
+
+interface domain.item.Equippable {
+~ void equip(Character)
+~ EquipmentSlot getSlot()
+~ int getDefense()
+~ int getAttack()
+~ String getName()
+}
+
+abstract class domain.item.Item {
+# String id
+# String name
+# String description
+# int price
+# <<Create>> Item(String,String,String,int)
++ String getName()
++ int getPrice()
++ String getDescription()
++ String getId()
+}
+
+
+class domain.item.Consumable {
+- PotionEffect effect
+- int magnitude
++ <<Create>> Consumable(String,String,String,int,PotionEffect,int)
++ void use(Character)
++ PotionEffect getEffect()
++ int getMagnitude()
+}
+
+
+class domain.inventory.Inventory {
+# int gold
+# Map<String,Item> inventory
++ <<Create>> Inventory()
++ void addGold(int)
++ void removeGold(int)
++ void addItem(Item)
++ boolean hasItem(Item)
++ void removeItem(Item)
++ String toString()
+}
+
+
+class domain.quest.Quest {
+- String id
+- String name
+- String description
+- int experienceReward
+- int goldReward
+- List<Item> itemReward
++ String getId()
+}
+
+
+class domain.dialog.Condition {
+- List<Predicate<Character>> conditions
+- Character character
++ <<Create>> Condition(Character)
++ <<Create>> Condition()
++ void addCondition(Predicate<Character>)
++ boolean checkAll()
++ void setCharacter(Character)
++ Character getCharacter()
++ boolean isEmpty()
+}
+note left of domain.dialog.Condition::character
+ abgespeicherter Kontext
+end note
+
+
+class domain.dialog.StartQuest {
+- String questId
++ <<Create>> StartQuest(String)
++ void execute()
+}
+
+
+class domain.character.Enemy {
++ <<Create>> Enemy(String,String,int,int,int,Inventory,Equipment)
+}
+
+enum domain.inventory.PotionEffect {
++  HEAL
+}
+
+class domain.map.MapData {
+- int width
+- int height
+- char[][] tiles
++ <<Create>> MapData(int,int,List<NPC>,PlayerCharacter)
++ char[][] getTiles()
++ void printMap()
++ void updatePlayerPosition(PlayerCharacter)
++ boolean isWalkable(int,int)
+}
+
+
+class domain.dialog.ReceiveItem {
+- String itemName
++ <<Create>> ReceiveItem(String)
++ void execute()
+}
+
+
+
+
+domain.item.Equippable <|.. domain.item.Armor
+domain.item.Item <|-- domain.item.Armor
+domain.character.Character <|-- domain.character.NPC
+domain.dialog.InfoElement <|.. domain.dialog.DialogLine
+domain.character.Character <|-- domain.character.PlayerCharacter
+domain.item.Equippable <|.. domain.item.Weapon
+domain.item.Item <|-- domain.item.Weapon
+domain.item.Usable <|.. domain.item.Consumable
+domain.item.Item <|-- domain.item.Consumable
+domain.dialog.InfoElement <|.. domain.dialog.StartQuest
+domain.character.Character <|-- domain.character.Enemy
+domain.dialog.InfoElement <|.. domain.dialog.ReceiveItem
+@enduml

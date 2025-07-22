@@ -1,0 +1,72 @@
+@startuml
+class UI.GUI.FightScreen {
++ void createScreen()
+}
+
+class UI.Input.ArrowKeyListener {
+- PlayerController controller
+- MapScreen mapScreen
++ <<Create>> ArrowKeyListener(PlayerController,MapScreen)
++ void keyPressed(KeyEvent)
+}
+
+
+class UI.GUI.DialogScreen {
+- JPanel dialogContainer
+- JScrollPane scrollPaneDialog
+- JPanel optionContainer
+- JScrollPane scrollPaneOptionen
++ void createScreen()
++ void addDialog(String)
++ void addOption(String)
+}
+
+
+class UI.GUI.StartScreen {
++ void createScreen()
+}
+
+class UI.GUI.ModernScrollBarUI {
+# void configureScrollBarColors()
+# JButton createDecreaseButton(int)
+# JButton createIncreaseButton(int)
+- JButton createZeroButton()
+# Dimension getThumbSize()
+}
+
+abstract class UI.GUI.Screen {
+# JFrame frame
+# JPanel panel
+# Dimension displayDimensions
+# Color fontColor
+# Color backgroundColor
+# Font headerFont
+# Font normalFont
+# LineBorder border
++ {abstract}void createScreen()
++ Component getFrame()
++ void closeScreen()
+}
+note left of UI.GUI.Screen::displayDimensions
+Design preset
+end note
+
+
+class UI.GUI.MapScreen {
+- MapData mapData
+- JTextPane mapPane
++ <<Create>> MapScreen(MapData)
++ void createScreen()
++ void renderMap()
+}
+
+
+
+
+UI.GUI.Screen <|-- UI.GUI.FightScreen
+java.awt.event.KeyAdapter <|-- UI.Input.ArrowKeyListener
+UI.GUI.Screen <|-- UI.GUI.DialogScreen
+UI.GUI.Screen <|-- UI.GUI.StartScreen
+javax.swing.plaf.basic.BasicScrollBarUI <|-- UI.GUI.ModernScrollBarUI
+UI.GUI.Screen <|-- UI.GUI.MapScreen
+@enduml
