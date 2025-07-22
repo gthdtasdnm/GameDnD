@@ -1,3 +1,47 @@
+/**
+ * JSON-Struktur: Liste von Rüstungsgegenständen (Armor)
+ *
+ * Diese Datei enthält eine Sammlung von Rüstungsobjekten, die im Spiel verfügbar sind.
+ * Jedes Objekt entspricht einem {@link domain.item.Armor}-Item und wird über die Factory
+ * beim Spielstart geladen und dem ItemRepository hinzugefügt.
+ *
+ * Struktur pro Eintrag:
+ * {
+ *   "id":          String – Eindeutige technische Kennung des Items (z. B. "iron_helmet")
+ *   "name":        String – Anzeigename des Items im Spiel (z. B. "Eisenhelm")
+ *   "description": String – Beschreibungstext für Tooltip oder Item-Bildschirm
+ *   "defense":     int – Verteidigungswert des Rüstungsteils
+ *   "price":       int – Wert des Items in Gold
+ *   "slot":        String – Ausrüstungsplatz (siehe {@link domain.inventory.EquipmentSlot})
+ *                           Zulässige Werte: HEAD, CHEST, LEGS, FEET, ARMS
+ * }
+ *
+ * Beispiel:
+ * {
+ *   "id": "iron_chestplate",
+ *   "name": "Eisenbrustplatte",
+ *   "description": "Schützt den Oberkörper mit dicker Eisenschicht.",
+ *   "defense": 10,
+ *   "price": 150,
+ *   "slot": "CHEST"
+ * }
+ *
+ * Verwendung:
+ * - Wird über {@code ItemLoader.loadArmorItems()} eingelesen
+ * - Automatisch in {@code ItemRepository} übernommen
+ * - Kann von Charakteren ausgerüstet werden über {@code equip(Armor)}
+ *
+ * Hinweise:
+ * - Alle Felder sind Pflicht
+ * - {@code slot} muss exakt mit einem gültigen {@code EquipmentSlot}-Enum-Wert übereinstimmen
+ * - Die Werte sind leicht erweiterbar um z. B. Seltenheit, Gewicht oder Boni
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
+
 [
   {
     "id": "iron_helmet",

@@ -1,6 +1,5 @@
 package state;
 
-import UI.Input.ArrowKeyListener;
 import UI.GUI.MapScreen;
 import domain.character.PlayerCharacter;
 import core.GameManager;
@@ -47,7 +46,7 @@ public class ExploreState implements GameState {
         System.out.println("Betrete Erkundungsmodus");
         mapScreen = new MapScreen(mapData);
         mapScreen.createScreen();
-        mapScreen.getFrame().addKeyListener(new ArrowKeyListener(controller, mapScreen));
+        //mapScreen.getFrame().addKeyListener(new ArrowKeyListener(controller, mapScreen));
     }
 
     @Override
@@ -60,6 +59,11 @@ public class ExploreState implements GameState {
     public void exit() {
         System.out.println("Verlasse Erkundungsmodus");
         mapScreen.closeScreen();
+    }
+
+    @Override
+    public String getDescription() {
+        return "Explore State";
     }
 }
 

@@ -1,3 +1,42 @@
+/**
+ * JSON-Struktur: NPC-Liste (Array von Objekten)
+ *
+ * Diese Datei enthält eine Liste von Nicht-Spieler-Charakteren (NPCs),
+ * die im Spiel instanziiert und auf der Karte platziert werden.
+ *
+ * Struktur pro NPC:
+ * {
+ *   "id":           String – Eindeutige interne Kennung des NPCs
+ *   "name":         String – Anzeigename des NPCs im Spiel
+ *   "maxHp":        int – Maximale Lebenspunkte
+ *   "currentHp":    int – Aktuelle Lebenspunkte
+ *   "strength":     int – Nahkampfstärke
+ *   "dexterity":    int – Fernkampfstärke oder Geschicklichkeit
+ *   "inventory": {         // Inventar des NPCs
+ *     "gold":       int – Goldmenge im Besitz
+ *     "inventory":  Map<String, Item> – Items als Key-Value-Paare (aktuell leer)
+ *   },
+ *   "equipment": {         // Ausgerüstete Items des NPCs (aktuell leer)
+ *     // z. B. "WEAPON": { ... }
+ *   },
+ *   "x":            int – X-Koordinate auf der Karte
+ *   "y":            int – Y-Koordinate auf der Karte
+ * }
+ *
+ * Beispielhafte Verwendung:
+ * - Darstellung auf Karte per Anfangsbuchstabe
+ * - Laden über CharacterLoader.loadNPCs("characters/oldcamp_npcs.json")
+ * - Zugriff über CharacterRepository.getCharacter("npc_gomez")
+ *
+ * Hinweis:
+ * - Alle Felder sind erforderlich.
+ * - Die Inventar- und Equipment-Felder sind erweiterbar mit tatsächlichen Items.
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 [
   {
     "id": "npc_gomez",

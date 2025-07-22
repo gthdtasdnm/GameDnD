@@ -44,20 +44,23 @@ public class MapData {
         }
 
         // NPCs platzieren
-        for (NPC npc : npcs) {
-            int x = npc.getX();
-            int y = npc.getY();
+        if(npcs != null) {
+            for (NPC npc : npcs) {
+                int x = npc.getX();
+                int y = npc.getY();
 
-            // Nur wenn Position im Bereich
-            if (x >= 0 && x < width && y >= 0 && y < height) {
-                char symbol = Character.toUpperCase(npc.getName().charAt(0));
-                tiles[y][x] = symbol;
+                // Nur wenn Position im Bereich
+                if (x >= 0 && x < width && y >= 0 && y < height) {
+                    char symbol = Character.toUpperCase(npc.getName().charAt(0));
+                    tiles[y][x] = symbol;
+                }
             }
         }
 
         // Spieler platzieren
-
-        tiles[player.getY()][player.getX()] = '@';
+        if(player != null) {
+            tiles[player.getY()][player.getX()] = '@';
+        }
     }
 
     public char[][] getTiles() {

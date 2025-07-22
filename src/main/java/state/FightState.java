@@ -43,5 +43,10 @@ public class FightState implements GameState {
         System.out.println("Kampf vorbei.");
         fightScreen.closeScreen();
     }
+
+    @Override
+    public String getDescription() {
+        return "Fight State";
+    }
 }
 

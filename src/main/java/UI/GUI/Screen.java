@@ -53,5 +53,7 @@ public abstract class Screen {
     public void closeScreen() {
         frame.dispose();
     }
+
+
 }
 

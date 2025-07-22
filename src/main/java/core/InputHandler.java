@@ -1,19 +1,29 @@
 package core;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 /**
- * Der {@code InputHandler} verarbeitet und interpretiert Benutzereingaben im Spiel.
+ * Reagiert auf Tastendrücke und leitet sie weiter z. B. an den PlayerController.
+ * Verwendet für Echtzeit-Eingaben im JFrame ohne Blockierung.
  *
- * <p>Er dient als zentrale Schnittstelle zwischen Tastatureingaben (z. B. WASD, Enter)
- * und den auszuführenden Aktionen im jeweiligen Spielzustand.</p>
- *
- * <p>Geplant ist eine Erweiterung zur kontextsensitiven Eingabeverarbeitung,
- * je nach aktivem {@code GameState} (z. B. Bewegung, Dialogauswahl, Kampfaktionen).</p>
- *
- * @author Cengiz
- * @since 2025-07-22
+ * Beispiel: Steuerung mit WASD oder Pfeiltasten.
  */
+public class InputHandler extends KeyAdapter {
 
+    private final InputCallback callback;
 
-public class InputHandler {
-    //TODO: Eingabe-Logig aus den Klassen rausnehmen und hier Zentral verwalten.
+    public interface InputCallback {
+        void onInput(String key);
+    }
+
+    public InputHandler(InputCallback callback) {
+        this.callback = callback;
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        String keyText = KeyEvent.getKeyText(e.getKeyCode()).toUpperCase();
+        callback.onInput(keyText);
+    }
 }

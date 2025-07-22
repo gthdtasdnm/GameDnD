@@ -1,3 +1,43 @@
+/**
+ * JSON-Struktur: Liste von Waffen (Weapons)
+ *
+ * Diese Datei enthält eine Sammlung von ausrüstbaren Waffen, die dem Spieler im Spiel
+ * zur Verfügung stehen. Jeder Eintrag entspricht einem {@link domain.item.Weapon}-Objekt
+ * und wird beim Spielstart automatisch geladen und ins {@code ItemRepository} übernommen.
+ *
+ * Struktur pro Eintrag:
+ * {
+ *   "id":          String – Eindeutige technische Kennung der Waffe (z. B. "iron_sword")
+ *   "name":        String – Anzeigename der Waffe im Spiel
+ *   "description": String – Beschreibung der Waffe für Tooltip oder Inventar
+ *   "attack":      int – Angriffswert, der im Kampf zur Schadensberechnung dient
+ *   "price":       int – Goldwert der Waffe (z. B. für Händler oder Belohnung)
+ * }
+ *
+ * Beispiel:
+ * {
+ *   "id": "iron_sword",
+ *   "name": "Eisenschwert",
+ *   "description": "Ein solides Schwert aus Eisen. Zuverlässig und scharf.",
+ *   "attack": 15,
+ *   "price": 50
+ * }
+ *
+ * Verwendung:
+ * - Geladen über {@code ItemLoader.loadWeaponItems()}
+ * - Als {@link domain.item.Weapon} in {@code ItemRepository} gespeichert
+ * - Ausrüstbar durch Charaktere über {@code equip(Weapon)}
+ *
+ * Hinweise:
+ * - Alle Felder sind erforderlich
+ * - Waffen werden automatisch im Slot {@code EquipmentSlot.WEAPON} platziert
+ * - Erweiterbar um weitere Eigenschaften wie Reichweite, Geschwindigkeit, Seltenheit
+ *
+ * @author Cengiz
+ * @since 2025-07-22
+ */
+
+
 [
   {
     "id": "rusty_iron_sword",

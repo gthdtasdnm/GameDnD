@@ -26,7 +26,7 @@ import javax.swing.SwingConstants;
  */
 
 
-public class StartScreen extends Screen{
+public class MenuScreen extends Screen{
     public void createScreen(){
         // Frame Einstellungen
         frame.setSize(displayDimensions);

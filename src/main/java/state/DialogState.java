@@ -28,6 +28,10 @@ public class DialogState implements GameState{
 
     }
 
+    public DialogState() {
+
+    }
+
     @Override
     public void enter() {
         System.out.println("Starte Dialog");
@@ -44,6 +48,11 @@ public class DialogState implements GameState{
     public void exit() {
         System.out.println("Verlasse Dialog");
         dialogScreen.closeScreen();
+    }
+
+    @Override
+    public String getDescription() {
+        return "Dialog State";
     }
 }
 

@@ -1,5 +1,8 @@
 package core;
 
+import state.GameState;
+import state.MenuState;
+
 /**
  * Der {@code StateManager} verwaltet den aktuellen Spielzustand.
  *
@@ -14,5 +17,18 @@ package core;
 
 
 public class StateManager {
-    //TODO
+    GameState gameState;
+
+    public StateManager(){
+        setGameState(new MenuState());
+    }
+
+    public void setGameState(GameState gameState){
+        this.gameState = gameState;
+        gameState.enter();
+    }
+
+    public GameState getCurrentState() {
+        return gameState;
+    }
 }
