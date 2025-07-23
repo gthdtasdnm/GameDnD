@@ -1,3 +1,4 @@
+package demo;
 
 import core.StateManager;
 

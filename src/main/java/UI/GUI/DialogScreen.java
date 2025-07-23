@@ -1,5 +1,6 @@
 package UI.GUI;
 
+import domain.dialog.DialogInstance;
 import state.GameEventListener;
 
 import javax.swing.BorderFactory;
@@ -115,11 +116,14 @@ public class DialogScreen extends Screen{
         textArea.setOpaque(false);
         textArea.setForeground(fontColor);
         textArea.setFont(normalFont);
-        textArea.setBorder(BorderFactory.createEmptyBorder(2, 10, 2, 10));  // innenabstand statt margin
+        textArea.setBorder(BorderFactory.createEmptyBorder(2, 10, 2, 10));
         textArea.setAlignmentX(Component.LEFT_ALIGNMENT);
-        textArea.setMaximumSize(new Dimension(750, Integer.MAX_VALUE));  // damit der Umbruch funktioniert
 
-        // Abstand hinzufügen
+        // Höhe dynamisch bestimmen
+        textArea.setSize(new Dimension(750, Short.MAX_VALUE)); // Wichtig!
+        Dimension preferredSize = textArea.getPreferredSize();
+        textArea.setMaximumSize(new Dimension(750, preferredSize.height));
+
         if (dialogContainer.getComponentCount() > 0) {
             dialogContainer.add(Box.createRigidArea(new Dimension(0, 4)));
         }
@@ -128,14 +132,15 @@ public class DialogScreen extends Screen{
         dialogContainer.revalidate();
         dialogContainer.repaint();
 
-        // Automatisch nach unten scrollen
         SwingUtilities.invokeLater(() ->
-                                           scrollPaneDialog.getVerticalScrollBar().setValue(scrollPaneDialog.getVerticalScrollBar().getMaximum()));
+                                           scrollPaneDialog.getVerticalScrollBar().setValue(
+                                                   scrollPaneDialog.getVerticalScrollBar().getMaximum()));
     }
 
 
-    public void addOption(String text) {
-        JButton btn = new JButton("- " + text);
+
+    public void addOption(DialogInstance dialogInstance) {
+        JButton btn = new JButton("- " + dialogInstance.getDescription());
 
         // Stil
         btn.setAlignmentX(Component.LEFT_ALIGNMENT);  // zentriert in BoxLayout
@@ -151,7 +156,7 @@ public class DialogScreen extends Screen{
 
 
         // Beispiel: Button schreibt eigenen Text in den Dialog
-        btn.addActionListener(e -> addDialog("Spieler: " + text));
+        btn.addActionListener(e -> listener.onUiAction(dialogInstance.getDescription()));
 
         // Abstand davor
         optionContainer.add(Box.createRigidArea(new Dimension(7, 10))); // Breite 0, Höhe 3

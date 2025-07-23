@@ -42,6 +42,10 @@ public class Information {
         }
     }
 
+    public Queue<InfoElement> getElements(){
+        return elements;
+    }
+
     public boolean isEmpty() {
         return elements.isEmpty();
     }

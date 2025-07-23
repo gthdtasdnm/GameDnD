@@ -55,6 +55,10 @@ public class DialogInstance {
         return description;
     }
 
+    public Information getInformation() {
+        return information;
+    }
+
     // Getter: getText(), getId(), isPermanent(), ...
 }
 

@@ -4,9 +4,9 @@ import core.StateManager;
 import UI.GUI.DialogScreen;
 import data.DialogRepository;
 import domain.dialog.DialogInstance;
+import domain.dialog.DialogLine;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Der {@code DialogState} repräsentiert den Spielzustand, in dem sich der Spieler
@@ -33,7 +33,6 @@ public class DialogState extends GameState implements GameEventListener{
     public DialogState(StateManager stateManager) {
         super(stateManager);
         this.screen = new DialogScreen(this);
-
     }
 
     @Override
@@ -43,7 +42,7 @@ public class DialogState extends GameState implements GameEventListener{
         //TODO: Dialog wird als String übergeben um die Option anzuzeigen.
         //TODO: Ziel ist es eine ganze Dialoginstanz zu übergeben und damit die Sprecher und die Dialogzeilen anzuzeigen.
         for(DialogInstance dialogInstance: dialogs){
-            screen.addOption(dialogInstance.getDescription());
+            screen.addOption(dialogInstance);
             System.out.println(dialogInstance.getDescription());
         }
     }
@@ -66,8 +65,8 @@ public class DialogState extends GameState implements GameEventListener{
     }
 
     @Override
-    public void onUiAction(String actionId) {
-
+    public void onUiAction(String actionID) {
+        System.out.println(actionID);
     }
 
 }
