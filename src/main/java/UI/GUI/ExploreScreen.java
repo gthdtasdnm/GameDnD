@@ -48,7 +48,7 @@ public class ExploreScreen extends Screen {
         panel.setLayout(null);
 
         // Header
-        JLabel header = new JLabel("Map");
+        JLabel header = new JLabel("Explore");
         header.setForeground(fontColor);
         header.setFont(headerFont);
         header.setBounds(350, 20, 300, 60);

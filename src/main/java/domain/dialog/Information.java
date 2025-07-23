@@ -28,6 +28,9 @@ import java.util.Queue;
 public class Information {
     private Queue<InfoElement> elements = new LinkedList<>();
 
+    public Information(){
+
+    }
     public void add(InfoElement element) {
         elements.offer(element);
     }

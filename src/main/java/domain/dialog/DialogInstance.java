@@ -30,7 +30,13 @@ public class DialogInstance {
     private Information information;    // Script function to be called when this information got selected in the dialogue menu. hat dialog lines
 
 
-    public DialogInstance(String description, int priority, boolean isPermanent, boolean isImportant, Condition condition, Information information) {
+    public DialogInstance(
+            String description,
+            int priority,
+            boolean isPermanent,
+            boolean isImportant,
+            Condition condition,
+            Information information) {
         this.description = description;
         this.priority = priority;
         this.isPermanent = isPermanent;
@@ -45,6 +51,9 @@ public class DialogInstance {
         }
     }
 
+    public String getDescription() {
+        return description;
+    }
 
     // Getter: getText(), getId(), isPermanent(), ...
 }

@@ -19,6 +19,7 @@ public class MenuState extends GameState implements GameEventListener {
 
     @Override
     public void update() {
+
         System.out.println("Menu läuft");
     }
 

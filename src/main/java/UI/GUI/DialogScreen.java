@@ -64,7 +64,7 @@ public class DialogScreen extends Screen{
         panel.setLayout(null);
 
         // === Header ===
-        JLabel Header = new JLabel("domain");
+        JLabel Header = new JLabel("Dialog");
         Header.setForeground(fontColor);
         Header.setFont(headerFont);
         Header.setBounds(350, 20, 300, 60);
