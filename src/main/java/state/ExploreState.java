@@ -1,16 +1,12 @@
 package state;
 
-import UI.GUI.MapScreen;
-import domain.character.PlayerCharacter;
-import core.GameManager;
-import core.PlayerController;
-import domain.map.MapData;
+import UI.GUI.ExploreScreen;
+import core.StateManager;
 
 /**
  * Der {@code ExploreState} repräsentiert den Spielzustand, in dem sich der Spieler frei durch die Welt bewegt.
  *
- * <p>Beim Betreten wird ein {@link UI.GUI.MapScreen} erzeugt, der die aktuelle Karte darstellt.
- * Zusätzlich wird ein {@link UI.Input.ArrowKeyListener} registriert, um Bewegungen mit den Pfeiltasten zu ermöglichen.</p>
+ * <p>Beim Betreten wird ein {@link UI.GUI.ExploreScreen} erzeugt, der die aktuelle Karte darstellt.
  *
  * <p>Während des Zustands werden Spielaktionen wie Bewegung, Begegnungen oder Interaktionen verarbeitet.</p>
  *
@@ -24,28 +20,18 @@ import domain.map.MapData;
  */
 
 
-public class ExploreState implements GameState {
+public class ExploreState extends GameState implements GameEventListener {
 
-    //TODO Eingabe und ausgabe auslagern in andere Klassen
-    GameManager gameManager;
-    PlayerCharacter player;
-    MapData mapData;
-    MapScreen mapScreen;
-    PlayerController controller;
+    ExploreScreen screen;
 
-
-    public ExploreState(GameManager gameManager, PlayerCharacter player, MapData mapData, PlayerController controller) {
-        this.gameManager = gameManager;
-        this.player = player;
-        this.mapData = mapData;
-        this.controller = controller;
+    public ExploreState(StateManager stateManager) {
+        super(stateManager);
+        this.screen = new ExploreScreen(this);
     }
 
     @Override
     public void enter() {
         System.out.println("Betrete Erkundungsmodus");
-        mapScreen = new MapScreen(mapData);
-        mapScreen.createScreen();
         //mapScreen.getFrame().addKeyListener(new ArrowKeyListener(controller, mapScreen));
     }
 
@@ -58,12 +44,18 @@ public class ExploreState implements GameState {
     @Override
     public void exit() {
         System.out.println("Verlasse Erkundungsmodus");
-        mapScreen.closeScreen();
     }
 
     @Override
     public String getDescription() {
         return "Explore State";
     }
+
+    @Override
+    public void onUiAction(String actionId) {
+
+    }
+
+
 }
 

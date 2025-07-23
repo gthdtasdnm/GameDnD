@@ -1,5 +1,7 @@
 package UI.GUI;
 
+import state.GameEventListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,6 +31,10 @@ import java.awt.Dimension;
 
 
 public class FightScreen extends Screen {
+
+    public FightScreen(GameEventListener listener) {
+        super(listener);
+    }
 
     @Override
     public void createScreen() {

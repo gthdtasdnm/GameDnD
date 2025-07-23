@@ -1,5 +1,7 @@
 package UI.GUI;
 
+import state.GameEventListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
@@ -21,7 +23,7 @@ import java.awt.Font;
  *   <li>Design-Parameter wie Farben, Schriftgrößen und Rahmen</li>
  * </ul>
  *
- * <p>Abgeleitete Klassen (z. B. {@link DialogScreen}, {@link MapScreen}, {@link FightScreen})
+ * <p>Abgeleitete Klassen (z. B. {@link DialogScreen}, {@link ExploreScreen}, {@link FightScreen})
  * müssen die Methode {@code createScreen()} implementieren.</p>
  *
  * <p>Zusätzlich bietet die Klasse {@code closeScreen()} zum Schließen des Fensters
@@ -35,6 +37,12 @@ import java.awt.Font;
 public abstract class Screen {
     protected JFrame frame = new JFrame();
     protected JPanel panel = new JPanel();
+
+    protected final GameEventListener listener;
+
+    public Screen(GameEventListener listener){
+        this.listener = listener;
+    }
 
 
     //Design preset

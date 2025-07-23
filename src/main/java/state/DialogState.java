@@ -1,8 +1,7 @@
 package state;
 
-import domain.dialog.DialogInstance;
+import core.StateManager;
 import UI.GUI.DialogScreen;
-import core.GameManager;
 
 /**
  * Der {@code DialogState} repräsentiert den Spielzustand, in dem sich der Spieler
@@ -21,21 +20,18 @@ import core.GameManager;
  */
 
 
-public class DialogState implements GameState{
-    DialogScreen dialogScreen = new DialogScreen();
+public class DialogState extends GameState implements GameEventListener{
+    DialogScreen screen;
 
-    public DialogState(GameManager gameManager, DialogInstance dialog) {
-
-    }
-
-    public DialogState() {
-
+    public DialogState(StateManager stateManager) {
+        super(stateManager);
+        this.screen = new DialogScreen(this);
     }
 
     @Override
     public void enter() {
         System.out.println("Starte Dialog");
-        dialogScreen.createScreen();
+        screen.createScreen();
     }
 
     @Override
@@ -47,12 +43,18 @@ public class DialogState implements GameState{
     @Override
     public void exit() {
         System.out.println("Verlasse Dialog");
-        dialogScreen.closeScreen();
+        screen.closeScreen();
     }
 
     @Override
     public String getDescription() {
         return "Dialog State";
     }
+
+    @Override
+    public void onUiAction(String actionId) {
+
+    }
+
 }
 

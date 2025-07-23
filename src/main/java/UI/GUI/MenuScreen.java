@@ -1,5 +1,8 @@
 package UI.GUI;
 
+import state.GameEventListener;
+import state.MenuState;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -27,6 +30,11 @@ import javax.swing.SwingConstants;
 
 
 public class MenuScreen extends Screen{
+
+    public MenuScreen(GameEventListener listener) {
+        super(listener);
+    }
+
     public void createScreen(){
         // Frame Einstellungen
         frame.setSize(displayDimensions);
@@ -46,7 +54,10 @@ public class MenuScreen extends Screen{
         Header.setVerticalAlignment(SwingConstants.CENTER);
         panel.add(Header);
 
+
+        //Start Knopf
         JButton startGameButton = new JButton("Start new Game");
+        startGameButton.addActionListener(e -> listener.onUiAction("start_game"));//Übergibt ActionID um Im MenuState state zu wechseln
         startGameButton.setForeground(fontColor);
         startGameButton.setFont(normalFont);
         startGameButton.setBounds(400,130,200,50);
@@ -56,6 +67,19 @@ public class MenuScreen extends Screen{
         startGameButton.setHorizontalAlignment(SwingConstants.CENTER);
         startGameButton.setVerticalAlignment(SwingConstants.CENTER);
         panel.add(startGameButton);
+
+        //Exit Knopf
+        JButton exitGameButton = new JButton("Exit Game");
+        exitGameButton.addActionListener(e -> listener.onUiAction("exit_game"));
+        exitGameButton.setForeground(fontColor);
+        exitGameButton.setFont(normalFont);
+        exitGameButton.setBounds(400,200,200,50);
+        exitGameButton.setBackground(backgroundColor);
+        exitGameButton.setBorder(border);
+        exitGameButton.setFocusPainted(false);//sonst ist eine box im button
+        exitGameButton.setHorizontalAlignment(SwingConstants.CENTER);
+        exitGameButton.setVerticalAlignment(SwingConstants.CENTER);
+        panel.add(exitGameButton);
 
         // Panel Einstellungen
         panel.setBackground(backgroundColor);  // Hintergrundfarbe

@@ -1,6 +1,8 @@
 package state;
 
+import UI.GUI.DialogScreen;
 import UI.GUI.FightScreen;
+import core.StateManager;
 import domain.character.Enemy;
 import domain.character.PlayerCharacter;
 import core.GameManager;
@@ -22,15 +24,19 @@ import core.GameManager;
  */
 
 
-public class FightState implements GameState {
-    FightScreen fightScreen = new FightScreen();
+public class FightState extends GameState implements GameEventListener {
 
-    public FightState(GameManager gameManager, PlayerCharacter player, Enemy enemy) {}
+    FightScreen screen;
+
+    public FightState(StateManager stateManager) {
+        super(stateManager);
+        this.screen = new FightScreen(this);
+    }
 
     @Override
     public void enter() {
         System.out.println("Kampf beginnt!");
-        fightScreen.createScreen();
+        screen.createScreen();
     }
 
     @Override
@@ -41,12 +47,19 @@ public class FightState implements GameState {
     @Override
     public void exit() {
         System.out.println("Kampf vorbei.");
-        fightScreen.closeScreen();
+        screen.closeScreen();
     }
 
     @Override
     public String getDescription() {
         return "Fight State";
     }
+
+    @Override
+    public void onUiAction(String actionId) {
+
+    }
+
+
 }
 

@@ -1,5 +1,7 @@
 package UI.GUI;
 
+import state.GameEventListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -42,10 +44,12 @@ public class DialogScreen extends Screen{
 
     private JPanel dialogContainer;
     private JScrollPane scrollPaneDialog;
-
     private JPanel optionContainer;
     private JScrollPane scrollPaneOptionen;
 
+    public DialogScreen(GameEventListener listener) {
+        super(listener);
+    }
 
     @Override
     public void createScreen() {

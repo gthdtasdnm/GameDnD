@@ -20,10 +20,13 @@ public class StateManager {
     GameState gameState;
 
     public StateManager(){
-        setGameState(new MenuState());
+        setGameState(new MenuState(this));
     }
 
     public void setGameState(GameState gameState){
+        if(this.gameState != null){
+            this.gameState.exit();
+        }
         this.gameState = gameState;
         gameState.enter();
     }

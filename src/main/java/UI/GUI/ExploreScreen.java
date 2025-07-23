@@ -1,6 +1,7 @@
 package UI.GUI;
 
 import domain.map.MapData;
+import state.GameEventListener;
 
 import javax.swing.*;
 import javax.swing.text.*;
@@ -27,12 +28,11 @@ import java.awt.*;
  */
 
 
-public class MapScreen extends Screen {
-    private final MapData mapData;
+public class ExploreScreen extends Screen {
     private JTextPane mapPane;
 
-    public MapScreen(MapData mapData) {
-        this.mapData = mapData;
+    public ExploreScreen(GameEventListener listener) {
+        super(listener);
     }
 
     @Override
@@ -71,33 +71,33 @@ public class MapScreen extends Screen {
         frame.add(panel);
         frame.setVisible(true);
 
-        renderMap();
+        //renderMap();
     }
 
-    public void renderMap() {
-        char[][] tiles = mapData.getTiles();
-        StringBuilder builder = new StringBuilder();
-
-        for (char[] row : tiles) {
-            for (char c : row) {
-                builder.append(c).append(' ');
-            }
-            builder.append('\n');
-        }
-
-        // Text zentrieren
-        StyledDocument doc = mapPane.getStyledDocument();
-        SimpleAttributeSet center = new SimpleAttributeSet();
-        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-        doc.setParagraphAttributes(0, doc.getLength(), center, false);
-
-        try {
-            mapPane.setText(""); // leeren
-            doc.insertString(0, builder.toString(), null);
-        } catch (BadLocationException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void renderMap() {
+//        char[][] tiles = mapData.getTiles();
+//        StringBuilder builder = new StringBuilder();
+//
+//        for (char[] row : tiles) {
+//            for (char c : row) {
+//                builder.append(c).append(' ');
+//            }
+//            builder.append('\n');
+//        }
+//
+//        // Text zentrieren
+//        StyledDocument doc = mapPane.getStyledDocument();
+//        SimpleAttributeSet center = new SimpleAttributeSet();
+//        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+//        doc.setParagraphAttributes(0, doc.getLength(), center, false);
+//
+//        try {
+//            mapPane.setText(""); // leeren
+//            doc.insertString(0, builder.toString(), null);
+//        } catch (BadLocationException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 //    private void checkForEvent() {
 //        // Beispiel: Wenn Spieler bei (10,5) steht → Kampf starten
