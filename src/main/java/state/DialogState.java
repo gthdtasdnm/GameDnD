@@ -40,6 +40,8 @@ public class DialogState extends GameState implements GameEventListener{
     public void enter() {
         System.out.println("Starte Dialog");
         screen.createScreen();
+        //TODO: Dialog wird als String übergeben um die Option anzuzeigen.
+        //TODO: Ziel ist es eine ganze Dialoginstanz zu übergeben und damit die Sprecher und die Dialogzeilen anzuzeigen.
         for(DialogInstance dialogInstance: dialogs){
             screen.addOption(dialogInstance.getDescription());
             System.out.println(dialogInstance.getDescription());
