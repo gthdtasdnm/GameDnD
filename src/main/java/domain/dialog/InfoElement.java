@@ -14,5 +14,7 @@ package domain.dialog;
  */
 
 public interface InfoElement {
+    String getSpeaker();
+    String getText();
     void execute();
 }

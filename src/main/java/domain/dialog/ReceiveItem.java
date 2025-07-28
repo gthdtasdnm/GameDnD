@@ -23,6 +23,16 @@ public class ReceiveItem implements InfoElement {
     }
 
     @Override
+    public String getSpeaker() {
+        return "";
+    }
+
+    @Override
+    public String getText() {
+        return "";
+    }
+
+    @Override
     public void execute() {
         //TODO Items sollen im Inventar des Spielers landen.
         System.out.println("Item erhalten: " + itemName);

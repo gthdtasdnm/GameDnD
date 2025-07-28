@@ -1,7 +1,6 @@
-package UI.GUI;
+package UI;
 
 import state.GameEventListener;
-import state.MenuState;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

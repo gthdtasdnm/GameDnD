@@ -1,17 +1,13 @@
 package state;
 
-import UI.GUI.DialogScreen;
-import UI.GUI.FightScreen;
+import UI.FightScreen;
 import core.StateManager;
-import domain.character.Enemy;
-import domain.character.PlayerCharacter;
-import core.GameManager;
 
 /**
  * Der {@code FightState} repräsentiert den Spielzustand, in dem ein Kampf
  * zwischen dem Spieler und einem Gegner stattfindet.
  *
- * <p>Beim Betreten wird ein {@link UI.GUI.FightScreen} erzeugt, der den Kampf visuell darstellt.
+ * <p>Beim Betreten wird ein {@link FightScreen} erzeugt, der den Kampf visuell darstellt.
  * Während {@code update()} können z. B. Angriffe, Rundenfortschritt oder Aktionen verarbeitet werden.</p>
  *
  * <p>Nach Beendigung des Kampfes wird der Bildschirm korrekt geschlossen.</p>
@@ -41,7 +37,7 @@ public class FightState extends GameState implements GameEventListener {
 
     @Override
     public void update() {
-        System.out.println("Kampf läuft...");
+        // Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
     }
 
     @Override

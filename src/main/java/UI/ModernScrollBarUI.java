@@ -1,4 +1,4 @@
-package UI.GUI;
+package UI;
 
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicScrollBarUI;

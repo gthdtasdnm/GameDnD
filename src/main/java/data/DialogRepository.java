@@ -35,8 +35,8 @@ public class DialogRepository {
         Condition condition = null;
 
         Information information = new Information();
-        DialogLine dialogLine1 = new DialogLine("1", "Hallo, ich bin Diego.");
-        DialogLine dialogLine2 = new DialogLine("2", "Du solltest lieber aufpassen, wo du hinläufst.");
+        DialogLine dialogLine1 = new DialogLine("1","dummy", "Hallo, ich bin Diego.");
+        DialogLine dialogLine2 = new DialogLine("2","dummy", "Du solltest lieber aufpassen, wo du hinläufst.");
 
         information.add(dialogLine1);
         information.add(dialogLine2);

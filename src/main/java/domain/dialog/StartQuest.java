@@ -23,6 +23,16 @@ public class StartQuest implements InfoElement {
     }
 
     @Override
+    public String getSpeaker() {
+        return "";
+    }
+
+    @Override
+    public String getText() {
+        return "";
+    }
+
+    @Override
     public void execute() {
         //TODO es soll ein Quest Objekt dem Questlog des Spielers hinzugefügt werden.
         System.out.println("Quest gestartet: " + questId);

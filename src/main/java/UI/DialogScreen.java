@@ -1,4 +1,4 @@
-package UI.GUI;
+package UI;
 
 import domain.dialog.DialogInstance;
 import state.GameEventListener;
@@ -165,9 +165,4 @@ public class DialogScreen extends Screen{
         optionContainer.revalidate();
         optionContainer.repaint();
     }
-
-
-
-
-
 }

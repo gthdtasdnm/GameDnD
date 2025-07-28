@@ -1,6 +1,6 @@
 package state;
 
-import UI.GUI.Screen;
+import UI.Screen;
 import core.StateManager;
 
 public abstract class GameState {
@@ -12,7 +12,7 @@ public abstract class GameState {
     }
 
     public abstract void enter();
-    public abstract void update();
+    public abstract void update();// Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
     public abstract void exit();
     public abstract String getDescription();
 }

@@ -1,18 +1,21 @@
 package state;
 
 import core.StateManager;
-import UI.GUI.DialogScreen;
+import UI.DialogScreen;
 import data.DialogRepository;
 import domain.dialog.DialogInstance;
 import domain.dialog.DialogLine;
+import domain.dialog.InfoElement;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Der {@code DialogState} repräsentiert den Spielzustand, in dem sich der Spieler
  * in einem aktiven Dialog mit einem NPC befindet.
  *
- * <p>Beim Betreten des Zustands wird ein {@link UI.GUI.DialogScreen} erstellt,
+ * <p>Beim Betreten des Zustands wird ein {@link DialogScreen} erstellt,
  * der den Dialog visuell darstellt. Während {@code update()} können z. B.
  * Eingaben verarbeitet oder Dialogoptionen ausgewählt werden.</p>
  *
@@ -27,12 +30,16 @@ import java.util.List;
 
 public class DialogState extends GameState implements GameEventListener{
     DialogScreen screen;
-    DialogRepository dialogRepository = new DialogRepository();
-    List<DialogInstance> dialogs = dialogRepository.getAllDialogs();
+    //DialogRepository dialogRepository = new DialogRepository();
+    //List<DialogInstance> dialogs = dialogRepository.getAllDialogs();
+    Map<String, DialogInstance> dialogOptions = new HashMap<>();
 
-    public DialogState(StateManager stateManager) {
+    public DialogState(StateManager stateManager, List<DialogInstance> dialogOptions) {
         super(stateManager);
         this.screen = new DialogScreen(this);
+        for(DialogInstance dialogInstance:dialogOptions){
+            this.dialogOptions.put(dialogInstance.getDescription(),dialogInstance);
+        }
     }
 
     @Override
@@ -41,7 +48,7 @@ public class DialogState extends GameState implements GameEventListener{
         screen.createScreen();
         //TODO: Dialog wird als String übergeben um die Option anzuzeigen.
         //TODO: Ziel ist es eine ganze Dialoginstanz zu übergeben und damit die Sprecher und die Dialogzeilen anzuzeigen.
-        for(DialogInstance dialogInstance: dialogs){
+        for(DialogInstance dialogInstance: dialogOptions.values()){
             screen.addOption(dialogInstance);
             System.out.println(dialogInstance.getDescription());
         }
@@ -49,8 +56,7 @@ public class DialogState extends GameState implements GameEventListener{
 
     @Override
     public void update() {
-        System.out.println("Spieler unterhält sich");
-        // z.B. auf Input reagieren
+        // Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
     }
 
     @Override
@@ -64,10 +70,11 @@ public class DialogState extends GameState implements GameEventListener{
         return "Dialog State";
     }
 
-    @Override
-    public void onUiAction(String actionID) {
-        System.out.println(actionID);
-    }
 
+    public void onUiAction(String actionID) {
+        for(InfoElement dialogLine: dialogOptions.get(actionID).getInformation().getElements()){
+            screen.addDialog(dialogLine.getSpeaker() + ": " + dialogLine.getText());
+        }
+    }
 }
 

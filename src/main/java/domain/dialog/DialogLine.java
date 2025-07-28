@@ -17,14 +17,19 @@ package domain.dialog;
 
 public class DialogLine implements InfoElement{
     private String id;
+    private String speaker;
     private String text;
 
-    public DialogLine(String id, String text){
+    public DialogLine(String id, String speaker, String text) {
         this.id = id;
+        this.speaker = speaker;
         this.text = text;
+
     }
 
     public String getId(){return id;}
+
+    public String getSpeaker() {return speaker;}
 
     public String getText(){return text;}
 

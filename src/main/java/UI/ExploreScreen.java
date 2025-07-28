@@ -1,10 +1,8 @@
-package UI.GUI;
+package UI;
 
-import domain.map.MapData;
 import state.GameEventListener;
 
 import javax.swing.*;
-import javax.swing.text.*;
 import java.awt.*;
 
 /**

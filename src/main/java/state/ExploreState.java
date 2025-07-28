@@ -1,12 +1,12 @@
 package state;
 
-import UI.GUI.ExploreScreen;
+import UI.ExploreScreen;
 import core.StateManager;
 
 /**
  * Der {@code ExploreState} repräsentiert den Spielzustand, in dem sich der Spieler frei durch die Welt bewegt.
  *
- * <p>Beim Betreten wird ein {@link UI.GUI.ExploreScreen} erzeugt, der die aktuelle Karte darstellt.
+ * <p>Beim Betreten wird ein {@link ExploreScreen} erzeugt, der die aktuelle Karte darstellt.
  *
  * <p>Während des Zustands werden Spielaktionen wie Bewegung, Begegnungen oder Interaktionen verarbeitet.</p>
  *
@@ -37,8 +37,7 @@ public class ExploreState extends GameState implements GameEventListener {
 
     @Override
     public void update() {
-        System.out.println("Spieler läuft durch die Welt");
-        // z.B. auf Input reagieren
+        // Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
     }
 
     @Override

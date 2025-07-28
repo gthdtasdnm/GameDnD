@@ -1,4 +1,4 @@
-package UI.GUI;
+package UI;
 
 import state.GameEventListener;
 

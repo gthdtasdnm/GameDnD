@@ -45,6 +45,16 @@ public class DialogInstance {
         this.information = information;
     }
 
+    public DialogInstance(String npc, String description, Information information){
+        this.npc = npc;
+        this.description = description;
+        this.priority = 1;
+        this.isPermanent = false;
+        this.isImportant = false;
+        this.condition = null;
+        this.information = information;
+    }
+
     public void run(){
         if(condition.checkAll()){
             information.processAll();
@@ -57,6 +67,10 @@ public class DialogInstance {
 
     public Information getInformation() {
         return information;
+    }
+
+    public String getNPC() {
+        return npc;
     }
 
     // Getter: getText(), getId(), isPermanent(), ...
