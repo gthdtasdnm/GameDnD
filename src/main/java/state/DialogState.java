@@ -72,9 +72,14 @@ public class DialogState extends GameState implements GameEventListener{
 
 
     public void onUiAction(String actionID) {
-        for(InfoElement dialogLine: dialogOptions.get(actionID).getInformation().getElements()){
-            screen.addDialog(dialogLine.getSpeaker() + ": " + dialogLine.getText());
+        if(actionID == "ENDE"){
+            stateManager.setGameState(new ExploreState(stateManager));
+        }else{
+            for(InfoElement dialogLine: dialogOptions.get(actionID).getInformation().getElements()){
+                screen.addDialog(dialogLine.getSpeaker() + ": " + dialogLine.getText());
+            }
         }
+
     }
 }
 

@@ -45,6 +45,18 @@ public class DialogInstance {
         this.information = information;
     }
 
+    //ENDE
+    public DialogInstance(){
+        this.npc = null;
+        this.description = "ENDE";
+        this.priority = 1;
+        this.isPermanent = false;
+        this.isImportant = false;
+        this.condition = null;
+        this.information = null;
+    }
+
+    //Testing
     public DialogInstance(String npc, String description, Information information){
         this.npc = npc;
         this.description = description;

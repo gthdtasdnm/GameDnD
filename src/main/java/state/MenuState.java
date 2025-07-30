@@ -78,6 +78,10 @@ public class MenuState extends GameState implements GameEventListener {
                 info3.add(d3_2);
                 info3.add(d3_3);
                 dialogs.add(new DialogInstance("Diego", "Was soll ich tun?", info3));
+
+                // Dialog 4: ENDE
+                dialogs.add(new DialogInstance());
+
                 System.out.println("start gedrückt");
                 stateManager.setGameState(new DialogState(stateManager, dialogs));
             }

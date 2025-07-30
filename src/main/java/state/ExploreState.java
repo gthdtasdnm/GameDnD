@@ -32,6 +32,7 @@ public class ExploreState extends GameState implements GameEventListener {
     @Override
     public void enter() {
         System.out.println("Betrete Erkundungsmodus");
+        screen.createScreen();
         //mapScreen.getFrame().addKeyListener(new ArrowKeyListener(controller, mapScreen));
     }
 
