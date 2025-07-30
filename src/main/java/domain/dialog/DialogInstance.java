@@ -69,21 +69,28 @@ public class DialogInstance {
     }
 
     public void run(){
-    logger.info("run()");        if(condition.checkAll()){
+        logger.info("run()");
+        if(condition.checkAll()){
             information.processAll();
         }
     }
 
     public String getDescription() {
-    logger.info("getDescription()");        return description;
+        logger.info("getDescription()");        return description;
     }
 
     public Information getInformation() {
-    logger.info("getInformation()");        return information;
+        logger.info("getInformation()");        return information;
     }
 
-    public String getNPC() {
-    logger.info("getNPC()");        return npc;
+    public String getNpc() {
+        logger.info("getNpc()");
+        return npc;
+    }
+
+    @Override
+    public String toString() {
+        return getDescription();
     }
 
     // Getter: getText(), getId(), isPermanent(), ...

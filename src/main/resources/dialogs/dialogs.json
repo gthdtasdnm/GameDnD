@@ -1,0 +1,65 @@
+[
+  {
+    "npc": "Diego",
+    "description": "Wer bist du?",
+    "information": [
+      {
+        "type": "DialogLine",
+        "speaker": "Diego",
+        "text": "Hey du! Bist du neu hier?"
+      },
+      {
+        "type": "DialogLine",
+        "speaker": "Held",
+        "text": "Das kommt drauf an."
+      },
+      {
+        "type": "DialogLine",
+        "speaker": "Diego",
+        "text": "Ich bin Diego. Und wenn du Hilfe brauchst, solltest du dich mit mir gut stellen."
+      }
+    ]
+  },
+  {
+    "npc": "Diego",
+    "description": "Wo bin ich?",
+    "information": [
+      {
+        "type": "DialogLine",
+        "speaker": "Held",
+        "text": "Wo bin ich hier?"
+      },
+      {
+        "type": "DialogLine",
+        "speaker": "Diego",
+        "text": "In der Kolonie. Oder besser gesagt: im alten Lager, mitten in der Barriere."
+      },
+      {
+        "type": "DialogLine",
+        "speaker": "Diego",
+        "text": "Die Magier haben die Barriere erschaffen, um die Strafkolonie einzusperren. Nur reinkommen ist einfach – raus kommt keiner."
+      }
+    ]
+  },
+  {
+    "npc": "Diego",
+    "description": "Was soll ich tun?",
+    "information": [
+      {
+        "type": "DialogLine",
+        "speaker": "Held",
+        "text": "Was soll ich jetzt tun?"
+      },
+      {
+        "type": "DialogLine",
+        "speaker": "Diego",
+        "text": "Das hängt ganz von dir ab. Schließ dich einem Lager an, lern kämpfen – oder du wirst hier nicht lange überleben."
+      },
+      {
+        "type": "DialogLine",
+        "speaker": "Diego",
+        "text": "Wenn du schlau bist, kommst du mit mir. Ich zeige dir das Alte Lager."
+      }
+    ]
+  }
+]

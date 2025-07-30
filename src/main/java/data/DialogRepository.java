@@ -12,16 +12,10 @@ import java.util.Map;
 public class DialogRepository {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(DialogRepository.class);
     //TODO: Läd die Dialoge mit dem DialogLoader aus einer json in eine HashMap
-    //Jetzt nur provisorisch aufgebaut, um DialogManager zu machen
-//    private String npc;
-//    private String description;         // Option text shown in dialog menu
-//    private int priority;               // Priority in the dialog select menu
-//    private boolean isPermanent;        // If yes the dialog option is repeatable
-//    private boolean isImportant;        // If yes NPC will stop you and talk to you
-//    private Condition condition;        // Conditions to show dialog as an option
-//    private Information information;    // Script function to be called when this information got selected in the dialogue menu. hat dialog lines
 
     List<DialogInstance> dialogRepository = new ArrayList<>();
+    Map<String, List<DialogInstance>> dialogMap = DialogLoader.loadDialogMap("dialogs/dialogs.json");
+
 
     public DialogRepository() {
         loadDialogs();
@@ -88,6 +82,20 @@ public class DialogRepository {
 
         return dialogs;
     }
+
+    public List<DialogInstance> getDialogsByNpc(String npcName) {
+        logger.info("getDialogsByNpc(): " + npcName);
+        List<DialogInstance> original = dialogMap.getOrDefault(npcName, List.of());
+
+        // Neue Liste kopieren und ENDE hinzufügen
+        List<DialogInstance> extended = new ArrayList<>(original);
+        extended.add(new DialogInstance()); // Leere Instanz als "ENDE"
+        System.out.print(extended);
+        return extended;
+    }
+
+
+
 
 
 

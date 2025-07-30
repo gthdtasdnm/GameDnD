@@ -49,7 +49,7 @@ public class MenuState extends GameState implements GameEventListener {
     logger.info("MenuState.onUiAction(): " + actionId);
         switch (actionId) {
             case "start_game" -> {
-                List<DialogInstance> dialogs = context.getDialogRepository().getIntroDialogs();
+                List<DialogInstance> dialogs = context.getDialogRepository().getDialogsByNpc("Diego");
                 stateManager.setGameState(new DialogState(context, dialogs));
             }
             case "exit_game" -> System.exit(0);
