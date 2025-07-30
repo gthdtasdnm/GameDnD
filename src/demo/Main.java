@@ -1,20 +1,24 @@
 package demo;
 
+import core.GameContext;
 import core.StateManager;
-import domain.dialog.DialogInstance;
-import domain.dialog.DialogLine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import state.GameState;
 import state.MenuState;
 
 public class Main {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
-        final Logger logger = LoggerFactory.getLogger(Main.class);
-        logger.info("Starte Spiel - #################################");
-        StateManager stateManager = new StateManager(logger);
-        GameState startState = new MenuState(stateManager);
+    logger.info("main()");
+        GameContext context = new GameContext();
+
+        StateManager stateManager = new StateManager(context);
+        context.setStateManager(stateManager);
+
+        GameState startState = new MenuState(context);
         stateManager.setGameState(startState);
     }
 }
+
 

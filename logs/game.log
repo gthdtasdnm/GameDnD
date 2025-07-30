@@ -1,60 +1,68 @@
-2025-07-30 04:15:35,254 [INFO] state.DialogState - Starte DIalog
-2025-07-30 04:17:14,787 [INFO] state.DialogState - Starte DIalog
-2025-07-30 04:17:47,520 [INFO] state.DialogState - Starte Dialog
-2025-07-30 04:23:22,898 [INFO] demo.Main - Starte Spiel
-2025-07-30 04:23:26,859 [INFO] state.DialogState - Starte Dialog
-2025-07-30 04:24:17,427 [INFO] demo.Main - Starte Spiel#################################
-2025-07-30 04:24:19,171 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:14:48,203 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:16:02,058 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:16:23,296 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:16:27,636 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:17:00,081 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:17:20,710 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:17:43,354 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:18:05,626 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:18:38,219 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:20:12,012 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:20:12,248 [INFO] demo.Main - Spiel neu gestartet
-2025-07-30 05:20:19,023 [INFO] demo.Main - Fight State -> Dialog State
-2025-07-30 05:20:19,033 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:22:10,889 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:22:11,112 [INFO] demo.Main - Spiel neu gestartet
-2025-07-30 05:22:13,030 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:22:13,039 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:23:02,332 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:27:01,833 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:27:03,738 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:27:03,746 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:27:42,341 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:27:42,663 [INFO] demo.Main - Menu State
-2025-07-30 05:27:43,674 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:27:43,684 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:27:45,097 [INFO] demo.Main - Dialog State -> Explore State
-2025-07-30 05:27:57,884 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:27:58,242 [INFO] demo.Main - Menu State
-2025-07-30 05:28:02,274 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:28:02,286 [INFO] state.DialogState - Starte Dialog
-2025-07-30 05:31:35,696 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:31:36,032 [INFO] demo.Main - Menu State
-2025-07-30 05:31:37,734 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:32:38,887 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:32:39,202 [INFO] demo.Main - Menu State
-2025-07-30 05:32:40,174 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:32:41,653 [INFO] demo.Main - Dialog State -> Explore State
-2025-07-30 05:38:23,154 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:38:23,581 [INFO] demo.Main - Menu State
-2025-07-30 05:39:13,112 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:39:13,468 [INFO] demo.Main - Menu State
-2025-07-30 05:50:08,787 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:50:09,092 [INFO] demo.Main - Menu State
-2025-07-30 05:50:21,678 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:52:03,480 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:52:03,802 [INFO] demo.Main - Menu State
-2025-07-30 05:52:04,930 [INFO] demo.Main - Menu State -> Dialog State
-2025-07-30 05:57:09,347 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:57:47,981 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:57:48,214 [INFO] demo.Main -  -> Menu State
-2025-07-30 05:59:38,705 [INFO] demo.Main - Starte Spiel - #################################
-2025-07-30 05:59:38,929 [INFO] demo.Main - Initialer Zustand: Menu State
-2025-07-30 05:59:40,175 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 08:26:36,354 [INFO] demo.Main - main()
+2025-07-30 08:26:36,358 [INFO] core.GameContext - setStateManager()
+2025-07-30 08:26:36,358 [INFO] core.GameContext - setStateManager(State Manager)
+2025-07-30 08:26:36,360 [INFO] state.GameState - GameState()
+2025-07-30 08:26:36,360 [INFO] core.GameContext - getStateManager()
+2025-07-30 08:26:36,573 [INFO] UI.MenuScreen - MenuScreen()
+2025-07-30 08:26:36,574 [INFO] state.MenuState - MenuState()
+2025-07-30 08:26:36,574 [INFO] core.StateManager - setGameState()
+2025-07-30 08:26:36,574 [INFO] state.MenuState - getDescription()
+2025-07-30 08:26:36,574 [INFO] core.StateManager - Initialer Zustand: Menu State
+2025-07-30 08:26:36,574 [INFO] state.MenuState - enter()
+2025-07-30 08:26:36,574 [INFO] UI.MenuScreen - createScreen()
+2025-07-30 08:26:37,770 [INFO] state.MenuState - onUiAction()
+2025-07-30 08:26:37,770 [INFO] state.MenuState - MenuState.onUiAction(): start_game
+2025-07-30 08:26:37,771 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,771 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,771 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] domain.dialog.Information - add()
+2025-07-30 08:26:37,772 [INFO] state.GameState - GameState()
+2025-07-30 08:26:37,772 [INFO] core.GameContext - getStateManager()
+2025-07-30 08:26:37,775 [INFO] UI.DialogScreen - DialogScreen()
+2025-07-30 08:26:37,775 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,775 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,775 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,775 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,775 [INFO] state.DialogState - DialogState()
+2025-07-30 08:26:37,775 [INFO] core.StateManager - setGameState()
+2025-07-30 08:26:37,775 [INFO] state.MenuState - getDescription()
+2025-07-30 08:26:37,775 [INFO] state.DialogState - getDescription()
+2025-07-30 08:26:37,775 [INFO] core.StateManager - Menu State -> Dialog State
+2025-07-30 08:26:37,775 [INFO] state.MenuState - exit()
+2025-07-30 08:26:37,775 [INFO] UI.Screen - closeScreen()
+2025-07-30 08:26:37,783 [INFO] state.DialogState - enter()
+2025-07-30 08:26:37,783 [INFO] UI.DialogScreen - createScreen()
+2025-07-30 08:26:37,814 [INFO] UI.DialogScreen - addOption()
+2025-07-30 08:26:37,814 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,816 [INFO] UI.DialogScreen - addOption()
+2025-07-30 08:26:37,816 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,817 [INFO] UI.DialogScreen - addOption()
+2025-07-30 08:26:37,817 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:37,818 [INFO] UI.DialogScreen - addOption()
+2025-07-30 08:26:37,819 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:38,922 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:38,922 [INFO] state.DialogState - onUiAction()
+2025-07-30 08:26:38,922 [INFO] state.DialogState - DialogState.onUiAction(): Was soll ich tun?
+2025-07-30 08:26:38,922 [INFO] domain.dialog.DialogInstance - getInformation()
+2025-07-30 08:26:38,922 [INFO] domain.dialog.Information - getElements()
+2025-07-30 08:26:38,922 [INFO] UI.DialogScreen - addDialog()
+2025-07-30 08:26:38,965 [INFO] UI.DialogScreen - addDialog()
+2025-07-30 08:26:38,980 [INFO] UI.DialogScreen - addDialog()
+2025-07-30 08:26:39,642 [INFO] domain.dialog.DialogInstance - getDescription()
+2025-07-30 08:26:39,642 [INFO] state.DialogState - onUiAction()
+2025-07-30 08:26:39,643 [INFO] state.DialogState - DialogState.onUiAction(): ENDE
+2025-07-30 08:26:39,643 [INFO] state.GameState - GameState()
+2025-07-30 08:26:39,643 [INFO] core.GameContext - getStateManager()
+2025-07-30 08:26:39,645 [INFO] core.StateManager - setGameState()
+2025-07-30 08:26:39,645 [INFO] state.DialogState - getDescription()
+2025-07-30 08:26:39,645 [INFO] state.ExploreState - getDescription()
+2025-07-30 08:26:39,645 [INFO] core.StateManager - Dialog State -> Explore State
+2025-07-30 08:26:39,645 [INFO] state.DialogState - exit()
+2025-07-30 08:26:39,645 [INFO] UI.Screen - closeScreen()
+2025-07-30 08:26:39,656 [INFO] state.ExploreState - enter()
+2025-07-30 08:26:39,656 [INFO] UI.ExploreScreen - createScreen()

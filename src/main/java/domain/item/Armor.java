@@ -19,6 +19,7 @@ import domain.inventory.EquipmentSlot;
 
 
 public class Armor extends Item implements Equippable {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Armor.class);
     private final int defense;
     private final EquipmentSlot slot;
 

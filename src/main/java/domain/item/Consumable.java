@@ -19,6 +19,7 @@ import domain.inventory.PotionEffect;
 
 
 public class Consumable extends Item implements Usable{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Consumable.class);
     private PotionEffect effect;
     private int magnitude;
 

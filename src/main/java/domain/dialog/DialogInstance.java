@@ -21,6 +21,7 @@ package domain.dialog;
 
 
 public class DialogInstance {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(DialogInstance.class);
     private String npc;
     private String description;         // Option text shown in dialog menu
     private int priority;               // Priority in the dialog select menu
@@ -68,21 +69,21 @@ public class DialogInstance {
     }
 
     public void run(){
-        if(condition.checkAll()){
+    logger.info("run()");        if(condition.checkAll()){
             information.processAll();
         }
     }
 
     public String getDescription() {
-        return description;
+    logger.info("getDescription()");        return description;
     }
 
     public Information getInformation() {
-        return information;
+    logger.info("getInformation()");        return information;
     }
 
     public String getNPC() {
-        return npc;
+    logger.info("getNPC()");        return npc;
     }
 
     // Getter: getText(), getId(), isPermanent(), ...

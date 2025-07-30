@@ -34,13 +34,14 @@ import java.util.Map;
 
 
 public class ItemRepository {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ItemRepository.class);
 
     private static final Map<String, Armor> armorMap = new HashMap<>();
     private static final Map<String, Weapon> weaponMap = new HashMap<>();
     private static final Map<String, Consumable> consumableMap = new HashMap<>();
 
     public static void loadAllItems() {
-        // Von JSON laden über ItemLoader (Factory wird intern verwendet)
+    logger.info("loadAllItems()");        // Von JSON laden über ItemLoader (Factory wird intern verwendet)
         for (Armor armor : ItemLoader.loadArmorItems()) {
             armorMap.put(armor.getId(), armor);
         }

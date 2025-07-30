@@ -16,6 +16,7 @@ package domain.dialog;
 
 
 public class DialogLine implements InfoElement{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(DialogLine.class);
     private String id;
     private String speaker;
     private String text;
@@ -35,6 +36,6 @@ public class DialogLine implements InfoElement{
 
     @Override
     public void execute() {
-        System.out.println(text);
+    logger.info("execute()");        System.out.println(text);
     }
 }

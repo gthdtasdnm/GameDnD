@@ -17,8 +17,9 @@ import domain.inventory.Inventory;
 
 
 public class PlayerFactory extends CharacterFactory{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(PlayerFactory.class);
     @Override
     public Character create(String name, String guild, int maxHp, int strength, int dexterity, Inventory inventory, Equipment equipment) {
-        return new PlayerCharacter( name,  guild,  maxHp,  strength,  dexterity,  inventory, equipment);
+    logger.info("create()");        return new PlayerCharacter( name,  guild,  maxHp,  strength,  dexterity,  inventory, equipment);
     }
 }

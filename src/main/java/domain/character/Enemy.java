@@ -18,6 +18,7 @@ import domain.inventory.Inventory;
 
 
 public class Enemy extends Character{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Enemy.class);
     public Enemy(String name, String guild, int maxHp, int strength, int dexterity, Inventory inventory, Equipment equipment) {
         super(name, guild, maxHp, strength, dexterity, inventory, equipment);
     }

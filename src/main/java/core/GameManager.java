@@ -6,8 +6,6 @@ import domain.inventory.Inventory;
 import state.DialogState;
 import state.ExploreState;
 import state.FightState;
-import state.GameContext;
-
 
 
 /**
@@ -36,6 +34,7 @@ import state.GameContext;
  */
 
 public class GameManager {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GameManager.class);
     private final PlayerCharacter player;
     private final Inventory inventory;
     private final QuestLog questLog;
@@ -47,11 +46,11 @@ public class GameManager {
     }
 
     public void applyPlayerAction(String input) {
-        // prüfe, ob Aktion erlaubt ist, modifiziere Spielerzustand, ...
+    logger.info("applyPlayerAction()");        // prüfe, ob Aktion erlaubt ist, modifiziere Spielerzustand, ...
     }
 
     public PlayerCharacter getPlayer() {
-        return player;
+    logger.info("getPlayer()");        return player;
     }
 }
 

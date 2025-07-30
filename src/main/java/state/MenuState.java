@@ -1,7 +1,7 @@
 package state;
 
 import UI.MenuScreen;
-import core.StateManager;
+import core.GameContext;
 import domain.dialog.DialogInstance;
 import domain.dialog.DialogLine;
 import domain.dialog.Information;
@@ -10,35 +10,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuState extends GameState implements GameEventListener {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MenuState.class);
     MenuScreen screen;
 
-    public MenuState(StateManager stateManager) {
-        super(stateManager);
+    public MenuState(GameContext context) {
+        super(context);
         this.screen = new MenuScreen(this); // konkret für diesen State
+        logger.info("MenuState()");
     }
 
     @Override
     public void enter() {
+    logger.info("enter()");
         screen.createScreen();
     }
 
     @Override
     public void update() {
+    logger.info("update()");
 
     }
 
     @Override
     public void exit() {
+    logger.info("exit()");
         screen.closeScreen();
     }
 
     @Override
     public String getDescription() {
-        return "Menu State";
+    logger.info("getDescription()");        return "Menu State";
     }
 
     @Override
     public void onUiAction(String actionId) {
+    logger.info("onUiAction()");        logger.info("MenuState.onUiAction(): " + actionId);
         switch (actionId) {
             case "start_game" -> {
                 List<DialogInstance> dialogs = new ArrayList<>();
@@ -79,7 +85,7 @@ public class MenuState extends GameState implements GameEventListener {
                 // Dialog 4: ENDE
                 dialogs.add(new DialogInstance());
 
-                stateManager.setGameState(new DialogState(stateManager, dialogs));
+                stateManager.setGameState(new DialogState(context, dialogs));
             }
             case "exit_game" -> System.exit(0);
             default -> logger.warn("Unbekannte UI-Aktion: " + actionId);

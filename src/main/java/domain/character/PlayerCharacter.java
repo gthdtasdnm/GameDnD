@@ -19,6 +19,7 @@ import domain.inventory.Inventory;
 
 
 public class PlayerCharacter extends Character {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(PlayerCharacter.class);
     private QuestLog questLog;
 
     //Attribute
@@ -35,16 +36,16 @@ public class PlayerCharacter extends Character {
     }
 
     public void addExperience(int amount){
-        experience += amount;
+    logger.info("addExperience()");        experience += amount;
         //TODO auf levelup überprüfen;
     }
 
     public void addSkillpoint(){
-        skillpoints +=1;
+    logger.info("addSkillpoint()");        skillpoints +=1;
     }
 
     public void move(int dx, int dy){
-        x += dx;
+    logger.info("move()");        x += dx;
         y += dy;
     }
 

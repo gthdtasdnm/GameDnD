@@ -31,6 +31,7 @@ import java.awt.Dimension;
 
 
 public class FightScreen extends Screen {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(FightScreen.class);
 
     public FightScreen(GameEventListener listener) {
         super(listener);
@@ -38,7 +39,7 @@ public class FightScreen extends Screen {
 
     @Override
     public void createScreen() {
-        // Frame Einstellungen
+    logger.info("createScreen()");        // Frame Einstellungen
         frame.setSize(displayDimensions);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

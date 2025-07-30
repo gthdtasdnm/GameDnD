@@ -27,6 +27,7 @@ import java.util.List;
 
 
 public class MapData {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MapData.class);
     private final int width;
     private final int height;
     private final char[][] tiles;
@@ -64,11 +65,11 @@ public class MapData {
     }
 
     public char[][] getTiles() {
-        return tiles;
+    logger.info("getTiles()");        return tiles;
     }
 
     public void printMap() {
-        for (char[] row : tiles) {
+    logger.info("printMap()");        for (char[] row : tiles) {
             for (char c : row) {
                 System.out.print(c + " ");
             }
@@ -77,7 +78,7 @@ public class MapData {
     }
 
     public void updatePlayerPosition(PlayerCharacter player) {
-        // Karte vorher bereinigen (z. B. setze vorherige Position auf '.')
+    logger.info("updatePlayerPosition()");        // Karte vorher bereinigen (z. B. setze vorherige Position auf '.')
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 if (tiles[y][x] == '@') {
@@ -92,7 +93,7 @@ public class MapData {
     }
 
     public boolean isWalkable(int x, int y) {
-        return x >= 0 && x < width && y >= 0 && y < height;
+    logger.info("isWalkable()");        return x >= 0 && x < width && y >= 0 && y < height;
     }
 
 }

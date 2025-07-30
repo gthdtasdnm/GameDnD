@@ -29,12 +29,15 @@ import javax.swing.SwingConstants;
 
 
 public class MenuScreen extends Screen{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(MenuScreen.class);
 
     public MenuScreen(GameEventListener listener) {
         super(listener);
+        logger.info("MenuScreen()");
     }
 
     public void createScreen(){
+    logger.info("createScreen()");
         // Frame Einstellungen
         frame.setSize(displayDimensions);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

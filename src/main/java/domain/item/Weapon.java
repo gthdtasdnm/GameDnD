@@ -18,6 +18,7 @@ import domain.inventory.EquipmentSlot;
 
 
 public class Weapon extends Item implements Equippable {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Weapon.class);
     private final int attack;
 
     public Weapon(String id, String name, String description, int price, int attack){

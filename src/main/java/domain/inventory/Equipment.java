@@ -23,23 +23,24 @@ import java.util.Map;
 
 
 public class Equipment {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Equipment.class);
 
     private final Map<EquipmentSlot, Equippable> slots = new EnumMap<>(EquipmentSlot.class);
 
     // Item ausrüsten
     public void equip(Equippable item) {
-        EquipmentSlot slot = item.getSlot();
+    logger.info("equip()");        EquipmentSlot slot = item.getSlot();
         slots.put(slot, item);
     }
 
     // Item aus einem Slot entfernen
     public void unequip(EquipmentSlot slot) {
-        slots.remove(slot);
+    logger.info("unequip()");        slots.remove(slot);
     }
 
     // Ausgerüstetes Item für einen Slot abfragen
     public Equippable getItem(EquipmentSlot slot) {
-        return slots.get(slot);
+    logger.info("getItem()");        return slots.get(slot);
     }
 
     // Alle Slots + Items zurückgeben
@@ -49,14 +50,14 @@ public class Equipment {
 
     // Gesamte Verteidigung berechnen (z. B. für Kampfsystem)
     public int getTotalDefense() {
-        return slots.values().stream()
+    logger.info("getTotalDefense()");        return slots.values().stream()
                     .mapToInt(Equippable::getDefense)
                     .sum();
     }
 
     // Gesamten Angriff berechnen
     public int getTotalAttack() {
-        return slots.values().stream()
+    logger.info("getTotalAttack()");        return slots.values().stream()
                     .mapToInt(Equippable::getAttack)
                     .sum();
     }
@@ -64,7 +65,7 @@ public class Equipment {
     // Optional: Alle ausgerüsteten Items ausgeben
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Ausrüstung:\n");
+    logger.info("toString()");        StringBuilder sb = new StringBuilder("Ausrüstung:\n");
         for (EquipmentSlot slot : EquipmentSlot.values()) {
             Equippable item = slots.get(slot);
             sb.append(slot).append(": ")

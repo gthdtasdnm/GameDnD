@@ -26,27 +26,28 @@ import java.util.Queue;
 
 
 public class Information {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Information.class);
     private Queue<InfoElement> elements = new LinkedList<>();
 
     public Information(){
 
     }
     public void add(InfoElement element) {
-        elements.offer(element);
+    logger.info("add()");        elements.offer(element);
     }
 
     public void processAll() {
-        while (!elements.isEmpty()) {
+    logger.info("processAll()");        while (!elements.isEmpty()) {
             InfoElement next = elements.poll();
             next.execute();
         }
     }
 
     public Queue<InfoElement> getElements(){
-        return elements;
+    logger.info("getElements()");        return elements;
     }
 
     public boolean isEmpty() {
-        return elements.isEmpty();
+    logger.info("isEmpty()");        return elements.isEmpty();
     }
 }

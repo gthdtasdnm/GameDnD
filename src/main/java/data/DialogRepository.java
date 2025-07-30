@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DialogRepository {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(DialogRepository.class);
     //TODO: Läd die Dialoge mit dem DialogLoader aus einer json in eine HashMap
     //Jetzt nur provisorisch aufgebaut, um DialogManager zu machen
 //    private String npc;
@@ -54,7 +55,7 @@ public class DialogRepository {
     }
 
     public List<DialogInstance> getAllDialogs() {
-        return dialogRepository;
+    logger.info("getAllDialogs()");        return dialogRepository;
     }
 
 

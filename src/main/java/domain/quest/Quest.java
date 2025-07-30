@@ -19,6 +19,7 @@ import java.util.List;
 
 
 public class Quest {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Quest.class);
     private String id;
     private String name;
     private String description;

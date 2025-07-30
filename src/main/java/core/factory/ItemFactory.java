@@ -18,9 +18,10 @@ import domain.item.Armor;
 
 
 public class ItemFactory {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ItemFactory.class);
 
     public static Armor createArmor(String id, String name, String description, int price, int defense, EquipmentSlot slot) {
-        return new Armor(id, name,  description,  price,  defense,  slot );
+    logger.info("createArmor()");        return new Armor(id, name,  description,  price,  defense,  slot );
     }
 }
 

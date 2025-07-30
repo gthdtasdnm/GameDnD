@@ -9,17 +9,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CharacterTest {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(CharacterTest.class);
     private PlayerCharacter player;
     private NPC npc;
 
     @BeforeEach
     public void setup() {
-
+    logger.info("setup()");
     }
 
     @Test
     public void testInventoryandEquipment() {
-        System.out.println("==> Test startet");
+    logger.info("testInventoryandEquipment()");        System.out.println("==> Test startet");
 
         System.out.println("==> Initialisiere Testcharaktere...");
         player = new PlayerCharacter("Held", "oldcamp", 100, 10, 10, new Inventory(), new Equipment());

@@ -35,6 +35,7 @@ import java.awt.Font;
 
 
 public abstract class Screen {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Screen.class);
     protected JFrame frame = new JFrame();
     protected JPanel panel = new JPanel();
 
@@ -59,7 +60,7 @@ public abstract class Screen {
     public Component getFrame() {return frame;}
 
     public void closeScreen() {
-        frame.dispose();
+    logger.info("closeScreen()");        frame.dispose();
     }
 
 

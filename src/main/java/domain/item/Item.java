@@ -14,6 +14,7 @@ package domain.item;
 
 
 public abstract class Item {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Item.class);
     protected final String id;
     protected final String name;
     protected final String description;

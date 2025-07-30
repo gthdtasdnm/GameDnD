@@ -28,6 +28,7 @@ import java.util.function.Predicate;
 
 
 public class Condition {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Condition.class);
 
     private final List<Predicate<Character>> conditions = new ArrayList<>();
     private Character character; // abgespeicherter Kontext
@@ -41,11 +42,11 @@ public class Condition {
     }
 
     public void addCondition(Predicate<Character> condition) {
-        conditions.add(condition);
+    logger.info("addCondition()");        conditions.add(condition);
     }
 
     public boolean checkAll() {
-        if (character == null) return true;
+    logger.info("checkAll()");        if (character == null) return true;
         for (Predicate<Character> condition : conditions) {
             if (!condition.test(character)) {
                 return false;
@@ -55,14 +56,14 @@ public class Condition {
     }
 
     public void setCharacter(Character character) {
-        this.character = character;
+    logger.info("setCharacter()");        this.character = character;
     }
 
     public Character getCharacter() {
-        return character;
+    logger.info("getCharacter()");        return character;
     }
 
     public boolean isEmpty() {
-        return conditions.isEmpty();
+    logger.info("isEmpty()");        return conditions.isEmpty();
     }
 }

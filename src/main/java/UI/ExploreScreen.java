@@ -27,6 +27,7 @@ import java.awt.*;
 
 
 public class ExploreScreen extends Screen {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ExploreScreen.class);
     private JTextPane mapPane;
 
     public ExploreScreen(GameEventListener listener) {
@@ -35,7 +36,7 @@ public class ExploreScreen extends Screen {
 
     @Override
     public void createScreen() {
-        // Frame Einstellungen
+    logger.info("createScreen()");        // Frame Einstellungen
         frame.setSize(displayDimensions);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

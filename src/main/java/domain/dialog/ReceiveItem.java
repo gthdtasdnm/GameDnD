@@ -16,6 +16,7 @@ package domain.dialog;
 
 
 public class ReceiveItem implements InfoElement {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ReceiveItem.class);
     private String itemName;
 
     public ReceiveItem(String itemName) {
@@ -24,17 +25,17 @@ public class ReceiveItem implements InfoElement {
 
     @Override
     public String getSpeaker() {
-        return "";
+    logger.info("getSpeaker()");        return "";
     }
 
     @Override
     public String getText() {
-        return "";
+    logger.info("getText()");        return "";
     }
 
     @Override
     public void execute() {
-        //TODO Items sollen im Inventar des Spielers landen.
+    logger.info("execute()");        //TODO Items sollen im Inventar des Spielers landen.
         System.out.println("Item erhalten: " + itemName);
         // Dein Inventory-Manager wäre hier zuständig
     }

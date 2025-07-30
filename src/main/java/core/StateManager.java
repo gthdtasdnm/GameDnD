@@ -20,15 +20,14 @@ import org.slf4j.LoggerFactory;
 
 
 public class StateManager {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(StateManager.class);
     GameState gameState;
-    Logger logger;
 
-    public StateManager(Logger logger){
-        this.logger = logger;
+    public StateManager(GameContext context){
     }
 
     public void setGameState(GameState gameState) {
-        if (this.gameState != null) {
+    logger.info("setGameState()");        if (this.gameState != null) {
             logger.info(this.gameState.getDescription() + " -> " + gameState.getDescription());
             this.gameState.exit();
         } else {
@@ -41,6 +40,12 @@ public class StateManager {
 
 
     public GameState getCurrentState() {
+    logger.info("getCurrentState()");        logger.info("Aktueller Zustand: " + gameState.getDescription());
         return gameState;
+    }
+
+    @Override
+    public String toString() {
+    logger.info("toString()");        return "State Manager";
     }
 }

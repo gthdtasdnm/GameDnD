@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 
 
 public class Inventory {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Inventory.class);
     protected int gold;
     protected Map<String, Item> inventory;
 
@@ -32,11 +33,11 @@ public class Inventory {
     }
 
     public void addGold(int amount){
-        gold += amount;
+    logger.info("addGold()");        gold += amount;
     }
 
     public void removeGold(int amount){
-        if(gold - amount <= 0){
+    logger.info("removeGold()");        if(gold - amount <= 0){
             System.out.println("nicht genug Gold");
         }else{
             gold -= amount;
@@ -44,20 +45,20 @@ public class Inventory {
     }
 
     public void addItem(Item item){
-        inventory.put(item.getId(),item);
+    logger.info("addItem()");        inventory.put(item.getId(),item);
     }
 
     public boolean hasItem(Item item){
-        return inventory.containsKey(item.getId());
+    logger.info("hasItem()");        return inventory.containsKey(item.getId());
     }
 
     public void removeItem(Item item){
-        inventory.remove(item.getId());
+    logger.info("removeItem()");        inventory.remove(item.getId());
     }
 
     @Override
     public String toString() {
-        return inventory.values().stream()
+    logger.info("toString()");        return inventory.values().stream()
                         .map(Item::getName)
                         .collect(Collectors.joining(", "));
     }

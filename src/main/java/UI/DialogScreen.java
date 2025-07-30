@@ -42,19 +42,22 @@ import java.awt.Insets;
 
 
 public class DialogScreen extends Screen{
-
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(DialogScreen.class);
+    
     private JPanel dialogContainer;
     private JScrollPane scrollPaneDialog;
     private JPanel optionContainer;
     private JScrollPane scrollPaneOptionen;
 
     public DialogScreen(GameEventListener listener) {
+
         super(listener);
+        logger.info("DialogScreen()");
     }
 
     @Override
     public void createScreen() {
-        // Frame Einstellungen
+    logger.info("createScreen()");     // Frame Einstellungen
         frame.setSize(displayDimensions);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -109,7 +112,8 @@ public class DialogScreen extends Screen{
     }
 
     public void addDialog(String text) {
-        JTextArea textArea = new JTextArea(text);
+    logger.info("addDialog()");
+    JTextArea textArea = new JTextArea(text);
         textArea.setWrapStyleWord(true);
         textArea.setLineWrap(true);
         textArea.setEditable(false);
@@ -140,7 +144,7 @@ public class DialogScreen extends Screen{
 
 
     public void addOption(DialogInstance dialogInstance) {
-        JButton btn = new JButton("- " + dialogInstance.getDescription());
+    logger.info("addOption()");        JButton btn = new JButton("- " + dialogInstance.getDescription());
 
         // Stil
         btn.setAlignmentX(Component.LEFT_ALIGNMENT);  // zentriert in BoxLayout

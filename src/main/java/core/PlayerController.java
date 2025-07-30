@@ -17,6 +17,7 @@ import domain.map.MapData;
 
 
 public class PlayerController {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(PlayerController.class);
     private final MapData mapData;
     private final PlayerCharacter player;
 
@@ -26,7 +27,7 @@ public class PlayerController {
     }
 
     public void movePlayer(int dx, int dy) {
-        int newX = player.getX() + dx;
+    logger.info("movePlayer()");        int newX = player.getX() + dx;
         int newY = player.getY() + dy;
 
         if (mapData.isWalkable(newX, newY)) {

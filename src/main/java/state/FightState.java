@@ -1,7 +1,9 @@
 package state;
 
 import UI.FightScreen;
+import core.GameContext;
 import core.StateManager;
+import org.slf4j.Logger;
 
 /**
  * Der {@code FightState} repräsentiert den Spielzustand, in dem ein Kampf
@@ -21,37 +23,38 @@ import core.StateManager;
 
 
 public class FightState extends GameState implements GameEventListener {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(FightState.class);
 
     FightScreen screen;
 
-    public FightState(StateManager stateManager) {
-        super(stateManager);
+    public FightState(GameContext context) {
+        super(context);
         this.screen = new FightScreen(this);
     }
 
     @Override
     public void enter() {
-        screen.createScreen();
+    logger.info("enter()");        screen.createScreen();
     }
 
     @Override
     public void update() {
-        // Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
+    logger.info("update()");        // Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
     }
 
     @Override
     public void exit() {
-        screen.closeScreen();
+    logger.info("exit()");        screen.closeScreen();
     }
 
     @Override
     public String getDescription() {
-        return "Fight State";
+    logger.info("getDescription()");        return "Fight State";
     }
 
     @Override
     public void onUiAction(String actionId) {
-
+    logger.info("onUiAction()");
     }
 
 

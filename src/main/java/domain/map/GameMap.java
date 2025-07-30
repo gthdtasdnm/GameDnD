@@ -34,6 +34,7 @@ import java.util.Scanner;
  */
 
 public class GameMap {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GameMap.class);
 
     private static final int WIDTH = 10;
     private static final int HEIGHT = 10;
@@ -42,7 +43,7 @@ public class GameMap {
     private static int playerY = 0;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    logger.info("main()");        Scanner scanner = new Scanner(System.in);
         printMap();
 
         while (true) {

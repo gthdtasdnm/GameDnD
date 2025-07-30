@@ -17,6 +17,7 @@ import domain.inventory.Inventory;
 
 
 public class NPC extends Character{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(NPC.class);
     //Quest die der NPC dir gibt
     //protected QuestLog questlog;
 

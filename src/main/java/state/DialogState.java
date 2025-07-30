@@ -1,5 +1,6 @@
 package state;
 
+import core.GameContext;
 import core.StateManager;
 import UI.DialogScreen;
 import data.DialogRepository;
@@ -31,22 +32,24 @@ import org.slf4j.LoggerFactory;
 
 
 public class DialogState extends GameState implements GameEventListener{
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(DialogState.class);
     DialogScreen screen;
     //DialogRepository dialogRepository = new DialogRepository();
     //List<DialogInstance> dialogs = dialogRepository.getAllDialogs();
     Map<String, DialogInstance> dialogOptions = new HashMap<>();
-    private static final Logger logger = LoggerFactory.getLogger(DialogState.class);
 
-    public DialogState(StateManager stateManager, List<DialogInstance> dialogOptions) {
-        super(stateManager);
+    public DialogState(GameContext context, List<DialogInstance> dialogOptions) {
+        super(context);
         this.screen = new DialogScreen(this);
         for(DialogInstance dialogInstance:dialogOptions){
             this.dialogOptions.put(dialogInstance.getDescription(),dialogInstance);
         }
+        logger.info("DialogState()");
     }
 
     @Override
     public void enter() {
+    logger.info("enter()");
         screen.createScreen();
         //TODO: Dialog wird als String übergeben um die Option anzuzeigen.
         //TODO: Ziel ist es eine ganze Dialoginstanz zu übergeben und damit die Sprecher und die Dialogzeilen anzuzeigen.
@@ -57,23 +60,26 @@ public class DialogState extends GameState implements GameEventListener{
 
     @Override
     public void update() {
+    logger.info("update()");
         // Wird in diesem Zustand nicht verwendet. Reserviert für Game Loop.
     }
 
     @Override
     public void exit() {
+    logger.info("exit()");
         screen.closeScreen();
     }
 
     @Override
     public String getDescription() {
-        return "Dialog State";
+    logger.info("getDescription()");        return "Dialog State";
     }
 
 
     public void onUiAction(String actionID) {
+    logger.info("onUiAction()");        logger.info("DialogState.onUiAction(): " + actionID);
         if(actionID == "ENDE"){
-            stateManager.setGameState(new ExploreState(stateManager));
+            stateManager.setGameState(new ExploreState(context));
         }else{
             for(InfoElement dialogLine: dialogOptions.get(actionID).getInformation().getElements()){
                 screen.addDialog(dialogLine.getSpeaker() + ": " + dialogLine.getText());

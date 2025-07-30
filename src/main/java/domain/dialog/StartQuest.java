@@ -16,6 +16,7 @@ package domain.dialog;
 
 
 public class StartQuest implements InfoElement {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(StartQuest.class);
     private String questId;
 
     public StartQuest(String questId) {
@@ -24,17 +25,17 @@ public class StartQuest implements InfoElement {
 
     @Override
     public String getSpeaker() {
-        return "";
+    logger.info("getSpeaker()");        return "";
     }
 
     @Override
     public String getText() {
-        return "";
+    logger.info("getText()");        return "";
     }
 
     @Override
     public void execute() {
-        //TODO es soll ein Quest Objekt dem Questlog des Spielers hinzugefügt werden.
+    logger.info("execute()");        //TODO es soll ein Quest Objekt dem Questlog des Spielers hinzugefügt werden.
         System.out.println("Quest gestartet: " + questId);
         // Hier würde dein QuestSystem eingreifen
     }

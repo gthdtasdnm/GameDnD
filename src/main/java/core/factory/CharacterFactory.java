@@ -17,6 +17,7 @@ import domain.inventory.Inventory;
  */
 
 public abstract class CharacterFactory {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(CharacterFactory.class);
     public abstract Character create(String name, String guild, int maxHp,
                                int strength, int dexterity, Inventory inventory, Equipment equipment);
 }

@@ -32,12 +32,13 @@ import java.util.List;
 
 
 public class ItemLoader {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ItemLoader.class);
 
     private static final Gson gson = new Gson();
 
     // 💡 Generische Methode
     public static <T> List<T> loadItems(String resourcePath, Type typeToken) {
-        InputStream input = ItemLoader.class.getClassLoader().getResourceAsStream(resourcePath);
+    logger.info("loadItems()");        InputStream input = ItemLoader.class.getClassLoader().getResourceAsStream(resourcePath);
         if (input == null) {
             System.err.println("Datei nicht gefunden im Klassenpfad: " + resourcePath);
             return null;
@@ -54,17 +55,17 @@ public class ItemLoader {
 
     // Spezialisierungen rufen nur noch die generische Methode auf
     public static List<Armor> loadArmorItems() {
-        System.out.println("Load Armor...");
+    logger.info("loadArmorItems()");        System.out.println("Load Armor...");
         return loadItems("items/armor.json", new com.google.gson.reflect.TypeToken<List<Armor>>() {}.getType());
     }
 
     public static List<Weapon> loadWeaponItems() {
-        System.out.println("Load Weapons...");
+    logger.info("loadWeaponItems()");        System.out.println("Load Weapons...");
         return loadItems("items/weapons.json", new com.google.gson.reflect.TypeToken<List<Weapon>>() {}.getType());
     }
 
     public static List<Consumable> loadConsumableItems() {
-        System.out.println("Load Consumables...");
+    logger.info("loadConsumableItems()");        System.out.println("Load Consumables...");
         return loadItems("items/consumables.json", new com.google.gson.reflect.TypeToken<List<Consumable>>() {}.getType());
     }
 }

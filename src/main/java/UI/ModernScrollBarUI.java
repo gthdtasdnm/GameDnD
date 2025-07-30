@@ -26,6 +26,7 @@ import java.awt.*;
 
 
 public class ModernScrollBarUI extends BasicScrollBarUI {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ModernScrollBarUI.class);
 
     @Override
     protected void configureScrollBarColors() {

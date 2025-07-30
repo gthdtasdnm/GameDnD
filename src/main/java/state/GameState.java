@@ -1,18 +1,20 @@
 package state;
 
 import UI.Screen;
+import core.GameContext;
 import core.StateManager;
-import demo.Main;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public abstract class GameState {
-    final Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GameState.class);
     protected final StateManager stateManager;
+    protected GameContext context;
     protected Screen screen; // optional, wenn alle States GUI-basiert sind
 
-    public GameState(StateManager stateManager) {
-        this.stateManager = stateManager;
+    public GameState(GameContext context) {
+        logger.info("GameState()");
+        this.context = context;
+        this.stateManager = context.getStateManager();
     }
 
     public abstract void enter();

@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
  * Beispiel: Steuerung mit WASD oder Pfeiltasten.
  */
 public class InputHandler extends KeyAdapter {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(InputHandler.class);
 
     private final InputCallback callback;
 
@@ -23,7 +24,7 @@ public class InputHandler extends KeyAdapter {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        String keyText = KeyEvent.getKeyText(e.getKeyCode()).toUpperCase();
+    logger.info("keyPressed()");        String keyText = KeyEvent.getKeyText(e.getKeyCode()).toUpperCase();
         callback.onInput(keyText);
     }
 }

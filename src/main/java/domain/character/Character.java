@@ -30,6 +30,7 @@ import java.util.Set;
 
 
 public abstract class Character {
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Character.class);
     //unchangeable Attribute
     protected String name;
     protected int x;
@@ -73,7 +74,7 @@ public abstract class Character {
     }
 
     public void equip(Armor armor){
-        if(inventory.hasItem(armor)){
+    logger.info("equip()");        if(inventory.hasItem(armor)){
             equipment.equip(armor);
             inventory.removeItem(armor);
         }else{
@@ -84,38 +85,38 @@ public abstract class Character {
     public String getName() {return name;}
 
     public boolean knows(String infoId) {
-        return knownInfos.contains(infoId);
+    logger.info("knows()");        return knownInfos.contains(infoId);
     }
 
     public void learn(String infoId) {
-        knownInfos.add(infoId);
+    logger.info("learn()");        knownInfos.add(infoId);
     }
 
     public void setGuild(String guild) {
-        this.guild = guild;
+    logger.info("setGuild()");        this.guild = guild;
     }
 
     public String getGuild() {
-        return guild;
+    logger.info("getGuild()");        return guild;
     }
 
     public void addItem(Item item) {
-        inventory.addItem(item);
+    logger.info("addItem()");        inventory.addItem(item);
     }
 
     public boolean hasItem(Item item) {
-        return inventory.hasItem(item);
+    logger.info("hasItem()");        return inventory.hasItem(item);
     }
 
     public void takeDamage(int amount) {
-        currentHp -= amount;
+    logger.info("takeDamage()");        currentHp -= amount;
         if(currentHp <= 0){
             System.out.println("You died");
         }
     }
 
     public void heal(int amount) {
-        currentHp += amount;
+    logger.info("heal()");        currentHp += amount;
         if(currentHp > maxHp){
             currentHp = maxHp;
         }
@@ -139,11 +140,11 @@ public abstract class Character {
 
     @Override
     public String toString(){
-        return name;
+    logger.info("toString()");        return name;
     }
 
     public void setPosition(int newX, int newY) {
-        x = newX;
+    logger.info("setPosition()");        x = newX;
         y = newY;
     }
 }
