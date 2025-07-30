@@ -2,8 +2,12 @@ package state;
 
 import UI.Screen;
 import core.StateManager;
+import demo.Main;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class GameState {
+    final Logger logger = LoggerFactory.getLogger(Main.class);
     protected final StateManager stateManager;
     protected Screen screen; // optional, wenn alle States GUI-basiert sind
 

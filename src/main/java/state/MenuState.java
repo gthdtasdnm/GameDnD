@@ -19,25 +19,22 @@ public class MenuState extends GameState implements GameEventListener {
 
     @Override
     public void enter() {
-        System.out.println("Menu geöffnet");
         screen.createScreen();
     }
 
     @Override
     public void update() {
 
-        System.out.println("Menu läuft");
     }
 
     @Override
     public void exit() {
-        System.out.println("Menu geschlossen");
         screen.closeScreen();
     }
 
     @Override
     public String getDescription() {
-        return "Fight State";
+        return "Menu State";
     }
 
     @Override
@@ -82,11 +79,10 @@ public class MenuState extends GameState implements GameEventListener {
                 // Dialog 4: ENDE
                 dialogs.add(new DialogInstance());
 
-                System.out.println("start gedrückt");
                 stateManager.setGameState(new DialogState(stateManager, dialogs));
             }
             case "exit_game" -> System.exit(0);
-            default -> System.out.println("Unbekannte Aktion: " + actionId);
+            default -> logger.warn("Unbekannte UI-Aktion: " + actionId);
         }
     }
 

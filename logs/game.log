@@ -1,0 +1,60 @@
+2025-07-30 04:15:35,254 [INFO] state.DialogState - Starte DIalog
+2025-07-30 04:17:14,787 [INFO] state.DialogState - Starte DIalog
+2025-07-30 04:17:47,520 [INFO] state.DialogState - Starte Dialog
+2025-07-30 04:23:22,898 [INFO] demo.Main - Starte Spiel
+2025-07-30 04:23:26,859 [INFO] state.DialogState - Starte Dialog
+2025-07-30 04:24:17,427 [INFO] demo.Main - Starte Spiel#################################
+2025-07-30 04:24:19,171 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:14:48,203 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:16:02,058 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:16:23,296 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:16:27,636 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:17:00,081 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:17:20,710 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:17:43,354 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:18:05,626 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:18:38,219 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:20:12,012 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:20:12,248 [INFO] demo.Main - Spiel neu gestartet
+2025-07-30 05:20:19,023 [INFO] demo.Main - Fight State -> Dialog State
+2025-07-30 05:20:19,033 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:22:10,889 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:22:11,112 [INFO] demo.Main - Spiel neu gestartet
+2025-07-30 05:22:13,030 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:22:13,039 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:23:02,332 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:27:01,833 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:27:03,738 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:27:03,746 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:27:42,341 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:27:42,663 [INFO] demo.Main - Menu State
+2025-07-30 05:27:43,674 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:27:43,684 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:27:45,097 [INFO] demo.Main - Dialog State -> Explore State
+2025-07-30 05:27:57,884 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:27:58,242 [INFO] demo.Main - Menu State
+2025-07-30 05:28:02,274 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:28:02,286 [INFO] state.DialogState - Starte Dialog
+2025-07-30 05:31:35,696 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:31:36,032 [INFO] demo.Main - Menu State
+2025-07-30 05:31:37,734 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:32:38,887 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:32:39,202 [INFO] demo.Main - Menu State
+2025-07-30 05:32:40,174 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:32:41,653 [INFO] demo.Main - Dialog State -> Explore State
+2025-07-30 05:38:23,154 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:38:23,581 [INFO] demo.Main - Menu State
+2025-07-30 05:39:13,112 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:39:13,468 [INFO] demo.Main - Menu State
+2025-07-30 05:50:08,787 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:50:09,092 [INFO] demo.Main - Menu State
+2025-07-30 05:50:21,678 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:52:03,480 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:52:03,802 [INFO] demo.Main - Menu State
+2025-07-30 05:52:04,930 [INFO] demo.Main - Menu State -> Dialog State
+2025-07-30 05:57:09,347 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:57:47,981 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:57:48,214 [INFO] demo.Main -  -> Menu State
+2025-07-30 05:59:38,705 [INFO] demo.Main - Starte Spiel - #################################
+2025-07-30 05:59:38,929 [INFO] demo.Main - Initialer Zustand: Menu State
+2025-07-30 05:59:40,175 [INFO] demo.Main - Menu State -> Dialog State

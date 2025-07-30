@@ -31,7 +31,6 @@ public class FightState extends GameState implements GameEventListener {
 
     @Override
     public void enter() {
-        System.out.println("Kampf beginnt!");
         screen.createScreen();
     }
 
@@ -42,7 +41,6 @@ public class FightState extends GameState implements GameEventListener {
 
     @Override
     public void exit() {
-        System.out.println("Kampf vorbei.");
         screen.closeScreen();
     }
 

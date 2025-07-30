@@ -10,6 +10,8 @@ import domain.dialog.InfoElement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Der {@code DialogState} repräsentiert den Spielzustand, in dem sich der Spieler
@@ -33,6 +35,7 @@ public class DialogState extends GameState implements GameEventListener{
     //DialogRepository dialogRepository = new DialogRepository();
     //List<DialogInstance> dialogs = dialogRepository.getAllDialogs();
     Map<String, DialogInstance> dialogOptions = new HashMap<>();
+    private static final Logger logger = LoggerFactory.getLogger(DialogState.class);
 
     public DialogState(StateManager stateManager, List<DialogInstance> dialogOptions) {
         super(stateManager);
@@ -44,13 +47,11 @@ public class DialogState extends GameState implements GameEventListener{
 
     @Override
     public void enter() {
-        System.out.println("Starte Dialog");
         screen.createScreen();
         //TODO: Dialog wird als String übergeben um die Option anzuzeigen.
         //TODO: Ziel ist es eine ganze Dialoginstanz zu übergeben und damit die Sprecher und die Dialogzeilen anzuzeigen.
         for(DialogInstance dialogInstance: dialogOptions.values()){
             screen.addOption(dialogInstance);
-            System.out.println(dialogInstance.getDescription());
         }
     }
 
@@ -61,7 +62,6 @@ public class DialogState extends GameState implements GameEventListener{
 
     @Override
     public void exit() {
-        System.out.println("Verlasse Dialog");
         screen.closeScreen();
     }
 
