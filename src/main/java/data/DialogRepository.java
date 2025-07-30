@@ -58,6 +58,37 @@ public class DialogRepository {
     logger.info("getAllDialogs()");        return dialogRepository;
     }
 
+    public List<DialogInstance> getIntroDialogs() {
+        logger.info("getIntroDialogs()");
+        List<DialogInstance> dialogs = new ArrayList<>();
+
+        // Dialog 1
+        Information info1 = new Information();
+        info1.add(new DialogLine("1", "Diego", "Hey du! Bist du neu hier?"));
+        info1.add(new DialogLine("2", "Held", "Das kommt drauf an."));
+        info1.add(new DialogLine("3", "Diego", "Ich bin Diego. Und wenn du Hilfe brauchst, solltest du dich mit mir gut stellen."));
+        dialogs.add(new DialogInstance("Diego", "Wer bist du?", info1));
+
+        // Dialog 2
+        Information info2 = new Information();
+        info2.add(new DialogLine("1", "Held", "Wo bin ich hier?"));
+        info2.add(new DialogLine("2", "Diego", "In der Kolonie. Oder besser gesagt: im alten Lager, mitten in der Barriere."));
+        info2.add(new DialogLine("3", "Diego", "Die Magier haben die Barriere erschaffen, um die Strafkolonie einzusperren. Nur reinkommen ist einfach – raus kommt keiner."));
+        dialogs.add(new DialogInstance("Diego", "Wo bin ich?", info2));
+
+        // Dialog 3
+        Information info3 = new Information();
+        info3.add(new DialogLine("1", "Held", "Was soll ich jetzt tun?"));
+        info3.add(new DialogLine("2", "Diego", "Das hängt ganz von dir ab. Schließ dich einem Lager an, lern kämpfen – oder du wirst hier nicht lange überleben."));
+        info3.add(new DialogLine("3", "Diego", "Wenn du schlau bist, kommst du mit mir. Ich zeige dir das Alte Lager."));
+        dialogs.add(new DialogInstance("Diego", "Was soll ich tun?", info3));
+
+        // Ende
+        dialogs.add(new DialogInstance());
+
+        return dialogs;
+    }
+
 
 
 

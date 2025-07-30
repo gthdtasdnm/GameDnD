@@ -27,25 +27,26 @@ public class StateManager {
     }
 
     public void setGameState(GameState gameState) {
-    logger.info("setGameState()");        if (this.gameState != null) {
+        logger.info("setGameState()");
+        if (this.gameState != null) {
             logger.info(this.gameState.getDescription() + " -> " + gameState.getDescription());
             this.gameState.exit();
         } else {
             logger.info("Initialer Zustand: " + gameState.getDescription());
         }
-
         this.gameState = gameState;
         gameState.enter();
     }
 
 
     public GameState getCurrentState() {
-    logger.info("getCurrentState()");        logger.info("Aktueller Zustand: " + gameState.getDescription());
+        logger.info("Aktueller Zustand: " + gameState.getDescription());
         return gameState;
     }
 
     @Override
     public String toString() {
-    logger.info("toString()");        return "State Manager";
+        logger.info("toString()");
+        return "State Manager";
     }
 }

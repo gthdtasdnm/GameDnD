@@ -1,184 +1,190 @@
-# GameDnD Improvement Tasks
+# GameDnD Verbesserungsaufgaben
 
-This document contains a comprehensive list of actionable improvement tasks for the GameDnD project. Each task is marked with a checkbox [ ] that can be checked off when completed.
+Dieses Dokument enthält eine umfassende Liste von umsetzbaren Verbesserungsaufgaben für das GameDnD-Projekt. Jede Aufgabe ist mit einem Kontrollkästchen [ ] markiert, das abgehakt werden kann, wenn die Aufgabe abgeschlossen ist.
 
-## Architecture Improvements
+## Architekturverbesserungen
 
-1. [ ] Implement a proper dependency injection framework
-   - Consider using Spring or Guice for dependency management
-   - Replace direct instantiation with injected dependencies
-   - Create configuration for dependency wiring
+1. [ ] Implementierung eines geeigneten Dependency-Injection-Frameworks
+   - Spring oder Guice für Dependency-Management in Betracht ziehen
+   - Direkte Instanziierung durch injizierte Abhängigkeiten ersetzen
+   - Konfiguration für Dependency-Wiring erstellen
 
-2. [x] Implement a proper logging framework
-    - Eingeführt: SLF4J mit Logback als Logging-Backend
+2. [x] Implementierung eines geeigneten Logging-Frameworks
+   - Eingeführt: SLF4J mit Logback als Logging-Backend
    - Erstes Logging-Beispiel im `Main`-Entry-Point (`demo.Main`) integriert
    - `System.out.println` durch `logger.info(...)` ersetzt
    
-     ```java
-     import org.slf4j.Logger;
-     import org.slf4j.LoggerFactory;
-     final Logger logger = LoggerFactory.getLogger(Main.class);
-     logger.info("Starte Spiel - #################################");
-     ```
+   Beispiel:
+   ```java
+   // Import der Logger-Klassen
+   import org.slf4j.Logger;
+   import org.slf4j.LoggerFactory;
+   
+   // Logger-Instanz erstellen
+   final Logger logger = LoggerFactory.getLogger(Main.class);
+   
+   // Logging-Aufruf
+   logger.info("Starte Spiel - #################################");
+   ```
 
-3. [ ] Create a configuration management system
-   - Externalize configuration values to properties files
-   - Create a centralized configuration service
-   - Allow for different configurations in development/production
+3. [ ] Erstellung eines Konfigurationsmanagement-Systems
+   - Konfigurationswerte in Properties-Dateien auslagern
+   - Einen zentralisierten Konfigurationsdienst erstellen
+   - Unterschiedliche Konfigurationen für Entwicklung/Produktion ermöglichen
 
-4. [ ] Improve error handling strategy
-   - Define custom exceptions for different error scenarios
-   - Implement consistent error handling across the application
-   - Add proper error recovery mechanisms
+4. [ ] Verbesserung der Fehlerbehandlungsstrategie
+   - Benutzerdefinierte Ausnahmen für verschiedene Fehlerszenarien definieren
+   - Konsistente Fehlerbehandlung in der gesamten Anwendung implementieren
+   - Geeignete Fehlerwiederherstellungsmechanismen hinzufügen
 
-5. [ ] Implement a proper event system
-   - Replace direct method calls with an event-based system where appropriate
-   - Create a centralized event bus
-   - Define standard event types and handlers
+5. [ ] Implementierung eines geeigneten Event-Systems
+   - Direkte Methodenaufrufe durch ein ereignisbasiertes System ersetzen, wo angemessen
+   - Einen zentralisierten Event-Bus erstellen
+   - Standardereignistypen und -handler definieren
 
-6. [ ] Enhance state management
-   - Complete the GameContext implementation
-   - Implement proper state transitions with validation
-   - Add state history for undo/redo functionality
+6. [ ] Verbesserung des Zustandsmanagements
+   - Die GameContext-Implementierung vervollständigen
+   - Ordnungsgemäße Zustandsübergänge mit Validierung implementieren
+   - Zustandsverlauf für Rückgängig/Wiederholen-Funktionalität hinzufügen
 
-## Code Quality Improvements
+## Verbesserungen der Codequalität
 
-7. [ ] Clean up commented-out code and TODOs
-   - Remove or implement commented-out code in DialogState
-   - Address TODOs in DialogState and other classes
-   - Document design decisions that led to code removal
+7. [ ] Bereinigung von auskommentiertem Code und TODOs
+   - Auskommentierten Code in DialogState entfernen oder implementieren
+   - TODOs in DialogState und anderen Klassen bearbeiten
+   - Designentscheidungen dokumentieren, die zur Codeentfernung geführt haben
 
-8. [ ] Fix string comparison issues
-   - Replace == with equals() for string comparisons (e.g., in DialogState.onUiAction)
-   - Add null checks before string comparisons
-   - Consider using enums instead of strings for constants
+8. [ ] Behebung von Problemen beim String-Vergleich
+   - == durch equals() für String-Vergleiche ersetzen (z.B. in DialogState.onUiAction)
+   - Null-Prüfungen vor String-Vergleichen hinzufügen
+   - Enums statt Strings für Konstanten in Betracht ziehen
 
-9. [ ] Improve UI code
-   - Replace null layout with proper layout managers
-   - Extract hard-coded UI values to constants or configuration
-   - Implement responsive design for different screen sizes
+9. [ ] Verbesserung des UI-Codes
+   - Null-Layout durch geeignete Layout-Manager ersetzen
+   - Hartcodierte UI-Werte in Konstanten oder Konfiguration auslagern
+   - Responsive Design für verschiedene Bildschirmgrößen implementieren
 
-10. [ ] Standardize coding style
-    - Create and enforce a consistent coding style guide
-    - Use a code formatter like Google Java Format
-    - Add style checking to the build process
+10. [ ] Standardisierung des Codierungsstils
+    - Einen konsistenten Codierungsstil-Leitfaden erstellen und durchsetzen
+    - Einen Code-Formatierer wie Google Java Format verwenden
+    - Stilprüfung zum Build-Prozess hinzufügen
 
-11. [ ] Implement proper encapsulation
-    - Review and fix access modifiers (public, private, protected)
-    - Add missing getters and setters
-    - Make fields final where appropriate
+11. [ ] Implementierung einer ordnungsgemäßen Kapselung
+    - Zugriffsmodifikatoren überprüfen und korrigieren (public, private, protected)
+    - Fehlende Getter und Setter hinzufügen
+    - Felder wo angemessen als final deklarieren
 
-12. [ ] Enhance method signatures
-    - Add proper parameter validation
-    - Use Optional for nullable return values
-    - Add generic types where appropriate
+12. [ ] Verbesserung der Methodensignaturen
+    - Ordnungsgemäße Parametervalidierung hinzufügen
+    - Optional für nullable Rückgabewerte verwenden
+    - Generische Typen wo angemessen hinzufügen
 
-13. [ ] Complete incomplete implementations
-    - Finish the applyPlayerAction method in GameManager
-    - Implement DialogRepository functionality
-    - Complete any other stub methods
+13. [ ] Vervollständigung unvollständiger Implementierungen
+    - Die applyPlayerAction-Methode in GameManager fertigstellen
+    - DialogRepository-Funktionalität implementieren
+    - Alle anderen Stub-Methoden vervollständigen
 
-## Documentation Improvements
+## Dokumentationsverbesserungen
 
-14. [ ] Standardize documentation language
-    - Decide on either German or English for all documentation
-    - Translate existing documentation to the chosen language
-    - Create a documentation style guide
+14. [ ] Standardisierung der Dokumentationssprache
+    - Entscheidung für Deutsch oder Englisch für die gesamte Dokumentation
+    - Bestehende Dokumentation in die gewählte Sprache übersetzen
+    - Einen Dokumentationsstil-Leitfaden erstellen
 
-15. [ ] Complete JavaDoc documentation
-    - Add missing JavaDoc for methods and classes
-    - Improve existing JavaDoc with more details
-    - Add @param, @return, and @throws tags where missing
+15. [ ] Vervollständigung der JavaDoc-Dokumentation
+    - Fehlende JavaDoc für Methoden und Klassen hinzufügen
+    - Bestehende JavaDoc mit mehr Details verbessern
+    - @param, @return und @throws Tags hinzufügen, wo sie fehlen
 
-16. [ ] Create architectural documentation
-    - Document the overall architecture of the application
-    - Create class diagrams for major components
-    - Document design patterns used in the codebase
+16. [ ] Erstellung von Architekturdokumentation
+    - Die Gesamtarchitektur der Anwendung dokumentieren
+    - Klassendiagramme für Hauptkomponenten erstellen
+    - Verwendete Entwurfsmuster in der Codebasis dokumentieren
 
-17. [ ] Add user documentation
-    - Create user guides for players
-    - Add in-game help and tutorials
-    - Document game mechanics and rules
+17. [ ] Hinzufügen von Benutzerdokumentation
+    - Benutzerhandbücher für Spieler erstellen
+    - In-Game-Hilfe und Tutorials hinzufügen
+    - Spielmechaniken und -regeln dokumentieren
 
-## Testing Improvements
+## Testverbesserungen
 
-18. [ ] Implement a testing framework
-    - Add JUnit or TestNG for unit testing
-    - Configure test coverage reporting
-    - Add test execution to the build process
+18. [ ] Implementierung eines Test-Frameworks
+    - JUnit oder TestNG für Unit-Tests hinzufügen
+    - Testabdeckungsberichte konfigurieren
+    - Testausführung zum Build-Prozess hinzufügen
 
-19. [ ] Create unit tests
-    - Write tests for core domain classes
-    - Test edge cases and error conditions
-    - Aim for high test coverage of critical components
+19. [ ] Erstellung von Unit-Tests
+    - Tests für Kern-Domain-Klassen schreiben
+    - Grenzfälle und Fehlerbedingungen testen
+    - Hohe Testabdeckung für kritische Komponenten anstreben
 
-20. [ ] Implement integration tests
-    - Test interactions between components
-    - Create test fixtures and test data
-    - Test state transitions and game flow
+20. [ ] Implementierung von Integrationstests
+    - Interaktionen zwischen Komponenten testen
+    - Testfixtures und Testdaten erstellen
+    - Zustandsübergänge und Spielablauf testen
 
-21. [ ] Add UI testing
-    - Implement automated UI tests
-    - Test UI responsiveness and usability
-    - Create visual regression tests
+21. [ ] Hinzufügen von UI-Tests
+    - Automatisierte UI-Tests implementieren
+    - UI-Reaktionsfähigkeit und Benutzerfreundlichkeit testen
+    - Visuelle Regressionstests erstellen
 
-## Performance and Scalability
+## Leistung und Skalierbarkeit
 
-22. [ ] Optimize resource usage
-    - Review and optimize memory usage
-    - Implement resource pooling where appropriate
-    - Add resource cleanup in finally blocks
+22. [ ] Optimierung der Ressourcennutzung
+    - Speichernutzung überprüfen und optimieren
+    - Ressourcenpooling implementieren, wo angemessen
+    - Ressourcenbereinigung in finally-Blöcken hinzufügen
 
-23. [ ] Improve rendering performance
-    - Optimize UI rendering code
-    - Implement double buffering if not already used
-    - Consider using a more efficient UI framework
+23. [ ] Verbesserung der Rendering-Leistung
+    - UI-Rendering-Code optimieren
+    - Double Buffering implementieren, falls noch nicht verwendet
+    - Ein effizienteres UI-Framework in Betracht ziehen
 
-24. [ ] Enhance data loading
-    - Implement lazy loading for game resources
-    - Add caching for frequently accessed data
-    - Optimize file I/O operations
+24. [ ] Verbesserung des Datenladens
+    - Lazy Loading für Spielressourcen implementieren
+    - Caching für häufig abgerufene Daten hinzufügen
+    - Datei-I/O-Operationen optimieren
 
-## Game Features
+## Spielfunktionen
 
-25. [ ] Enhance dialog system
-    - Implement branching dialog trees
-    - Add condition-based dialog options
-    - Support for dialog history and replay
+25. [ ] Verbesserung des Dialogsystems
+    - Verzweigte Dialogbäume implementieren
+    - Bedingungsbasierte Dialogoptionen hinzufügen
+    - Unterstützung für Dialogverlauf und Wiederholung
 
-26. [ ] Improve combat system
-    - Enhance turn-based combat mechanics
-    - Add more combat actions and strategies
-    - Implement combat logging and statistics
+26. [ ] Verbesserung des Kampfsystems
+    - Rundenbasierte Kampfmechaniken verbessern
+    - Mehr Kampfaktionen und -strategien hinzufügen
+    - Kampfprotokollierung und -statistiken implementieren
 
-27. [ ] Expand quest system
-    - Add complex quest chains and dependencies
-    - Implement quest tracking and progress indicators
-    - Add quest rewards and consequences
+27. [ ] Erweiterung des Questsystems
+    - Komplexe Questketten und -abhängigkeiten hinzufügen
+    - Quest-Tracking und Fortschrittsanzeigen implementieren
+    - Quest-Belohnungen und -Konsequenzen hinzufügen
 
-28. [ ] Enhance character progression
-    - Implement experience and leveling system
-    - Add skill trees and specializations
-    - Create character development milestones
+28. [ ] Verbesserung der Charakterentwicklung
+    - Erfahrungs- und Levelsystem implementieren
+    - Fertigkeitsbäume und Spezialisierungen hinzufügen
+    - Meilensteine für die Charakterentwicklung erstellen
 
-29. [ ] Improve game world
-    - Expand map and locations
-    - Add dynamic world events
-    - Implement day/night cycle and weather
+29. [ ] Verbesserung der Spielwelt
+    - Karte und Orte erweitern
+    - Dynamische Weltereignisse hinzufügen
+    - Tag/Nacht-Zyklus und Wetter implementieren
 
-## Build and Deployment
+## Build und Deployment
 
-30. [ ] Enhance build process
-    - Configure proper Maven or Gradle build
-    - Add build profiles for different environments
-    - Implement continuous integration
+30. [ ] Verbesserung des Build-Prozesses
+    - Ordnungsgemäßen Maven- oder Gradle-Build konfigurieren
+    - Build-Profile für verschiedene Umgebungen hinzufügen
+    - Kontinuierliche Integration implementieren
 
-31. [ ] Improve deployment process
-    - Create installation packages
-    - Add auto-update functionality
-    - Implement version checking
+31. [ ] Verbesserung des Deployment-Prozesses
+    - Installationspakete erstellen
+    - Auto-Update-Funktionalität hinzufügen
+    - Versionsprüfung implementieren
 
-32. [ ] Add monitoring and analytics
-    - Implement application health monitoring
-    - Add usage analytics
-    - Create performance dashboards
+32. [ ] Hinzufügen von Überwachung und Analytik
+    - Anwendungsgesundheitsüberwachung implementieren
+    - Nutzungsanalytik hinzufügen
+    - Leistungs-Dashboards erstellen
