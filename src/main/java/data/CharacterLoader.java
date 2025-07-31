@@ -33,7 +33,8 @@ public class CharacterLoader {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(CharacterLoader.class);
 
     public static List<NPC> loadNPCs(String resourcePath) {
-    logger.info("loadNPCs()");        InputStream input = CharacterLoader.class.getClassLoader().getResourceAsStream(resourcePath);
+    logger.info("loadNPCs()");
+    InputStream input = CharacterLoader.class.getClassLoader().getResourceAsStream(resourcePath);
 
         if (input == null) {
             System.err.println("NPC-Datei nicht gefunden: " + resourcePath);

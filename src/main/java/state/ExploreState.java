@@ -57,6 +57,11 @@ public class ExploreState extends GameState implements GameEventListener {
     logger.info("onUiAction()");
     }
 
+    @Override
+    public String toString() {
+        return getDescription();
+    }
+
 
 }
 

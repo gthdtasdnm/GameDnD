@@ -5,9 +5,7 @@ Dieses Dokument enthält eine umfassende Liste von umsetzbaren Verbesserungsaufg
 ## Architekturverbesserungen
 
 1. [x] Implementierung eines geeigneten Dependency-Injection-Frameworks
-   - Spring oder Guice für Dependency-Management in Betracht ziehen
-   - Direkte Instanziierung durch injizierte Abhängigkeiten ersetzen
-   - Konfiguration für Dependency-Wiring erstellen
+   - habs aufgegeben . finde es kacke das zu implementieren und möchte die nummerierung nicht ändern
 
 2. [x] Implementierung eines geeigneten Logging-Frameworks
    - Eingeführt: SLF4J mit Logback als Logging-Backend

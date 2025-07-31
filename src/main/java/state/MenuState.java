@@ -55,4 +55,9 @@ public class MenuState extends GameState implements GameEventListener {
             default -> logger.warn("Unbekannte UI-Aktion: " + actionId);
         }
     }
+
+    @Override
+    public String toString() {
+        return getDescription();
+    }
 }

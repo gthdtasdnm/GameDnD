@@ -57,6 +57,10 @@ public class FightState extends GameState implements GameEventListener {
     logger.info("onUiAction()");
     }
 
+    @Override
+    public String toString() {
+        return getDescription();
+    }
 
 }
 

@@ -3,38 +3,28 @@ package demo;
 import core.GameContext;
 import core.StateManager;
 import core.factory.DefaultScreenFactory;
-import core.factory.ScreenFactory;
 import data.DialogRepository;
-import state.GameState;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import state.GameStateType;
-import state.MenuState;
-
 
 public class Main {
-    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Main.class);
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
         logger.info("main() gestartet");
 
-        // Zuerst den GameContext vorbereiten
+        // 1. Kontext vorbereiten
         GameContext context = new GameContext();
-
-        // Erforderliche Komponenten setzen
-        ScreenFactory screenFactory = new DefaultScreenFactory();
-        context.setScreenFactory(screenFactory);
-
+        context.setScreenFactory(new DefaultScreenFactory());
         context.setDialogRepository(new DialogRepository());
 
-        // Jetzt StateManager initialisieren (nachdem alle Abhängigkeiten gesetzt sind)
-        StateManager stateManager = new StateManager(context);
-        context.setStateManager(stateManager);
+        // 2. StateManager erstellen und direkt im Kontext registrieren
+        StateManager stateManager = new StateManager(context); // Achtung: setzt context.setStateManager() intern
 
-        // Startzustand setzen
-        GameState startState = new MenuState(context);
+        // 3. Startzustand setzen (STATE wird vom StateManager intern erzeugt)
         stateManager.setGameState(GameStateType.MENU);
 
         logger.info("main() beendet");
     }
 }
-
-

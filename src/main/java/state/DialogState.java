@@ -88,4 +88,9 @@ public class DialogState extends GameState implements GameEventListener {
             screen.addDialog(element.getSpeaker() + ": " + element.getText());
         }
     }
+
+    @Override
+    public String toString() {
+        return getDescription();
+    }
 }

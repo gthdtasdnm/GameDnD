@@ -37,7 +37,7 @@ public class DialogLoader {
      */
     public static Map<String, List<DialogInstance>> loadDialogMap(String resourcePath) {
         logger.info("loadDialogMap(): " + resourcePath);
-        List<DialogInstance> dialogs = loadDialogs(resourcePath);
+        List<DialogInstance> dialogs = loadDialogs();
 
         Map<String, List<DialogInstance>> dialogMap = new HashMap<>();
         for (DialogInstance dialog : dialogs) {
@@ -52,15 +52,15 @@ public class DialogLoader {
     /**
      * Lädt die Dialoge aus der JSON-Datei und gibt sie als Liste zurück.
      *
-     * @param resourcePath Pfad zur JSON-Datei
      * @return Liste der geladenen Dialoginstanzen
      */
-    public static List<DialogInstance> loadDialogs(String resourcePath) {
-        logger.info("loadDialogs(): " + resourcePath);
-        InputStream input = DialogLoader.class.getClassLoader().getResourceAsStream(resourcePath);
+    public static List<DialogInstance> loadDialogs() {
+        logger.info("loadDialogs()");
+        InputStream input = DialogLoader.class.getClassLoader().getResourceAsStream(ConfigService.get("dialogs.path"));
+
 
         if (input == null) {
-            logger.error("Dialogdatei nicht gefunden: " + resourcePath);
+            logger.error("Dialogdatei nicht gefunden: " + ConfigService.get("dialogs.path"));
             return Collections.emptyList();
         }
 
@@ -72,7 +72,7 @@ public class DialogLoader {
             Type listType = new TypeToken<List<DialogInstance>>() {}.getType();
             return gson.fromJson(reader, listType);
         } catch (Exception e) {
-            logger.error("Fehler beim Laden der Dialoge aus: " + resourcePath, e);
+            logger.error("Fehler beim Laden der Dialoge aus: " + ConfigService.get("dialogs.path"), e);
             return Collections.emptyList();
         }
     }

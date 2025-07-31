@@ -1,10 +1,6 @@
 package core;
 
-import demo.Main;
 import state.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -28,18 +24,21 @@ public class StateManager {
     private final GameContext context;
 
     public StateManager(GameContext context) {
+        logger.info("StateManager()");
         this.context = context;
         context.setStateManager(this); // <-- Frühzeitig setzen
         initStates();
     }
 
     private void initStates() {
+        logger.info("initStates()");
         stateMap.put(GameStateType.MENU, new MenuState(context));
         stateMap.put(GameStateType.DIALOG, new DialogState(context));
         stateMap.put(GameStateType.EXPLORE, new ExploreState(context));
     }
 
     public void setGameState(GameStateType type) {
+        logger.info("setGameState(): " + currentState + " to " + type);
         if (currentState != null) {
             currentState.exit();
         }

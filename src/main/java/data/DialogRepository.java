@@ -49,7 +49,8 @@ public class DialogRepository {
     }
 
     public List<DialogInstance> getAllDialogs() {
-    logger.info("getAllDialogs()");        return dialogRepository;
+    logger.info("getAllDialogs()");
+    return dialogRepository;
     }
 
     public List<DialogInstance> getIntroDialogs() {
