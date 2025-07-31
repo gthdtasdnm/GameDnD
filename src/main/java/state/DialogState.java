@@ -29,10 +29,11 @@ public class DialogState extends GameState implements GameEventListener {
     private final DialogScreen screen;
     private final Map<String, DialogInstance> dialogOptions = new LinkedHashMap<>();
 
-    public DialogState(GameContext context, List<DialogInstance> dialogList) {
+    public DialogState(GameContext context) {
         super(context);
         this.screen = new DialogScreen(this);
 
+        List<DialogInstance> dialogList = context.getDialogRepository().getDialogsByNpc("Diego");
         for (DialogInstance dialog : dialogList) {
             dialogOptions.put(dialog.getDescription(), dialog);
         }
@@ -73,7 +74,7 @@ public class DialogState extends GameState implements GameEventListener {
         logger.info("onUiAction(): " + actionID);
 
         if ("ENDE".equals(actionID)) {
-            stateManager.setGameState(new ExploreState(context));
+            stateManager.setGameState(GameStateType.EXPLORE);
             return;
         }
 

@@ -4,7 +4,7 @@ Dieses Dokument enthält eine umfassende Liste von umsetzbaren Verbesserungsaufg
 
 ## Architekturverbesserungen
 
-1. [ ] Implementierung eines geeigneten Dependency-Injection-Frameworks
+1. [x] Implementierung eines geeigneten Dependency-Injection-Frameworks
    - Spring oder Guice für Dependency-Management in Betracht ziehen
    - Direkte Instanziierung durch injizierte Abhängigkeiten ersetzen
    - Konfiguration für Dependency-Wiring erstellen

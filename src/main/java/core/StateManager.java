@@ -1,10 +1,12 @@
 package core;
 
 import demo.Main;
-import state.GameState;
-import state.MenuState;
+import state.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.EnumMap;
+import java.util.Map;
 
 /**
  * Der {@code StateManager} verwaltet den aktuellen Spielzustand.
@@ -21,27 +23,37 @@ import org.slf4j.LoggerFactory;
 
 public class StateManager {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(StateManager.class);
-    GameState gameState;
+    private final Map<GameStateType, GameState> stateMap = new EnumMap<>(GameStateType.class);
+    private GameState currentState;
+    private final GameContext context;
 
-    public StateManager(GameContext context){
+    public StateManager(GameContext context) {
+        this.context = context;
+        context.setStateManager(this); // <-- Frühzeitig setzen
+        initStates();
     }
 
-    public void setGameState(GameState gameState) {
-        logger.info("setGameState()");
-        if (this.gameState != null) {
-            logger.info(this.gameState.getDescription() + " -> " + gameState.getDescription());
-            this.gameState.exit();
-        } else {
-            logger.info("Initialer Zustand: " + gameState.getDescription());
+    private void initStates() {
+        stateMap.put(GameStateType.MENU, new MenuState(context));
+        stateMap.put(GameStateType.DIALOG, new DialogState(context));
+        stateMap.put(GameStateType.EXPLORE, new ExploreState(context));
+    }
+
+    public void setGameState(GameStateType type) {
+        if (currentState != null) {
+            currentState.exit();
         }
-        this.gameState = gameState;
-        gameState.enter();
+        currentState = stateMap.get(type);
+        if (currentState != null) {
+            currentState.enter();
+        }
     }
+
 
 
     public GameState getCurrentState() {
-        logger.info("Aktueller Zustand: " + gameState.getDescription());
-        return gameState;
+        logger.info("Aktueller Zustand: " + currentState.getDescription());
+        return currentState;
     }
 
     @Override

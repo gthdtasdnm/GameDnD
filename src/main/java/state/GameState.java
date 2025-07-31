@@ -3,7 +3,6 @@ package state;
 import UI.Screen;
 import core.GameContext;
 import core.StateManager;
-import org.slf4j.Logger;
 
 public abstract class GameState {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(GameState.class);
