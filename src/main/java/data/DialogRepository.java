@@ -90,7 +90,6 @@ public class DialogRepository {
         // Neue Liste kopieren und ENDE hinzufügen
         List<DialogInstance> extended = new ArrayList<>(original);
         extended.add(new DialogInstance()); // Leere Instanz als "ENDE"
-        System.out.print(extended);
         return extended;
     }
 
