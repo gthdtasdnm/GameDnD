@@ -25,7 +25,7 @@ Dieses Dokument enthält eine umfassende Liste von umsetzbaren Verbesserungsaufg
    logger.info("Starte Spiel - #################################");
    ```
 
-3. [ ] Erstellung eines Konfigurationsmanagement-Systems
+3. [x] Erstellung eines Konfigurationsmanagement-Systems
    - Konfigurationswerte in Properties-Dateien auslagern
    - Einen zentralisierten Konfigurationsdienst erstellen
    - Unterschiedliche Konfigurationen für Entwicklung/Produktion ermöglichen
